@@ -12,12 +12,12 @@ Claude Code는 기본 기능만으로도 충분히 강력하지만, **플러그�
 
 플러그인 하나에는 다음 요소들이 들어있을 수 있습니다:
 
-| 구성 요소 | 설명 |
-|----------|------|
-| **Skills (스킬)** | `/플러그인명:명령어` 형태의 커스텀 명령어 |
-| **Agents (에이전트)** | 특정 역할을 수행하는 AI 에이전트 |
-| **Hooks (훅)** | 파일 저장, 명령 실행 시 자동으로 동작하는 이벤트 핸들러 |
-| **MCP 서버** | GitHub, Figma 등 외부 서비스 연동 |
+| 구성 요소                   | 설명                                                    |
+| --------------------------- | ------------------------------------------------------- |
+| **Skills (스킬)**     | `/플러그인명:명령어` 형태의 커스텀 명령어             |
+| **Agents (에이전트)** | 특정 역할을 수행하는 AI 에이전트                        |
+| **Hooks (훅)**        | 파일 저장, 명령 실행 시 자동으로 동작하는 이벤트 핸들러 |
+| **MCP 서버**          | GitHub, Figma 등 외부 서비스 연동                       |
 
 ---
 
@@ -35,17 +35,17 @@ Claude Code 안에서 `/plugin` 을 입력하면 **Discover 탭**에서 바로 �
 
 ### 공식 마켓에서 제공하는 주요 플러그인 카테고리
 
-| 카테고리 | 대표 플러그인 | 설명 |
-|---------|------------|------|
-| **외부 서비스 연동** | `notion`, `slack`, `github` | Notion, Slack, GitHub 등 외부 서비스를 Claude와 직접 연결 |
-| **출력 스타일** | `explanatory-output-style` | Claude 응답 방식 커스터마이징 (요약 형식, 체크리스트 등) |
-| **개발 워크플로** | `commit-commands`, `pr-review-toolkit` | Git 커밋, PR 리뷰 자동화 |
+| 카테고리                   | 대표 플러그인                              | 설명                                                      |
+| -------------------------- | ------------------------------------------ | --------------------------------------------------------- |
+| **외부 서비스 연동** | `notion`, `slack`, `github`          | Notion, Slack, GitHub 등 외부 서비스를 Claude와 직접 연결 |
+| **출력 스타일**      | `explanatory-output-style`               | Claude 응답 방식 커스터마이징 (요약 형식, 체크리스트 등)  |
+| **개발 워크플로**    | `commit-commands`, `pr-review-toolkit` | Git 커밋, PR 리뷰 자동화                                  |
 
 <details>
 <summary>🖥️ 개발자용 코드 인텔리전스 플러그인</summary>
 
-| 카테고리 | 대표 플러그인 | 설명 |
-|---------|------------|------|
+| 카테고리                  | 대표 플러그인                       | 설명                             |
+| ------------------------- | ----------------------------------- | -------------------------------- |
 | **코드 인텔리전스** | `typescript-lsp`, `pyright-lsp` | 타입 오류 실시간 감지, 코드 탐색 |
 
 ```shell
@@ -65,16 +65,16 @@ Claude Code 안에서 `/plugin` 을 입력하면 **Discover 탭**에서 바로 �
 
 ### 포함된 플러그인
 
-| 플러그인 이름 | 역할 | 사용 예시 |
-|------------|------|---------|
-| **docs-guide** | 라이브러리 공식 문서 기반으로 정확한 답변 제공. Claude가 최신 공식 문서를 참고해 할루시네이션 없이 답변 | `/docs-guide:explain React hooks` |
-| **바르다 깃선생** (git-teacher) | 비개발자를 위한 Git 온보딩 가이드. "커밋이 뭐야?"부터 시작해서 실무 Git 워크플로우까지 단계별 안내 | `/git-teacher:what-is-commit` |
-| **바선생** (vibe-sunsang) | Claude Code 대화 로그를 자동 수집해 요청 품질을 A~D로 평가하고 성장 보고서 생성. AI 사용 패턴을 분석해 더 잘 쓰는 법을 코칭 | `/vibe-sunsang 시작` |
-| **deep-research-kit** | 멀티에이전트 7단계 리서치 자동화. 웹/학술/기술 출처 병렬 수집 → 교차검증 → 보고서 생성 | `/deep-research [주제]` |
-| **품앗이** (pumasi) | Claude(PM)가 작업을 분담하고 병렬 처리. Codex가 설치되어 있으면 Codex가 개발자 역할, 없으면 Claude만으로 동작 | `/pumasi [작업 설명]` |
-| **쇼미더피알디** (show-me-the-prd) | 인터뷰 5~6번으로 4종 디자인 문서(PRD, 데이터 모델, Phase 분리, 프로젝트 스펙) 자동 생성. 기획을 못 해도 OK | `/show-me-the-prd 사진 정리 앱 만들고 싶어` |
-| **끼리끼리** (kkirikkiri) | 자연어 한마디로 Claude Code Agent Teams를 자동 구성하고 실행. 리서치/개발/분석/콘텐츠 4종 프리셋 | `/kkirikkiri 리서치 팀 만들어줘` |
-| **스킬러들의 수다** (skillers-suda) | 4명의 전문가(기획자/사용자/전문가/검수자)가 모호한 아이디어를 동작하는 스킬로 변환 | `/skillers-suda 번역 스킬 만들어줘` |
+| 플러그인 이름                             | 역할                                                                                                                        | 사용 예시                                     |
+| ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| **docs-guide**                      | 라이브러리 공식 문서 기반으로 정확한 답변 제공. Claude가 최신 공식 문서를 참고해 할루시네이션 없이 답변                     | `/docs-guide:explain React hooks`           |
+| **바르다 깃선생** (git-teacher)     | 비개발자를 위한 Git 온보딩 가이드. "커밋이 뭐야?"부터 시작해서 실무 Git 워크플로우까지 단계별 안내                          | `/git-teacher:what-is-commit`               |
+| **바선생** (vibe-sunsang)           | Claude Code 대화 로그를 자동 수집해 요청 품질을 A~D로 평가하고 성장 보고서 생성. AI 사용 패턴을 분석해 더 잘 쓰는 법을 코칭 | `/vibe-sunsang 시작`                        |
+| **deep-research-kit**               | 멀티에이전트 7단계 리서치 자동화. 웹/학술/기술 출처 병렬 수집 → 교차검증 → 보고서 생성                                    | `/deep-research [주제]`                     |
+| **품앗이** (pumasi)                 | Claude(PM)가 작업을 분담하고 병렬 처리. Codex가 설치되어 있으면 Codex가 개발자 역할, 없으면 Claude만으로 동작               | `/pumasi [작업 설명]`                       |
+| **쇼미더피알디** (show-me-the-prd)  | 인터뷰 5~6번으로 4종 디자인 문서(PRD, 데이터 모델, Phase 분리, 프로젝트 스펙) 자동 생성. 기획을 못 해도 OK                  | `/show-me-the-prd 사진 정리 앱 만들고 싶어` |
+| **끼리끼리** (kkirikkiri)           | 자연어 한마디로 Claude Code Agent Teams를 자동 구성하고 실행. 리서치/개발/분석/콘텐츠 4종 프리셋                            | `/kkirikkiri 리서치 팀 만들어줘`            |
+| **스킬러들의 수다** (skillers-suda) | 4명의 전문가(기획자/사용자/전문가/검수자)가 모호한 아이디어를 동작하는 스킬로 변환                                          | `/skillers-suda 번역 스킬 만들어줘`         |
 
 ---
 
@@ -150,13 +150,13 @@ Claude Code 안에서 다음 명령어를 입력하세요:
 
 ## 플러그인 관리
 
-| 명령어 | 설명 |
-|--------|------|
-| `/plugin` | 플러그인 매니저 열기 (Discover/Installed/Marketplaces/Errors 탭) |
-| `/plugin list` | 설치된 플러그인 목록 확인 |
-| `/plugin disable 플러그인명` | 플러그인 임시 비활성화 |
-| `/plugin enable 플러그인명` | 비활성화된 플러그인 다시 활성화 |
-| `/plugin uninstall 플러그인명` | 플러그인 완전 삭제 |
+| 명령어                           | 설명                                                             |
+| -------------------------------- | ---------------------------------------------------------------- |
+| `/plugin`                      | 플러그인 매니저 열기 (Discover/Installed/Marketplaces/Errors 탭) |
+| `/plugin list`                 | 설치된 플러그인 목록 확인                                        |
+| `/plugin disable 플러그인명`   | 플러그인 임시 비활성화                                           |
+| `/plugin enable 플러그인명`    | 비활성화된 플러그인 다시 활성화                                  |
+| `/plugin uninstall 플러그인명` | 플러그인 완전 삭제                                               |
 
 ---
 
@@ -169,12 +169,13 @@ Claude Code 안에서 다음 명령어를 입력하세요:
 Claude Code 커뮤니티에서 가장 많이 쓰이는 서드파티 플러그인입니다. 단순한 확장이 아니라 Claude Code 자체를 **오케스트레이터**로 탈바꿈시켜 줍니다.
 
 주요 기능:
+
 - **Autopilot**: "만들어줘"라고 하면 계획 → 구현 → 검증까지 자동 수행
 - **33개 전문 에이전트**: 코드 리뷰, 보안 분석, 테스트, 문서화 등 역할별 AI 에이전트
 - **외부 AI 연동**: Codex(OpenAI), Gemini(Google)와 협업해 다각도 분석
 - **Skills 시스템**: 자주 쓰는 워크플로를 재사용 가능한 명령어로 저장
 
-설치: GitHub 저장소([github.com/wshf/oh-my-claudecode](https://github.com/wshf/oh-my-claudecode))의 README 참조
+설치: GitHub 저장소([github.com/Yeachan-Heo/oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode/tree/main) )의 README 참조
 
 <details>
 <summary>🖥️ 개발자용 커뮤니티 플러그인 (LSP / chrome-devtools)</summary>
