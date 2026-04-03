@@ -99,7 +99,7 @@ apk add libgcc libstdc++ ripgrep
 claude
 ```
 
-처음 실행하면 **브라우저가 자동으로 열리면서 OAuth 로그인 화면**이 나타납니다. Claude.ai 계정(Pro 또는 Max 구독)으로 로그인하면 자동으로 인증이 완료됩니다.
+처음 실행하면 <strong>브라우저가 자동으로 열리면서 OAuth 로그인 화면</strong>이 나타납니다. Claude.ai 계정(Pro 또는 Max 구독)으로 로그인하면 자동으로 인증이 완료됩니다.
 
 ### 인증 흐름 요약
 
@@ -115,7 +115,7 @@ Claude.ai 계정으로 로그인
 
 ### 자격 증명 보안
 
-- macOS: API 키와 OAuth 토큰은 **macOS Keychain(암호화 저장소)**에 안전하게 저장됩니다.
+- macOS: API 키와 OAuth 토큰은 <strong>macOS Keychain(암호화 저장소)</strong>에 안전하게 저장됩니다.
 - 재로그인이 필요한 경우: `claude` 실행 후 `/login` 입력
 
 ---
@@ -140,7 +140,7 @@ claude doctor
 
 ## 자동 업데이트
 
-Claude Code는 **자동으로 최신 버전으로 업데이트**됩니다. 시작 시 업데이트를 확인하고 백그라운드에서 다운로드합니다. 다음 실행 시 새 버전이 적용됩니다.
+Claude Code는 <strong>자동으로 최신 버전으로 업데이트</strong>됩니다. 시작 시 업데이트를 확인하고 백그라운드에서 다운로드합니다. 다음 실행 시 새 버전이 적용됩니다.
 
 수동으로 업데이트하려면:
 

@@ -6,9 +6,9 @@
 
 ## 플러그인이란?
 
-Claude Code는 기본 기능만으로도 충분히 강력하지만, **플러그인(Plugin)**을 설치하면 더 많은 것을 할 수 있습니다.
+Claude Code는 기본 기능만으로도 충분히 강력하지만, <strong>플러그인(Plugin)</strong>을 설치하면 더 많은 것을 할 수 있습니다.
 
-플러그인은 쉽게 말하면 **Claude Code에 추가 기능 꾸러미를 설치하는 것**입니다. 스마트폰에 앱을 설치하듯, Claude Code에 필요한 기능을 플러그인으로 추가할 수 있습니다.
+플러그인은 쉽게 말하면 <strong>Claude Code에 추가 기능 꾸러미를 설치하는 것</strong>입니다. 스마트폰에 앱을 설치하듯, Claude Code에 필요한 기능을 플러그인으로 추가할 수 있습니다.
 
 플러그인 하나에는 다음 요소들이 들어있을 수 있습니다:
 
@@ -23,9 +23,9 @@ Claude Code는 기본 기능만으로도 충분히 강력하지만, **플러그�
 
 ## 공식 플러그인 마켓플레이스
 
-Anthropic이 운영하는 공식 마켓플레이스(`claude-plugins-official`)는 Claude Code를 시작하면 **자동으로 사용 가능한 상태**입니다.
+Anthropic이 운영하는 공식 마켓플레이스(`claude-plugins-official`)는 Claude Code를 시작하면 <strong>자동으로 사용 가능한 상태</strong>입니다.
 
-Claude Code 안에서 `/plugin` 을 입력하면 **Discover 탭**에서 바로 공식 플러그인들을 둘러볼 수 있습니다.
+Claude Code 안에서 `/plugin` 을 입력하면 <strong>Discover 탭</strong>에서 바로 공식 플러그인들을 둘러볼 수 있습니다.
 
 ### 공식 마켓에서 플러그인 설치하기
 
@@ -61,7 +61,7 @@ Claude Code 안에서 `/plugin` 을 입력하면 **Discover 탭**에서 바로 �
 
 > GitHub: [https://github.com/fivetaku/gptaku_plugins](https://github.com/fivetaku/gptaku_plugins)
 
-**gptaku_plugins**는 한국의 Claude Code 입문자, 비개발자, 바이브코더를 위해 특별히 만들어진 플러그인 모음입니다. 어렵고 낯선 개발 개념들을 Claude가 더 친절하게 안내해주도록 설계되어 있습니다.
+<strong>gptaku_plugins</strong>는 한국의 Claude Code 입문자, 비개발자, 바이브코더를 위해 특별히 만들어진 플러그인 모음입니다. 어렵고 낯선 개발 개념들을 Claude가 더 친절하게 안내해주도록 설계되어 있습니다.
 
 ### 포함된 플러그인
 
@@ -110,7 +110,7 @@ Claude Code 안에서 다음 명령어를 입력하세요:
 /plugin list
 ```
 
-또는 `/plugin` 을 입력 후 **Installed 탭**으로 이동하면 설치된 플러그인 목록을 볼 수 있습니다.
+또는 `/plugin` 을 입력 후 <strong>Installed 탭</strong>으로 이동하면 설치된 플러그인 목록을 볼 수 있습니다.
 
 ### 4단계: 업데이트
 
@@ -166,7 +166,7 @@ Claude Code 안에서 다음 명령어를 입력하세요:
 
 ### oh-my-claudecode
 
-Claude Code 커뮤니티에서 가장 많이 쓰이는 서드파티 플러그인입니다. 단순한 확장이 아니라 Claude Code 자체를 **오케스트레이터**로 탈바꿈시켜 줍니다.
+Claude Code 커뮤니티에서 가장 많이 쓰이는 서드파티 플러그인입니다. 단순한 확장이 아니라 Claude Code 자체를 <strong>오케스트레이터</strong>로 탈바꿈시켜 줍니다.
 
 주요 기능:
 - **Autopilot**: "만들어줘"라고 하면 계획 → 구현 → 검증까지 자동 수행

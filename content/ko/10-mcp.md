@@ -6,7 +6,7 @@
 
 ## MCP란?
 
-**MCP(Model Context Protocol)**는 Claude가 외부 도구와 데이터 소스에 연결할 수 있게 해주는 오픈 표준입니다.
+<strong>MCP(Model Context Protocol)</strong>는 Claude가 외부 도구와 데이터 소스에 연결할 수 있게 해주는 오픈 표준입니다.
 
 쉽게 말하면: Claude Code는 기본적으로 파일과 터미널만 다룹니다. MCP를 연결하면 Claude가 Notion 문서를 직접 읽고, Slack 메시지를 요약하고, Google Sheets를 업데이트하는 등 외부 도구와 상호작용할 수 있게 됩니다.
 
@@ -274,7 +274,7 @@ MCP 서버가 프롬프트를 제공하는 경우, Claude Code에서 `/mcp__서�
 **신뢰할 수 없는 MCP 서버를 함부로 설치하지 마세요.**
 
 - MCP 서버는 Claude를 통해 내 파일 시스템, DB, 외부 서비스에 접근할 수 있습니다
-- 특히 **외부 콘텐츠를 가져오는 MCP 서버**는 프롬프트 인젝션 위험이 있습니다
+- 특히 <strong>외부 콘텐츠를 가져오는 MCP 서버</strong>는 프롬프트 인젝션 위험이 있습니다
 - Anthropic이 직접 검증한 서버만 공식 MCP 레지스트리에 등록되어 있습니다
 - 출처가 불명확한 서버는 설치 전 소스 코드를 반드시 확인하세요
 

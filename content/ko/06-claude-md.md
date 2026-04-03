@@ -8,11 +8,11 @@
 
 Claude Code는 세션이 끝나면 대화 내용을 잊어버립니다. 다음에 다시 시작하면 처음 만난 사이처럼 아무것도 모릅니다.
 
-**CLAUDE.md**는 이 문제를 해결합니다.
+<strong>CLAUDE.md</strong>는 이 문제를 해결합니다.
 
 Claude Code를 시작할 때마다 CLAUDE.md 파일을 자동으로 읽어서, 프로젝트에 대한 맥락과 규칙을 기억한 채로 작업을 시작합니다.
 
-CLAUDE.md는 Claude에게 주는 **지시서이자 프로젝트 설명서**입니다.
+CLAUDE.md는 Claude에게 주는 <strong>지시서이자 프로젝트 설명서</strong>입니다.
 
 ```
 사람: "이 프로젝트는 Next.js로 만들었고, TypeScript를 써야 해.

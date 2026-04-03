@@ -19,7 +19,7 @@ Claude Code는 강력합니다. 파일을 만들고, 수정하고, 삭제하고,
 
 ## Hooks란?
 
-**Hooks**는 Claude Code의 특정 이벤트가 발생할 때 자동으로 실행되는 셸 커맨드입니다.
+<strong>Hooks</strong>는 Claude Code의 특정 이벤트가 발생할 때 자동으로 실행되는 셸 커맨드입니다.
 
 | 이벤트 | 발생 시점 | 주요 용도 |
 |--------|----------|----------|
@@ -131,7 +131,7 @@ Claude가 `rm -rf node_modules`를 실행하려고 하면:
 3. `exit 2`로 **차단** + "rm 대신 trash를 사용하세요" 메시지 전달
 4. Claude가 메시지를 받고 `trash node_modules`로 대안 실행
 
-> **trash**는 파일을 휴지통으로 보내서 실수해도 복구할 수 있습니다. `brew install trash` (macOS) 또는 `npm install -g trash-cli`로 설치하세요.
+> <strong>trash</strong>는 파일을 휴지통으로 보내서 실수해도 복구할 수 있습니다. `brew install trash` (macOS) 또는 `npm install -g trash-cli`로 설치하세요.
 
 ### 차단 패턴을 더 추가하고 싶다면
 
@@ -182,7 +182,7 @@ Claude가 작업을 끝내면 소리로 알려줍니다. 바이브코딩 중 다
 }
 ```
 
-> `Stop`과 `Notification`에 **다른 소리**를 쓰면 "끝남" vs "확인 필요"를 소리만으로 구분할 수 있습니다.
+> `Stop`과 `Notification`에 <strong>다른 소리</strong>를 쓰면 "끝남" vs "확인 필요"를 소리만으로 구분할 수 있습니다.
 
 사용 가능한 macOS 시스템 사운드 확인:
 

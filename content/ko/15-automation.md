@@ -14,11 +14,11 @@
 
 보통 Claude Code는 터미널에서 대화형으로 사용합니다. 사람이 직접 질문하고, Claude가 답하고, 다시 사람이 피드백을 주는 방식이죠.
 
-**Headless 모드**는 사람 없이 Claude Code를 자동으로 실행하는 방식입니다. 스크립트나 CI/CD 파이프라인에서 Claude Code를 프로그램처럼 호출할 수 있습니다.
+<strong>Headless 모드</strong>는 사람 없이 Claude Code를 자동으로 실행하는 방식입니다. 스크립트나 CI/CD 파이프라인에서 Claude Code를 프로그램처럼 호출할 수 있습니다.
 
 > **Headless = 사람 없이 자동 실행**
 
-이전에는 "headless mode"라고 불렸지만, 공식적으로는 **Agent SDK CLI**라고도 합니다. `-p` 플래그와 모든 CLI 옵션은 동일하게 작동합니다.
+이전에는 "headless mode"라고 불렸지만, 공식적으로는 <strong>Agent SDK CLI</strong>라고도 합니다. `-p` 플래그와 모든 CLI 옵션은 동일하게 작동합니다.
 
 ---
 
