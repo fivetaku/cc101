@@ -1,4 +1,4 @@
-# 18. Designing Your Personal AI Workspace
+# 19. Designing Your Personal AI Workspace
 
 > Now that you've learned CLAUDE.md, Skills, and Hooks — it's time to combine them. Here's how to build your own automated office, not just an AI tool.
 

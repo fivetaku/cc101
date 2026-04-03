@@ -1,4 +1,4 @@
-# 10. Beginner Workflow
+# 05. Beginner Workflow
 
 > A step-by-step guide to starting your first Claude Code session and working effectively from day one.
 

@@ -1,4 +1,4 @@
-# 14. MCP & 외부 도구 연결
+# 15. MCP & 외부 도구 연결
 
 > Notion, Slack, Google Sheets, GitHub, DB 등 외부 도구를 Claude가 직접 다룰 수 있게 해주는 표준 프로토콜
 

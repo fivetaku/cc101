@@ -1,4 +1,4 @@
-# 11. Session & Context Management
+# 10. Session & Context Management
 
 > How to use Claude Code longer and more efficiently — compress long sessions, resume previous work, and add safety checks before complex tasks.
 

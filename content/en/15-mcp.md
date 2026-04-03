@@ -1,4 +1,4 @@
-# 14. MCP & External Tool Integrations
+# 15. MCP & External Tool Integrations
 
 > The standard protocol that lets Claude directly operate GitHub, Slack, databases, and browsers
 

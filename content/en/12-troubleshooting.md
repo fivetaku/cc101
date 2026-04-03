@@ -1,4 +1,4 @@
-# 13. Common Mistakes & How to Fix Them
+# 12. Common Mistakes & How to Fix Them
 
 > Ten problems beginners run into most often, in Q&A format — with clear solutions for each.
 

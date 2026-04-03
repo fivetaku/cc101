@@ -1,4 +1,4 @@
-# 12. Getting Started with GitHub
+# 11. Getting Started with GitHub
 
 > Everything you build with Claude Code needs to be saved with Git and uploaded to GitHub. You don't need to memorize commands — start with natural language.
 

@@ -37,7 +37,7 @@
       "file_en": "en/01-what-is-cc.md"
     },
     {
-      "id": "use-cases",
+      "id": "02-use-cases",
       "order": 2,
       "tier": "core",
       "slug": "use-cases",
@@ -46,11 +46,11 @@
       "description_ko": "개발 너머의 Claude Code. 비개발자도 할 수 있는 리서치, 문서, 데이터 처리, 개인 워크스페이스까지.",
       "description_en": "Claude Code beyond coding — research, documents, data processing, and personal AI workspaces.",
       "icon": "sparkles",
-      "file_ko": "ko/use-cases.md",
-      "file_en": "en/use-cases.md"
+      "file_ko": "ko/02-use-cases.md",
+      "file_en": "en/02-use-cases.md"
     },
     {
-      "id": "02-plans-pricing",
+      "id": "03-plans-pricing",
       "order": 3,
       "tier": "core",
       "slug": "plans-and-pricing",
@@ -59,11 +59,11 @@
       "description_ko": "Claude Code를 사용하는 방법과 요금제를 알아봅니다.",
       "description_en": "Learn about different plans and pricing for Claude Code.",
       "icon": "credit-card",
-      "file_ko": "ko/02-plans-pricing.md",
-      "file_en": "en/02-plans-pricing.md"
+      "file_ko": "ko/03-plans-pricing.md",
+      "file_en": "en/03-plans-pricing.md"
     },
     {
-      "id": "03-installation",
+      "id": "04-installation",
       "order": 4,
       "tier": "core",
       "slug": "installation",
@@ -72,11 +72,11 @@
       "description_ko": "Claude Code를 설치하고 인증하는 방법을 알아봅니다.",
       "description_en": "Learn how to install and authenticate Claude Code.",
       "icon": "download",
-      "file_ko": "ko/03-installation.md",
-      "file_en": "en/03-installation.md"
+      "file_ko": "ko/04-installation.md",
+      "file_en": "en/04-installation.md"
     },
     {
-      "id": "04-plugins",
+      "id": "06-plugins",
       "order": 6,
       "tier": "core",
       "slug": "plugins",
@@ -87,11 +87,11 @@
       "icon": "plug",
       "badge": "한국어 추천",
       "badge_en": "KR Recommended",
-      "file_ko": "ko/04-plugins.md",
-      "file_en": "en/04-plugins.md"
+      "file_ko": "ko/06-plugins.md",
+      "file_en": "en/06-plugins.md"
     },
     {
-      "id": "05-core-concepts",
+      "id": "07-core-concepts",
       "order": 7,
       "tier": "core",
       "slug": "core-concepts",
@@ -100,11 +100,11 @@
       "description_ko": "Context, Tools, Permissions, Memory, Session 등 핵심 개념을 이해합니다.",
       "description_en": "Understand key concepts: Context, Tools, Permissions, Memory, and Session.",
       "icon": "book-open",
-      "file_ko": "ko/05-core-concepts.md",
-      "file_en": "en/05-core-concepts.md"
+      "file_ko": "ko/07-core-concepts.md",
+      "file_en": "en/07-core-concepts.md"
     },
     {
-      "id": "06-claude-md",
+      "id": "08-claude-md",
       "order": 8,
       "tier": "core",
       "slug": "claude-md",
@@ -115,11 +115,11 @@
       "icon": "file-text",
       "badge": "핵심",
       "badge_en": "Essential",
-      "file_ko": "ko/06-claude-md.md",
-      "file_en": "en/06-claude-md.md"
+      "file_ko": "ko/08-claude-md.md",
+      "file_en": "en/08-claude-md.md"
     },
     {
-      "id": "07-commands",
+      "id": "09-commands",
       "order": 9,
       "tier": "core",
       "slug": "commands",
@@ -128,11 +128,11 @@
       "description_ko": "CLI 명령어, 슬래시 명령어, 키보드 단축키, Alias 설정까지 한눈에 정리합니다.",
       "description_en": "A complete reference for CLI commands, slash commands, keyboard shortcuts, and alias setup.",
       "icon": "terminal",
-      "file_ko": "ko/07-commands.md",
-      "file_en": "en/07-commands.md"
+      "file_ko": "ko/09-commands.md",
+      "file_en": "en/09-commands.md"
     },
     {
-      "id": "08-workflow",
+      "id": "05-workflow",
       "order": 5,
       "tier": "core",
       "slug": "workflow",
@@ -141,11 +141,11 @@
       "description_ko": "첫 세션부터 효과적인 프롬프트 작성까지 실전 워크플로우를 배웁니다.",
       "description_en": "Learn practical workflows from your first session to writing effective prompts.",
       "icon": "git-branch",
-      "file_ko": "ko/08-workflow.md",
-      "file_en": "en/08-workflow.md"
+      "file_ko": "ko/05-workflow.md",
+      "file_en": "en/05-workflow.md"
     },
     {
-      "id": "session-management",
+      "id": "10-session-management",
       "order": 10,
       "tier": "core",
       "slug": "session-management",
@@ -156,11 +156,11 @@
       "icon": "layers",
       "badge": "실전 팁",
       "badge_en": "Pro Tips",
-      "file_ko": "ko/session-management.md",
-      "file_en": "en/session-management.md"
+      "file_ko": "ko/10-session-management.md",
+      "file_en": "en/10-session-management.md"
     },
     {
-      "id": "git-with-teacher",
+      "id": "11-git-with-teacher",
       "order": 11,
       "tier": "core",
       "slug": "git-with-teacher",
@@ -171,11 +171,11 @@
       "icon": "git-branch",
       "badge": "필수",
       "badge_en": "Essential",
-      "file_ko": "ko/git-with-teacher.md",
-      "file_en": "en/git-with-teacher.md"
+      "file_ko": "ko/11-git-with-teacher.md",
+      "file_en": "en/11-git-with-teacher.md"
     },
     {
-      "id": "09-troubleshooting",
+      "id": "12-troubleshooting",
       "order": 12,
       "tier": "core",
       "slug": "troubleshooting",
@@ -184,11 +184,11 @@
       "description_ko": "초보자가 자주 겪는 문제와 해결 방법을 알아봅니다.",
       "description_en": "Common beginner problems and how to fix them.",
       "icon": "help-circle",
-      "file_ko": "ko/09-troubleshooting.md",
-      "file_en": "en/09-troubleshooting.md"
+      "file_ko": "ko/12-troubleshooting.md",
+      "file_en": "en/12-troubleshooting.md"
     },
     {
-      "id": "debugging-workflow",
+      "id": "13-debugging-workflow",
       "order": 13,
       "tier": "core",
       "slug": "debugging-workflow",
@@ -199,11 +199,11 @@
       "icon": "bug",
       "badge": "NEW",
       "badge_en": "NEW",
-      "file_ko": "ko/debugging-workflow.md",
-      "file_en": "en/debugging-workflow.md"
+      "file_ko": "ko/13-debugging-workflow.md",
+      "file_en": "en/13-debugging-workflow.md"
     },
     {
-      "id": "useful-features",
+      "id": "14-useful-features",
       "order": 14,
       "tier": "core",
       "slug": "useful-features",
@@ -214,11 +214,11 @@
       "icon": "sparkles",
       "badge": "NEW",
       "badge_en": "NEW",
-      "file_ko": "ko/useful-features.md",
-      "file_en": "en/useful-features.md"
+      "file_ko": "ko/14-useful-features.md",
+      "file_en": "en/14-useful-features.md"
     },
     {
-      "id": "10-mcp",
+      "id": "15-mcp",
       "order": 15,
       "tier": "advanced",
       "slug": "mcp",
@@ -227,11 +227,11 @@
       "description_ko": "Model Context Protocol로 GitHub, Slack, DB 등 외부 도구를 연결합니다.",
       "description_en": "Connect external tools like GitHub, Slack, and databases via MCP.",
       "icon": "link",
-      "file_ko": "ko/10-mcp.md",
-      "file_en": "en/10-mcp.md"
+      "file_ko": "ko/15-mcp.md",
+      "file_en": "en/15-mcp.md"
     },
     {
-      "id": "11-hooks",
+      "id": "16-hooks",
       "order": 16,
       "tier": "advanced",
       "slug": "hooks",
@@ -240,11 +240,11 @@
       "description_ko": "이벤트 기반 자동화 시스템, Hooks를 활용해 Claude Code를 커스터마이즈합니다.",
       "description_en": "Customize Claude Code with event-driven automation using Hooks.",
       "icon": "zap",
-      "file_ko": "ko/11-hooks.md",
-      "file_en": "en/11-hooks.md"
+      "file_ko": "ko/16-hooks.md",
+      "file_en": "en/16-hooks.md"
     },
     {
-      "id": "12-skills",
+      "id": "17-skills",
       "order": 17,
       "tier": "advanced",
       "slug": "skills",
@@ -253,11 +253,11 @@
       "description_ko": "자주 하는 일을 레시피로 저장하고 /커맨드 하나로 꺼내 씁니다. 팀과 플러그인으로 나눌 수도 있습니다.",
       "description_en": "Create Skills to automate repetitive tasks and share them as plugins.",
       "icon": "code",
-      "file_ko": "ko/12-skills.md",
-      "file_en": "en/12-skills.md"
+      "file_ko": "ko/17-skills.md",
+      "file_en": "en/17-skills.md"
     },
     {
-      "id": "13-subagents",
+      "id": "18-subagents",
       "order": 18,
       "tier": "advanced",
       "slug": "subagents",
@@ -266,11 +266,11 @@
       "description_ko": "여러 Claude 에이전트가 협력하는 고급 멀티 에이전트 시스템을 활용합니다.",
       "description_en": "Leverage advanced multi-agent systems where multiple Claude agents collaborate.",
       "icon": "users",
-      "file_ko": "ko/13-subagents.md",
-      "file_en": "en/13-subagents.md"
+      "file_ko": "ko/18-subagents.md",
+      "file_en": "en/18-subagents.md"
     },
     {
-      "id": "workspace-design",
+      "id": "19-workspace-design",
       "order": 19,
       "tier": "advanced",
       "slug": "workspace-design",
@@ -279,11 +279,11 @@
       "description_ko": "CLAUDE.md, Skills, Hooks를 조합해 나만의 자동화 사무실을 만드는 방법.",
       "description_en": "Combine CLAUDE.md, Skills, and Hooks to build your personal automated AI office.",
       "icon": "layout",
-      "file_ko": "ko/workspace-design.md",
-      "file_en": "en/workspace-design.md"
+      "file_ko": "ko/19-workspace-design.md",
+      "file_en": "en/19-workspace-design.md"
     },
     {
-      "id": "14-cost",
+      "id": "20-cost",
       "order": 20,
       "tier": "advanced",
       "slug": "cost-management",
@@ -292,11 +292,11 @@
       "description_ko": "토큰 비용 구조를 이해하고 효율적으로 Claude Code를 사용하는 방법을 배웁니다.",
       "description_en": "Understand token costs and learn how to use Claude Code efficiently.",
       "icon": "dollar-sign",
-      "file_ko": "ko/14-cost.md",
-      "file_en": "en/14-cost.md"
+      "file_ko": "ko/20-cost.md",
+      "file_en": "en/20-cost.md"
     },
     {
-      "id": "15-automation",
+      "id": "21-automation",
       "order": 21,
       "tier": "advanced",
       "slug": "automation",
@@ -305,11 +305,11 @@
       "description_ko": "CI/CD 파이프라인에 Claude Code를 통합하는 자동화 방법을 알아봅니다.",
       "description_en": "Learn how to integrate Claude Code into CI/CD pipelines.",
       "icon": "git-merge",
-      "file_ko": "ko/15-automation.md",
-      "file_en": "en/15-automation.md"
+      "file_ko": "ko/21-automation.md",
+      "file_en": "en/21-automation.md"
     },
     {
-      "id": "16-next-steps",
+      "id": "22-next-steps",
       "order": 22,
       "tier": "advanced",
       "slug": "next-steps",
@@ -318,8 +318,8 @@
       "description_ko": "CC101을 마친 후 더 깊이 배울 수 있는 리소스와 학습 경로를 안내합니다.",
       "description_en": "Resources and learning paths for going deeper after completing CC101.",
       "icon": "arrow-right",
-      "file_ko": "ko/16-next-steps.md",
-      "file_en": "en/16-next-steps.md"
+      "file_ko": "ko/22-next-steps.md",
+      "file_en": "en/22-next-steps.md"
     }
   ],
   "tiers": {

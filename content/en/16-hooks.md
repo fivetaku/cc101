@@ -1,4 +1,4 @@
-# 15. Hooks — Protect Your Work
+# 16. Hooks — Protect Your Work
 
 > What if AI runs `rm -rf` or `git push --force` and wipes your history? With Hooks configured, **that can never happen.**
 

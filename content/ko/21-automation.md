@@ -1,4 +1,4 @@
-# 20. Headless 모드 & GitHub Actions 자동화
+# 21. Headless 모드 & GitHub Actions 자동화
 
 > Claude Code를 사람 없이 자동으로 실행하는 방법을 배웁니다.
 
