@@ -79,15 +79,23 @@ rm -rf ~/.config/claude-code/auth.json
 claude
 ```
 
+**Run the health check first**
+
+```bash
+# Inside Claude Code
+> /doctor
+```
+
 **Full reset (last resort)**
 
 ```bash
+# ⚠️ Only use this if the above methods don't resolve the issue
 rm ~/.claude.json
 rm -rf ~/.claude/
 claude
 ```
 
-> Warning: This erases all settings and session history.
+> Warning: This erases all settings, session history, and plugin configurations. Always try `/doctor` first.
 
 ---
 

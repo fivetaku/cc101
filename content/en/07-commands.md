@@ -36,7 +36,7 @@ These commands launch or control Claude Code from your terminal prompt.
 
 ```bash
 # Start with a specific model
-claude --model claude-opus-4-5
+claude --model claude-opus-4-6
 
 # Short aliases also work
 claude --model opus
@@ -84,6 +84,8 @@ Type `/` at the prompt inside Claude Code to access built-in commands.
 | `/vim` | Toggle vim editing mode |
 | `/theme` | Change the color theme |
 | `/rename <name>` | Name the current session for easy resumption |
+| `/login` | Log in to Anthropic account |
+| `/logout` | Log out of Anthropic account |
 | `/rewind` | Restore conversation and code to a previous state |
 
 ### How to Use Slash Commands

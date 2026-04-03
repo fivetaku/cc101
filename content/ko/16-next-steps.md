@@ -93,7 +93,7 @@ CC101에서 배운 기초를 조합해 실제 업무에 적용해보세요.
 
 | 리소스 | URL |
 |--------|-----|
-| **공식 문서 (영어)** | [docs.anthropic.com/en/docs/claude-code](https://docs.anthropic.com/en/docs/claude-code) |
+| **공식 문서 (영어)** | [code.claude.com/docs](https://code.claude.com/docs) |
 | **GitHub 저장소** | [github.com/anthropics/claude-code](https://github.com/anthropics/claude-code) |
 | **공식 플러그인** | [github.com/anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) |
 | **Anthropic 콘솔** | [platform.claude.com](https://platform.claude.com) |
@@ -217,7 +217,7 @@ CC101을 마쳤다면 바로 실전에 뛰어들어 보세요. 코딩 여부와 
 대부분의 답은 공식 문서에 있습니다.
 
 ```
-https://docs.anthropic.com/en/docs/claude-code
+https://code.claude.com/docs
 ```
 
 Claude Code 안에서도 도움을 받을 수 있습니다:
@@ -265,7 +265,7 @@ CC101을 마친 여러분은 그 첫걸음을 내딛었습니다. 앞으로의 �
 ## 빠른 참조 카드
 
 ```
-공식 문서:      https://docs.anthropic.com/en/docs/claude-code
+공식 문서:      https://code.claude.com/docs
 GitHub:         https://github.com/anthropics/claude-code
 플러그인:       https://github.com/anthropics/claude-plugins-official
 gptaku_plugins: https://github.com/fivetaku/gptaku_plugins

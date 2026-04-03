@@ -4,6 +4,12 @@
 
 ---
 
+> 💡 **New to the terminal?** Just **copy and paste (Cmd+V or Ctrl+V)** the commands below, then press Enter. You don't need to understand what they mean.
+> - **macOS**: `Cmd+Space` → search "terminal" → Enter
+> - **Windows**: `Win+R` → type "powershell" → Enter
+
+---
+
 ## Before You Install
 
 ### Supported Operating Systems
@@ -45,22 +51,34 @@ brew install --cask claude-code
 
 ### Windows
 
-**Option 1 — PowerShell (recommended):**
+**Option 1 — WSL (recommended):**
+
+Using WSL (Windows Subsystem for Linux) ensures all features work fully.
+
+```powershell
+# 1. Install WSL (run in PowerShell as Administrator)
+wsl --install
+```
+
+After rebooting, Ubuntu will be set up automatically. Then in the Ubuntu terminal:
+
+```bash
+# 2. Install Claude Code (same as Linux)
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+**Option 2 — PowerShell direct install:**
+
+You can use this without WSL, but some features may be limited.
 
 ```powershell
 irm https://claude.ai/install.ps1 | iex
 ```
 
-**Option 2 — WinGet:**
+**Option 3 — WinGet:**
 
 ```powershell
 winget install Anthropic.ClaudeCode
-```
-
-**Option 3 — CMD:**
-
-```batch
-curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
 ```
 
 > On Windows, [Git for Windows](https://git-scm.com/downloads/win) must be installed for local sessions to work.
@@ -177,11 +195,13 @@ If that does not work, close the terminal completely and reopen it.
 
 ## Next Steps
 
-Once installation and authentication are complete, navigate to your project folder and start:
+Once installation and authentication are complete, navigate to any folder and start right away:
 
 ```bash
-cd your-project-folder
+# Navigate to your working folder and run
 claude
 ```
 
-Claude Code will analyze your project and wait to help you.
+> **Any folder works.** You can start Claude Code in any directory — not just code projects, but also document folders, research folders, or work files.
+
+Claude Code will analyze the folder and wait to help you.

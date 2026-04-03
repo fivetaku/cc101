@@ -36,7 +36,7 @@ Claude Code를 시작하거나 제어하는 명령어입니다. 터미널에서 
 
 ```bash
 # 특정 모델로 시작
-claude --model claude-opus-4-5
+claude --model claude-opus-4-6
 
 # 또는 짧게
 claude --model opus
@@ -88,6 +88,9 @@ Claude Code와 대화하는 도중에 `/`로 시작하는 명령어를 입력하
 | `/context` | 컨텍스트 창 토큰 사용량 시각화 |
 | `/rename [이름]` | 세션에 이름 붙이기 (`--resume 이름`으로 재개) |
 | `/bug` | Anthropic에 버그 리포트 직접 전송 |
+| `/login` | Anthropic 계정 로그인 |
+| `/logout` | Anthropic 계정 로그아웃 |
+| `/rewind` | 대화와 코드를 이전 시점으로 되돌리기 |
 
 ### 슬래시 명령어 사용법
 

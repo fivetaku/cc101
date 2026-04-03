@@ -106,6 +106,53 @@ Each session runs independently.
 
 ---
 
+## Effective Conversation Strategies
+
+### Don't ask for everything at once
+
+The most common mistake beginners make is requesting everything in a single prompt.
+
+```
+# Not recommended — scope too broad, easy to go off track midway
+> Build the login, dashboard, DB connection, API, tests, and deployment all at once
+```
+
+```
+# Recommended — proceed step by step, checking as you go
+> First, set up the project structure
+(review)
+> Now build the login feature
+(review)
+> Next, add the dashboard
+```
+
+Request one task per turn, review the result, then move on. It might feel roundabout, but it's actually faster and more accurate.
+
+### When to split sessions vs. continue
+
+| Situation | Recommendation |
+|-----------|---------------|
+| Continuing to refine the same feature | Continue (`--continue`) |
+| Context getting long and slowing down | `/compact` then continue |
+| Still getting odd responses after `/compact` | New session + re-provide key context |
+| Completely different task | New session |
+| Multiple independent tasks | Run parallel sessions |
+
+### Track progress with CLAUDE.md
+
+If a project spans multiple days, record the current state in CLAUDE.md.
+
+```markdown
+# Current Progress
+- Login feature: complete
+- Dashboard: layout done, needs data integration
+- Next up: connect live data to dashboard
+```
+
+Even when starting a new session, Claude reads CLAUDE.md and immediately picks up the context.
+
+---
+
 ## Common Situations & Fixes
 
 ### When Claude's Answers Suddenly Get Weird
@@ -126,4 +173,4 @@ Claude remembers the state and can pick up from where it stopped.
 
 ---
 
-> **Connected to cost savings**: Longer context means more tokens used. Using /compact regularly also reduces your bill. → Token costs are covered in detail in Section 18.
+> **Connected to cost savings**: Longer context means more tokens used. Using /compact regularly also reduces your bill. → Token costs are covered in detail in the Cost Management section.

@@ -51,22 +51,34 @@ brew install --cask claude-code
 
 ### Windows
 
-**방법 1 — PowerShell 사용 (권장):**
+**방법 1 — WSL 사용 (권장):**
+
+WSL(Windows Subsystem for Linux)을 사용하면 모든 기능이 완전히 동작합니다.
+
+```powershell
+# 1. WSL 설치 (PowerShell 관리자 모드에서 실행)
+wsl --install
+```
+
+재부팅 후 Ubuntu가 자동 설정됩니다. 이후 Ubuntu 터미널에서:
+
+```bash
+# 2. Claude Code 설치 (Linux와 동일)
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+**방법 2 — PowerShell 직접 설치:**
+
+WSL 없이 바로 사용할 수 있지만, 일부 기능이 제한될 수 있습니다.
 
 ```powershell
 irm https://claude.ai/install.ps1 | iex
 ```
 
-**방법 2 — WinGet 사용:**
+**방법 3 — WinGet 사용:**
 
 ```powershell
 winget install Anthropic.ClaudeCode
-```
-
-**방법 3 — CMD 사용:**
-
-```batch
-curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
 ```
 
 > Windows에서 로컬 세션을 사용하려면 [Git for Windows](https://git-scm.com/downloads/win)가 설치되어 있어야 합니다.

@@ -11,12 +11,13 @@
 ### Step 1. 프로젝트 폴더로 이동
 
 ```bash
-cd 내프로젝트
+# 예시: 바탕화면의 my-project 폴더로 이동
+cd ~/Desktop/my-project
 ```
 
 Claude Code는 현재 폴더를 기준으로 파일을 읽고 수정합니다. 반드시 작업할 프로젝트 폴더로 먼저 이동하세요.
 
-> 폴더가 없다면 `mkdir 내프로젝트 && cd 내프로젝트`로 만들어도 됩니다.
+> 폴더가 없다면 `mkdir ~/Desktop/my-project && cd ~/Desktop/my-project`로 만들어도 됩니다.
 
 ### Step 2. Claude Code 시작
 
@@ -222,28 +223,6 @@ claude --permission-mode plan
 # Claude가 계획을 보여주면 검토
 # 괜찮으면 일반 모드로 전환 후 실행
 ```
-
----
-
-## 작업 전 git commit 습관
-
-Claude Code가 파일을 수정하기 전에 현재 상태를 git에 저장해두면, 실수해도 쉽게 되돌릴 수 있습니다.
-
-```bash
-git add .
-git commit -m "Claude Code 작업 전 백업"
-```
-
-> 💡 Git 명령어가 낯설다면? **바르다 깃선생** 플러그인을 설치하면 "저장해줘", "올려줘"만으로 Git 관리가 가능합니다.
-
-이후 Claude가 수정한 내용이 마음에 들지 않으면:
-
-```bash
-git diff          # 변경된 내용 확인
-git checkout .    # 모든 변경 취소 (주의!)
-```
-
-또는 Claude Code 안에서 `Esc` + `Esc`를 눌러 이전 상태로 되감기할 수도 있습니다.
 
 ---
 

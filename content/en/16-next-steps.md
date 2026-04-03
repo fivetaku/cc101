@@ -162,7 +162,7 @@ on:
 
 | Resource | URL |
 |----------|-----|
-| **Official Docs** | [docs.anthropic.com/en/docs/claude-code](https://docs.anthropic.com/en/docs/claude-code) |
+| **Official Docs** | [code.claude.com/docs](https://code.claude.com/docs) |
 | **GitHub Repository** | [github.com/anthropics/claude-code](https://github.com/anthropics/claude-code) |
 | **Official Plugins** | [github.com/anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) |
 | **Anthropic Console** | [platform.claude.com](https://platform.claude.com) |
@@ -237,7 +237,7 @@ Convert each file and verify with tests."
 Most answers are in the official documentation.
 
 ```
-https://docs.anthropic.com/en/docs/claude-code
+https://code.claude.com/docs
 ```
 
 You can also get help from within Claude Code itself:
@@ -285,7 +285,7 @@ By completing CC101, you've taken the first step. The rest is practice.
 ## Quick Reference Card
 
 ```
-Official Docs:   https://docs.anthropic.com/en/docs/claude-code
+Official Docs:   https://code.claude.com/docs
 GitHub:          https://github.com/anthropics/claude-code
 Plugins:         https://github.com/anthropics/claude-plugins-official
 gptaku_plugins:  https://github.com/fivetaku/gptaku_plugins

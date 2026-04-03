@@ -4,10 +4,25 @@
     "url": "cc101.axwith.com",
     "description": "Claude Code 한국어 입문 가이드",
     "description_en": "Claude Code Korean Beginner's Guide",
-    "version": "1.1.0",
-    "lastUpdated": "2026-02-25"
+    "version": "1.2.0",
+    "lastUpdated": "2026-04-04"
   },
   "sections": [
+    {
+      "id": "00-before-you-start",
+      "order": 0,
+      "tier": "core",
+      "slug": "before-you-start",
+      "title_ko": "시작하기 전에",
+      "title_en": "Before You Start",
+      "description_ko": "Claude Code를 시작하기 전에 가장 많이 받는 질문 4가지에 답합니다.",
+      "description_en": "Answers to the 4 most common questions before starting Claude Code.",
+      "icon": "message-circle",
+      "badge": "NEW",
+      "badge_en": "NEW",
+      "file_ko": "ko/00-before-you-start.md",
+      "file_en": "en/00-before-you-start.md"
+    },
     {
       "id": "01-what-is-cc",
       "order": 1,
@@ -35,23 +50,8 @@
       "file_en": "en/use-cases.md"
     },
     {
-      "id": "vibe-coding",
-      "order": 3,
-      "tier": "core",
-      "slug": "vibe-coding",
-      "title_ko": "바이브코딩이란?",
-      "title_en": "What is Vibe Coding?",
-      "description_ko": "코드를 모르는 사람이 AI에게 자연어로 지시해 소프트웨어를 만드는 새로운 방법론.",
-      "description_en": "A new approach where non-developers create software by giving natural language instructions to AI.",
-      "icon": "sparkles",
-      "badge": "NEW",
-      "badge_en": "NEW",
-      "file_ko": "ko/vibe-coding.md",
-      "file_en": "en/vibe-coding.md"
-    },
-    {
       "id": "02-plans-pricing",
-      "order": 4,
+      "order": 3,
       "tier": "core",
       "slug": "plans-and-pricing",
       "title_ko": "제품군 & 가격",
@@ -64,7 +64,7 @@
     },
     {
       "id": "03-installation",
-      "order": 5,
+      "order": 4,
       "tier": "core",
       "slug": "installation",
       "title_ko": "설치 & 인증",
@@ -133,7 +133,7 @@
     },
     {
       "id": "08-workflow",
-      "order": 10,
+      "order": 5,
       "tier": "core",
       "slug": "workflow",
       "title_ko": "초보자 워크플로우",
@@ -146,7 +146,7 @@
     },
     {
       "id": "session-management",
-      "order": 11,
+      "order": 10,
       "tier": "core",
       "slug": "session-management",
       "title_ko": "세션 & 컨텍스트 관리",
@@ -161,7 +161,7 @@
     },
     {
       "id": "git-with-teacher",
-      "order": 12,
+      "order": 11,
       "tier": "core",
       "slug": "git-with-teacher",
       "title_ko": "GitHub 시작하기",
@@ -176,7 +176,7 @@
     },
     {
       "id": "09-troubleshooting",
-      "order": 13,
+      "order": 12,
       "tier": "core",
       "slug": "troubleshooting",
       "title_ko": "자주 하는 실수 & 해결법",
@@ -188,8 +188,38 @@
       "file_en": "en/09-troubleshooting.md"
     },
     {
-      "id": "10-mcp",
+      "id": "debugging-workflow",
+      "order": 13,
+      "tier": "core",
+      "slug": "debugging-workflow",
+      "title_ko": "디버깅 — 에러를 만났을 때",
+      "title_en": "Debugging — When You Hit an Error",
+      "description_ko": "에러가 났을 때 당황하지 않고 해결하는 3단계 워크플로우.",
+      "description_en": "A 3-step workflow for resolving errors without panic.",
+      "icon": "bug",
+      "badge": "NEW",
+      "badge_en": "NEW",
+      "file_ko": "ko/debugging-workflow.md",
+      "file_en": "en/debugging-workflow.md"
+    },
+    {
+      "id": "useful-features",
       "order": 14,
+      "tier": "core",
+      "slug": "useful-features",
+      "title_ko": "알아두면 유용한 기능들",
+      "title_en": "Useful Features to Know",
+      "description_ko": "이미지 입력, 음성 지시, 실수 복구, 자동 압축 등 터미널 경험을 높여주는 기능 모음.",
+      "description_en": "Image input, voice commands, undo, auto-compact and more features to enhance your terminal experience.",
+      "icon": "sparkles",
+      "badge": "NEW",
+      "badge_en": "NEW",
+      "file_ko": "ko/useful-features.md",
+      "file_en": "en/useful-features.md"
+    },
+    {
+      "id": "10-mcp",
+      "order": 15,
       "tier": "advanced",
       "slug": "mcp",
       "title_ko": "MCP & 외부 도구 연결",
@@ -202,7 +232,7 @@
     },
     {
       "id": "11-hooks",
-      "order": 15,
+      "order": 16,
       "tier": "advanced",
       "slug": "hooks",
       "title_ko": "Hooks — 자동화의 핵심",
@@ -215,7 +245,7 @@
     },
     {
       "id": "12-skills",
-      "order": 16,
+      "order": 17,
       "tier": "advanced",
       "slug": "skills",
       "title_ko": "Skills & 플러그인 만들기",
@@ -228,7 +258,7 @@
     },
     {
       "id": "13-subagents",
-      "order": 17,
+      "order": 18,
       "tier": "advanced",
       "slug": "subagents",
       "title_ko": "Sub-agents & Agent Teams",
@@ -241,7 +271,7 @@
     },
     {
       "id": "workspace-design",
-      "order": 18,
+      "order": 19,
       "tier": "advanced",
       "slug": "workspace-design",
       "title_ko": "나만의 AI 워크스페이스 설계하기",
@@ -254,7 +284,7 @@
     },
     {
       "id": "14-cost",
-      "order": 19,
+      "order": 20,
       "tier": "advanced",
       "slug": "cost-management",
       "title_ko": "비용 관리 & 절약 팁",
@@ -267,7 +297,7 @@
     },
     {
       "id": "15-automation",
-      "order": 20,
+      "order": 21,
       "tier": "advanced",
       "slug": "automation",
       "title_ko": "Headless & GitHub Actions",
@@ -280,7 +310,7 @@
     },
     {
       "id": "16-next-steps",
-      "order": 21,
+      "order": 22,
       "tier": "advanced",
       "slug": "next-steps",
       "title_ko": "다음 단계 & 리소스",
@@ -296,9 +326,9 @@
     "core": {
       "label_ko": "기초 필수",
       "label_en": "Core Essentials",
-      "description_ko": "Claude Code를 시작하는 데 반드시 알아야 할 13개 섹션",
-      "description_en": "13 sections you must know to get started with Claude Code",
-      "count": 13
+      "description_ko": "Claude Code를 시작하는 데 반드시 알아야 할 15개 섹션",
+      "description_en": "15 sections you must know to get started with Claude Code",
+      "count": 15
     },
     "advanced": {
       "label_ko": "고급 확장",

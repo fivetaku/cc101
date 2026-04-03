@@ -190,7 +190,7 @@ mkdir -p 01-inbox 02-work 03-output 04-archive
 ### 4단계: 반복 작업 → Skills화
 
 같은 작업을 3번 이상 하게 된다면 Skill로 만드세요.
-→ Skills 만들기는 15섹션에서 다룹니다
+→ Skills 만들기는 Skills & 플러그인 만들기 섹션에서 다룹니다
 
 ---
 
@@ -205,7 +205,7 @@ mkdir -p 01-inbox 02-work 03-output 04-archive
 | Slack | 팀 커뮤니케이션 통합 |
 | Google Sheets | 데이터 자동 집계 |
 
-→ MCP 연결은 13섹션에서 다룹니다
+→ MCP 연결은 MCP & 외부 도구 연결 섹션에서 다룹니다
 
 ---
 

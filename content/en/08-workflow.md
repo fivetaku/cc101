@@ -11,12 +11,12 @@ Follow these steps when starting out for the first time.
 ### Step 1. Navigate to Your Project Folder
 
 ```bash
-cd my-project
+cd ~/Desktop/my-project
 ```
 
 Claude Code reads and edits files relative to the current directory. Always move into your project folder first.
 
-> If the folder doesn't exist yet, create it with `mkdir my-project && cd my-project`.
+> If the folder doesn't exist yet, create it with `mkdir ~/Desktop/my-project && cd ~/Desktop/my-project`.
 
 ### Step 2. Start Claude Code
 
@@ -195,26 +195,6 @@ claude --permission-mode plan
 
 # Review the plan, then switch back to normal mode to execute
 ```
-
----
-
-## The Git Commit Habit
-
-Before Claude edits files, save the current state in git. If anything goes wrong, you can roll back instantly.
-
-```bash
-git add .
-git commit -m "checkpoint before Claude Code session"
-```
-
-If you don't like Claude's changes:
-
-```bash
-git diff          # See what changed
-git checkout .    # Discard all changes (careful!)
-```
-
-Alternatively, press `Esc` + `Esc` inside Claude Code to rewind the conversation and code to the last checkpoint.
 
 ---
 

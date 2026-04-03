@@ -1,6 +1,6 @@
 # 02. What You Can Do with Claude Code
 
-> This entire site (CC101) was built without writing a single line of code. Claude Code is not a coding tool — it's a terminal-based AI agent with access to your file system.
+> Despite the name "Code," Claude Code is not a coding-only tool. It's a **general-purpose AI agent** that runs on top of a terminal.
 
 ---
 
@@ -18,16 +18,47 @@ In short: **If Claude.ai is a conversation partner, Claude Code is an AI colleag
 
 ---
 
-## What You Can Do
+## In a Development Context
 
-### Development
-Write code, fix bugs, refactor, test, review
-→ Covered throughout many sections of this guide
+### Code Writing & Management
+Code writing, bug fixing, refactoring, testing, code review — you can give natural language instructions for all the tasks developers are familiar with.
+
+### Vibe Coding — Build Software Without Knowing Code
+
+"Coding by vibe." **A method of building software by giving natural language instructions to AI instead of writing code yourself.** Named by Andrej Karpathy (former Tesla AI Director) in 2025.
+
+| | Developer | Vibe Coder |
+|--|----------|-----------|
+| Code writing | Writes code directly | Instructs AI |
+| Debugging | Analyzes error messages → fixes | "This is throwing an error, fix it" |
+| Core role | Implementation | **Planning & review** |
+| Key skill | Programming languages | **Clear requirement communication** |
+
+The most important thing in vibe coding isn't coding skill — it's **"the ability to clearly explain what you want to build."**
+
+**What you can really do**: Prototypes, MVPs, personal tools, websites, simple apps, data processing automation. **This very site (CC101) was built with vibe coding.**
+
+**Honest limitations**: Large-scale production services still require expert developer review. For security, payments, and other sensitive logic, always get a professional review. Start with vibe coding, but as the service grows, collaborating with developers is the smart move.
+
+### Tips for Better Vibe Coding
+
+1. **Planning is half the battle** — "Build me an app" gives far worse results than "Build a web app that organizes photos by date." The show-me-the-prd plugin can auto-generate project requirement docs.
+2. **Start small and build up** — Don't demand a finished product all at once. "Login screen first" → "Now the list page" — go incrementally.
+3. **Check the results yourself** — Always run and verify what the AI has built.
+4. **Don't fear mistakes** — With Git saves, you can always roll back.
+
+---
+
+## In a Non-Development Context
+
+**Claude Code can do far more than vibe coding.** Regardless of coding, you can give natural language instructions for almost any task a computer can do.
 
 ### Research & Analysis
 - Read multiple web pages simultaneously and organize into markdown
 - Competitor analysis, market research, tech trend tracking
 - Batch summarize dozens of PDFs and documents
+
+> The **deep-research** plugin lets multi-agents investigate multiple sources in parallel and automatically generate comprehensive reports.
 
 ### Documents & Content Creation
 - Blog posts, newsletters, social media content drafts
@@ -51,7 +82,7 @@ Write code, fix bugs, refactor, test, review
 
 ### Personal AI Workspace
 Define roles and rules in CLAUDE.md, and you have **your own AI agent system** — not just a chat tool.
-→ Covered in detail in Advanced Section 17
+→ Covered in detail in the Designing Your Personal AI Workspace section
 
 ---
 
@@ -97,25 +128,4 @@ Claude Code way:
 
 ---
 
-## Try It Today
-
-Once installed, you can start right now:
-
-```
-1. Summarize a document
-   Put a PDF or text file in a folder and say:
-   "Summarize the key points of this document in 3 sentences"
-
-2. Draft an email
-   "Write an email draft for this situation: [describe situation]"
-
-3. Process data
-   Put a CSV in a folder and say:
-   "Sort by [column name] and give me a summary of this data"
-```
-
-No coding experience required.
-
----
-
-> The rest of this guide is about "how to use it better." Start by installing and trying it out.
+> Claude Code is **not a coding tool — it's a general-purpose AI agent.** Coding is just one of the many things it can do.
