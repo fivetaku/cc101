@@ -174,7 +174,7 @@ Claude Code 커뮤니티에서 가장 많이 쓰이는 서드파티 플러그인
 - **외부 AI 연동**: Codex(OpenAI), Gemini(Google)와 협업해 다각도 분석
 - **Skills 시스템**: 자주 쓰는 워크플로를 재사용 가능한 명령어로 저장
 
-설치: GitHub 저장소([github.com/wshf/oh-my-claudecode](https://github.com/wshf/oh-my-claudecode))의 README 참조
+설치: GitHub 저장소([github.com/yeachan-heo/oh-my-claudecode](https://github.com/yeachan-heo/oh-my-claudecode))의 README 참조
 
 <details>
 <summary>🖥️ 개발자용 커뮤니티 플러그인 (LSP / chrome-devtools)</summary>
