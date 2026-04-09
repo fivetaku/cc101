@@ -107,7 +107,7 @@ Think of CLAUDE.md as a **standing instruction sheet** for Claude.
 | `~/.claude/CLAUDE.md` | All your projects (global preferences) |
 | `./CLAUDE.local.md` | Personal project-specific settings (not committed to git) |
 
-> CLAUDE.md is covered in depth in **[06. Mastering CLAUDE.md](./06-claude-md.md)**.
+> CLAUDE.md is covered in depth in **[08. Mastering CLAUDE.md](#06-claude-md)**.
 
 ---
 
@@ -192,4 +192,4 @@ If something goes wrong:
 
 Now let's master CLAUDE.md — Claude Code's long-term memory system.
 
-→ **[06. Mastering CLAUDE.md](./06-claude-md.md)**
+→ **[08. Mastering CLAUDE.md](#06-claude-md)**

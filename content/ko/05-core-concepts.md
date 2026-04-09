@@ -118,7 +118,7 @@ CLAUDE.md는 Claude에게 주는 **지시서**라고 생각하면 됩니다.
 | `~/.claude/CLAUDE.md` | 내 모든 프로젝트에 적용 (전역 설정) |
 | `./CLAUDE.local.md` | 나만의 프로젝트별 설정 (git에 올라가지 않음) |
 
-> CLAUDE.md에 대한 자세한 내용은 **[06. CLAUDE.md 완전 정복](./06-claude-md.md)** 에서 다룹니다.
+> CLAUDE.md에 대한 자세한 내용은 **[08. CLAUDE.md 완전 정복](#06-claude-md)** 에서 다룹니다.
 
 ---
 
