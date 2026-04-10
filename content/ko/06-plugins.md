@@ -63,6 +63,8 @@ Claude Code 안에서 `/plugin` 을 입력하면 <strong>Discover 탭</strong>�
 
 <strong>gptaku_plugins</strong>는 한국의 Claude Code 입문자, 비개발자, 바이브코더를 위해 특별히 만들어진 플러그인 모음입니다. 어렵고 낯선 개발 개념들을 Claude가 더 친절하게 안내해주도록 설계되어 있습니다.
 
+> 플러그인 활용법에 대해 궁금하다면 [클로드코드 뽀개기 (패스트캠퍼스)](https://fastcampus.co.kr/biz_online_claudecode)를 참고하세요.
+
 ### 포함된 플러그인
 
 | 플러그인 이름 | 역할 | 사용 예시 |

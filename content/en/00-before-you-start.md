@@ -47,7 +47,9 @@ For example, open 4 terminal windows:
 
 This way, 4 instances of Claude Code **work on their own tasks at the same time**. When one finishes, you immediately give it the next instruction.
 
-![Multi-session example](/images/multisession.gif)
+<video autoPlay loop muted playsInline style={{maxWidth:'100%',borderRadius:'8px'}}>
+  <source src="/images/multisession.mp4" type="video/mp4" />
+</video>
 *Source: [@brxce.ai](https://www.threads.com/@brxce.ai)*
 
 You can create multiple sessions in the desktop app or VS Code extension too, but **monitoring them all side-by-side on one screen is only possible in a terminal**. With a tool like tmux, you can split one screen into panels and see every session's progress at a glance.

@@ -10,6 +10,8 @@ import type { Lang } from '@/types'
 
 const SUPPORTED_LANGS = ['ko', 'en'] as const
 
+export const dynamicParams = false
+
 export function generateStaticParams() {
   return [{ lang: 'ko' }, { lang: 'en' }]
 }

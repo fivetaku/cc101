@@ -283,6 +283,7 @@ GitHub:         https://github.com/anthropics/claude-code
 gptaku_plugins: https://github.com/fivetaku/gptaku_plugins
 CC101:          https://github.com/fivetaku/cc101
 콘솔:           https://platform.claude.com
+실전 강의:      https://fastcampus.co.kr/biz_online_claudecode
 
 다음 목표:
   바이브코더 → gptaku_plugins 설치, show-me-the-prd로 기획, 바선생으로 성장

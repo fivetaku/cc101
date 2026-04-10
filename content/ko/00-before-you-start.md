@@ -47,7 +47,9 @@ Claude Code로 생산성을 제대로 높이려면 <strong>여러 세션을 동�
 
 이런 식으로 4개의 Claude Code가 <strong>동시에 각자의 일을 처리</strong>합니다. 하나가 끝나면 바로 다음 지시를 내리면 됩니다.
 
-![멀티세션 예시](/images/multisession.gif)
+<video autoPlay loop muted playsInline style={{maxWidth:'100%',borderRadius:'8px'}}>
+  <source src="/images/multisession.mp4" type="video/mp4" />
+</video>
 *출처: [@brxce.ai](https://www.threads.com/@brxce.ai)*
 
 데스크톱 앱이나 VS Code 플러그인에서도 세션을 여러 개 만들 수 있지만, <strong>한 화면에 동시에 펼쳐놓고 모니터링하는 건 터미널에서만 가능</strong>합니다. tmux 같은 도구를 쓰면 한 화면을 패널로 나눠서 모든 세션의 진행 상황을 한눈에 볼 수 있습니다.

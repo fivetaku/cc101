@@ -329,6 +329,8 @@ Claude가 이 스킬을 실행하면:
 
 스킬러들의 수다 설치: 플러그인 설치 섹션의 gptaku_plugins 참조
 
+> 스킬 만들기에 대해 궁금하다면 [클로드코드 뽀개기 (패스트캠퍼스)](https://fastcampus.co.kr/biz_online_claudecode)를 참고하세요.
+
 ---
 
 ## 플러그인으로 패키징하기
