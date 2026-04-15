@@ -37,10 +37,23 @@ Type `/plugin` inside Claude Code and go to the **Discover tab** to browse offic
 
 | Category | Notable Plugins | Description |
 |----------|----------------|-------------|
-| **Code Intelligence** | `typescript-lsp`, `pyright-lsp` | Real-time type error detection, code navigation |
-| **External Integrations** | `github`, `figma`, `notion` | Connect Claude to external services |
+| **External Integrations** | `notion`, `slack`, `github` | Connect Claude to Notion, Slack, GitHub, and more |
+| **Output Styles** | `explanatory-output-style` | Customize how Claude responds (summary format, checklists, etc.) |
 | **Dev Workflows** | `commit-commands`, `pr-review-toolkit` | Automate Git commits and PR reviews |
-| **Output Styles** | `explanatory-output-style` | Customize how Claude responds |
+
+<details>
+<summary>🖥️ Code Intelligence Plugins (for developers)</summary>
+
+| Category | Notable Plugins | Description |
+|----------|----------------|-------------|
+| **Code Intelligence** | `typescript-lsp`, `pyright-lsp` | Real-time type error detection, code navigation |
+
+```shell
+/plugin install typescript-lsp@claude-plugins-official
+/plugin install pyright-lsp@claude-plugins-official
+```
+
+</details>
 
 ---
 
@@ -117,14 +130,23 @@ When new versions are available, update with:
 Once installed, plugins are ready to use immediately:
 
 ```shell
-# Try git-teacher
+# Auto-generate project requirements
+/show-me-the-prd I want to build a todo app
+
+# Build an AI agent team
+/kkirikkiri create a research team
+
+# Auto-generate skills
+/skillers-suda create a translation skill
+
+# Git onboarding
 /git-teacher:what-is-commit
 
-# Try docs-guide
-/docs-guide:explain useState
+# Official docs-based answers
+/docs-guide:explain React hooks
 
-# Ask vibe-sunsang for help
-/vibe-sunsang:help
+# AI usage pattern analysis
+/vibe-sunsang start
 ```
 
 ---
@@ -141,13 +163,55 @@ Once installed, plugins are ready to use immediately:
 
 ---
 
-## ⭐ Please Star Us on GitHub!
+## Community Plugins
 
-If gptaku_plugins has been helpful, please give us a star on GitHub.
+Beyond the official marketplace, you can install community-built plugins directly from GitHub. These offer diverse features — just check the code and confirm the repository is trustworthy before installing.
 
-Your star helps keep this project growing and improving.
+### oh-my-claudecode
 
-**[→ Star on GitHub](https://github.com/fivetaku/gptaku_plugins)**
+The most widely used third-party plugin in the Claude Code community. It transforms Claude Code itself into an **orchestrator**.
+
+Key features:
+- **Autopilot**: Say "build this" and it auto-handles planning → implementation → verification
+- **33 specialized agents**: Code review, security analysis, testing, documentation — role-based AI agents
+- **External AI integration**: Collaborate with Codex (OpenAI) and Gemini (Google) for multi-perspective analysis
+- **Skills system**: Save frequently-used workflows as reusable commands
+
+Install: See the README at GitHub ([github.com/Yeachan-Heo/oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode))
+
+<details>
+<summary>🖥️ More Community Plugins (LSP / chrome-devtools)</summary>
+
+### LSP Plugins (Code Intelligence)
+
+Integrate Language Server Protocol for type error detection, go-to-definition, and find-references directly inside Claude Code.
+
+```shell
+/plugin install typescript-lsp@claude-plugins-official
+/plugin install pyright-lsp@claude-plugins-official
+```
+
+### chrome-devtools MCP
+
+Control Chrome DevTools from Claude Code. Read console logs, inspect DOM, analyze network requests — all with AI assistance for a dramatically improved frontend debugging workflow.
+
+</details>
+
+### supermemory
+
+An MCP server that enhances Claude's long-term memory. Even when a new session starts, it automatically recalls previous work context, project decisions, and frequently-used patterns. The longer you work on the same project, the more effective it becomes.
+
+> **Before installing**: Community plugins are not verified by Anthropic. Check the GitHub repository's code and README first, and confirm the repo is actively maintained.
+
+---
+
+## ⭐ Please Star CC101 on GitHub!
+
+If this guide has been helpful, please give us a star on GitHub.
+
+Your star helps keep this guide growing and improving.
+
+**[→ Star CC101 on GitHub](https://github.com/fivetaku/cc101)**
 
 > It's easy — just click the link and press the ⭐ Star button in the top right!
 
@@ -156,5 +220,3 @@ Your star helps keep this project growing and improving.
 ## Next Steps
 
 Now that you have plugins installed, let's understand how Claude Code actually works under the hood.
-
-→ **[05. Core Concepts](./05-core-concepts.md)**

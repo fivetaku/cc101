@@ -56,7 +56,7 @@ Git에는 항상 두 단계가 있습니다:
 
 Git 명령어를 외우지 않아도 됩니다. **바르다 깃선생(git-teacher)** 플러그인이 자연어로 모든 걸 처리해 줍니다.
 
-gptaku_plugins를 04섹션에서 설치했다면 이미 준비되어 있습니다. 아니라면:
+gptaku_plugins를 06섹션에서 설치했다면 이미 준비되어 있습니다. 아니라면:
 
 ```shell
 /plugin marketplace add https://github.com/fivetaku/gptaku_plugins.git

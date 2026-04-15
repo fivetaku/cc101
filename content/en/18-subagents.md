@@ -264,6 +264,35 @@ Each sub-agent is an independent Claude instance. **Every agent consumes tokens 
 
 ---
 
+## Getting Started Easily: kkirikkiri Plugin
+
+If setting up Agent Teams manually feels overwhelming, the **kkirikkiri** plugin does it for you.
+
+```
+/kkirikkiri create a research team
+```
+
+With one natural language sentence:
+1. **Intent detection** — matches to research/development/analysis/content
+2. **Interview** — 2-3 questions to gather specific requirements
+3. **Environment scan** — auto-detects installed CLIs (Codex, Gemini, etc.)
+4. **Team proposal** — role-based agents + estimated cost/time
+5. **Execution** — auto-creates and runs Agent Teams
+6. **Quality verification** — auto-evaluates results, retries if insufficient
+
+| Preset | Trigger examples | Default composition |
+|--------|-----------------|-------------------|
+| Research | "investigate", "find" | Lead (Opus) + 2 Researchers |
+| Development | "build", "implement" | Lead (Opus) + 2 Developers |
+| Analysis | "analyze", "review" | Lead (Opus) + 2 Explorers |
+| Content | "write", "document" | Lead (Opus) + Writer + Reviewer |
+
+> The lead always uses the most capable model (Opus) and only does planning/delegation/verification — never writes code directly.
+
+Install kkirikkiri: see the Plugins section for gptaku_plugins
+
+---
+
 ## Advice for beginners
 
 > **You don't need sub-agents when you're starting out.**

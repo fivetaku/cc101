@@ -244,6 +244,20 @@ Type `@` in your prompt to see all available resources from connected servers.
 
 ---
 
+## GPTaku Plugins and MCP
+
+The GPTaku plugins you've already installed also use MCP internally:
+
+| Plugin | MCP Used | Role |
+|--------|----------|------|
+| **docs-guide** | Context7 MCP | Queries official documentation in real-time for accurate answers |
+| **pumasi** | Codex MCP (optional) | Claude as PM, Codex for parallel dev / works with Claude alone if Codex unavailable |
+| **deep-research** | Web search MCP | Multi-agents investigate multiple sources simultaneously |
+
+> When you install a plugin, MCP configurations are added automatically. No separate MCP setup required — the plugin handles it.
+
+---
+
 ## One-line summary
 
 > MCP = plug-in ports for Claude. Connect GitHub, databases, and Slack so Claude operates them directly — eliminating the copy-paste work between tools.

@@ -145,7 +145,7 @@ CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1 claude
 
 **Full CI/CD Automation**
 
-Apply what you learned in Section 15 to real projects.
+Apply what you learned in Section 21 to real projects.
 
 ```yaml
 # Example: automatic code review on every PR

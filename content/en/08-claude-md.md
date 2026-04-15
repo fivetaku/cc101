@@ -307,6 +307,4 @@ Or just ask Claude directly:
 
 ## Next Steps
 
-You've completed the core setup. Now let's see Claude Code in action with real-world examples!
-
-→ **[07. Practical Examples](./07-practical-examples.md)** (coming soon)
+You now know how to give Claude Code long-term memory. Next, let's learn the commands that make working with Claude Code faster and more efficient.

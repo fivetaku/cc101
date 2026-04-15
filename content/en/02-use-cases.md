@@ -93,7 +93,7 @@ Define roles and rules in CLAUDE.md, and you have **your own AI agent system** �
 **Planning**
 "I want to build a Korean Claude Code guide like Codex 101"
 → 3 AIs (Claude, Codex, Gemini) debated section structure, UX, and tech stack in an ideation workspace
-→ 20-section structure decided
+→ 23-section structure decided
 
 **Content**
 57 official docs collected → Claude extracted key content → structured into Korean & English markdown
