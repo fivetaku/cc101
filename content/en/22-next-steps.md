@@ -40,14 +40,30 @@ This isn't just learning a new tool. You've picked up a new way of developing so
 
 ### Intermediate Goals
 
-**Maximize Plugin Workflows**
-- **show-me-the-prd** for planning → **kkirikkiri** for research team → Claude Code for implementation — idea to prototype in a day
-- **deep-research** for market research → **docs-guide** for technical validation — AI-powered decision making
-- Improve prompt quality over time using **vibe-sunsang** feedback
+**Build Your Own Workflow Automation**
+- Combine CLAUDE.md + Hooks + Skills to turn repetitive tasks into one command
+- Example: auto-generate weekly reports, automate code reviews, meeting notes pipeline
+
+**Plugin Pipeline — From Idea to Finished Product**
+
+You can take a project from start to finish using plugin combinations:
+
+```
+1. Research    /deep-research → market research, competitor analysis, tech review
+2. Planning    /show-me-the-prd → auto-generate PRD, data model, project spec from research
+3. Development /kkirikkiri → build agent team for parallel dev (frontend/backend/tests)
+4. Review      /kkirikkiri → build analysis team for code review + quality checks
+5. Improve     /kkirikkiri → build improvement team based on feedback
+6. Skill-ify   /skillers-suda → turn repeating workflows into reusable skills
+```
+
+- Use **docs-guide** throughout for accurate, official-docs-based implementation
+- Use **vibe-sunsang** to analyze your AI usage patterns and improve prompt quality
 
 **Multi-session & Parallel Work**
 - Run Claude Code in multiple terminals to divide and conquer
-- Try parallel development with **pumasi** (works with Claude alone, no Codex needed)
+- Use **/kkirikkiri** to build agent teams that automatically work in parallel
+- Try **pumasi** to use Codex as a parallel developer (also works with Claude alone)
 
 **MCP (Model Context Protocol) Setup**
 
@@ -105,54 +121,33 @@ Recommended plugins:
 
 ---
 
-### Advanced Goals
+### Advanced: Beyond CC101
 
-**Building Your Own Skills**
+These are deeper topics not covered in this guide.
 
-Package frequently used workflows as reusable Skills.
+**Build Your Own AI Apps with Agent SDK**
+- Anthropic's [Agent SDK](https://docs.anthropic.com/en/docs/agents) lets you build standalone AI applications powered by Claude
+- Build custom agents in Python/TypeScript — automation systems that run without Claude Code
 
-```markdown
-# .claude/skills/fix-issue/SKILL.md
----
-name: fix-issue
-description: Analyze and fix a GitHub issue
----
-Analyze and fix the following GitHub issue: $ARGUMENTS
+**Build Your Own MCP Servers**
+- CC101 taught you how to "use" MCP servers, but you can also "build" them
+- Wrap your company's internal API, database, or wiki as an MCP server so Claude Code can access them directly
+- [MCP official spec](https://modelcontextprotocol.io)
 
-1. Use gh issue view to get issue details
-2. Search the codebase for relevant files
-3. Implement the necessary changes
-4. Write and run tests
-5. Create a PR
-```
+**Claude Code Plugin Development**
+- Create your own plugins and share them with the community
+- Package Skills, Hooks, Agents, and MCP servers into a single plugin
+- Use the **skillers-suda** plugin for rapid prototyping
 
-> You can also quickly prototype skills using the **skillers-suda** plugin.
+**Team Adoption & Governance**
+- Permission management, cost allocation, and security policies when your entire team uses Claude Code
+- Enterprise plan admin features (Admin Controls, Audit Logs)
+- Enforce coding standards via organization-managed CLAUDE.md
 
----
-
-**Agent Teams**
-
-Run multiple Claude instances simultaneously to handle complex tasks in parallel.
-
-```bash
-# Enable Agent Teams (requires environment variable)
-CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1 claude
-```
-
-> Use with care — Agent Teams consume significantly more tokens than standard sessions.
-
----
-
-**Full CI/CD Automation**
-
-Apply what you learned in Section 21 to real projects.
-
-```yaml
-# Example: automatic code review on every PR
-on:
-  pull_request:
-    types: [opened, synchronize]
-```
+**Production Automation Pipelines**
+- GitHub Actions + Headless Claude Code for auto PR reviews and test generation
+- Nightly batch jobs: data processing, report generation, code quality checks
+- Monitoring + alerting integrations (Slack, Discord)
 
 ---
 
@@ -180,13 +175,87 @@ If this has been helpful, please give it a **Star**. It helps the community grow
 
 ---
 
+## Using Claude Code Effectively & Anti-patterns
+
+Now that you know the tool, understanding when and how to use it is key.
+
+### Great Fit (use freely)
+
+| Task | Why |
+|------|-----|
+| Repetitive boilerplate code | Clear patterns, low risk of mistakes |
+| Test code generation | Accurately generated from function signatures |
+| Code refactoring (well-scoped) | Safe when targeting specific files/functions |
+| Error message analysis & fixes | Excellent at combining error logs + code context |
+| Documentation / comments | Low hallucination when based on existing code |
+| Regex, SQL queries, config files | Strong at tasks with clear syntax |
+| Exploring unfamiliar languages/frameworks | Very effective for fast onboarding |
+| Understanding legacy code | Excellent at context analysis + explanation |
+
+### Requires Caution (review carefully)
+
+| Task | Why |
+|------|-----|
+| Auth / security code | Subtle vulnerabilities can slip in |
+| Payment / financial logic | Absolute accuracy is critical |
+| Large-scale refactoring (multiple files) | Risk of unintended side effects |
+| DB schema changes / migrations | Potential data loss |
+| Production deployment scripts | Wide blast radius if wrong |
+| External API integration & secrets | Key exposure, wrong endpoint risks |
+
+### 5 Principles to Always Follow
+
+1. Git commit before starting → always have a rollback point
+2. Be specific about scope → "only this function in this file"
+3. Read the generated code yourself → don't use code you don't understand
+4. Always review security/payment code separately
+5. Use Plan Mode for big tasks to confirm the approach first (Shift+Tab)
+
+---
+
 ## Recommended First Real Projects
 
-Now that you've finished CC101, jump into practice. Here are beginner-friendly projects to get you started.
+Now that you've finished CC101, jump into practice. These projects work whether you code or not.
 
-### 1. Build a Portfolio Site
+### 1. Meeting Notes Automation
 
-One of the most motivating first projects. Describe what you want and let Claude Code build the whole thing.
+Hand off your weekly meeting note-taking to Claude Code.
+
+```
+"I have a file ~/Downloads/meeting-250225.mp3.
+Transcribe it, then summarize + sort action items by person.
+Save as meeting-250225.md"
+```
+
+It handles everything from installing transcription tools to organizing the output.
+
+---
+
+### 2. Build Your Own Skills
+
+Turn your weekly repetitive tasks into a single `/command`.
+
+```
+"Create a Skill that generates a weekly report every Monday.
+Based on GitHub commit history and my notes file,
+draft a weekly summary."
+```
+
+---
+
+### 3. Competitor Analysis Report
+
+Analyze competitors in any field you're interested in.
+
+```
+"Analyze competitor websites A, B, C.
+Compare features, pricing, target customers, differentiators.
+Save as competitor-analysis.md"
+```
+
+---
+
+### 4. Build a Portfolio Site (for developers)
 
 ```
 "Build a developer portfolio site using HTML/CSS/JS.
@@ -196,36 +265,12 @@ Keep it minimal with a dark theme."
 
 ---
 
-### 2. Refactor Existing Code
-
-Improve code you already have with Claude Code's help.
+### 5. Refactor Existing Code (for developers)
 
 ```
 "Review and improve this file.
 Focus on readability, performance, and error handling.
 @src/utils/dataProcessor.js"
-```
-
----
-
-### 3. Auto-Generate Test Code
-
-Adding tests to an untested project is something Claude Code does particularly well.
-
-```
-"Write unit tests for every function in auth.ts.
-Use Jest and make sure to cover edge cases."
-```
-
----
-
-### 4. Migrate Legacy Code
-
-Convert old code patterns to modern equivalents.
-
-```
-"Migrate these CommonJS modules to ES Modules.
-Convert each file and verify with tests."
 ```
 
 ---
@@ -262,7 +307,7 @@ Claude Code itself is the most powerful help resource available.
 ### Step 3: Community
 
 - **GitHub Issues**: [github.com/anthropics/claude-code/issues](https://github.com/anthropics/claude-code/issues)
-- **gptaku_plugins**: [github.com/fivetaku/gptaku_plugins](https://github.com/fivetaku/gptaku_plugins)
+- **CC101**: [github.com/fivetaku/cc101](https://github.com/fivetaku/cc101)
 
 ---
 
