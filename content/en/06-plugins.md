@@ -57,11 +57,14 @@ Type `/plugin` inside Claude Code and go to the **Discover tab** to browse offic
 | **docs-guide** | Answers questions based on official library documentation — no hallucinations, just accurate info | `/docs-guide:explain React hooks` |
 | **git-teacher** | Git onboarding for non-developers. Guides you step by step from "what is a commit?" to real-world workflows | `/git-teacher:what-is-commit` |
 | **vibe-sunsang** | Auto-collects Claude Code conversation logs, rates your prompt quality A~D, and generates growth reports. Coaches you on better AI usage patterns | `/vibe-sunsang start` |
-| **deep-research-kit** | Multi-agent 7-step research automation. Collects web/academic/technical sources in parallel → cross-validates → generates report | `/deep-research [topic]` |
+| **deep-research** | Multi-agent 7-step research automation. Collects web/academic/technical sources in parallel → cross-validates → generates report | `/deep-research [topic]` |
 | **pumasi** | Claude (PM) distributes tasks for parallel processing. Uses Codex if installed, otherwise works with Claude alone | `/pumasi [task description]` |
 | **show-me-the-prd** | 5-6 interview questions automatically generate 4 design documents (PRD, data model, phase breakdown, project spec). No planning skills needed | `/show-me-the-prd I want to build a photo organizer app` |
 | **kkirikkiri** | One sentence in natural language auto-configures and runs Claude Code Agent Teams. 4 presets: research, development, analysis, content | `/kkirikkiri create a research team` |
 | **skillers-suda** | 4 experts (planner, user, specialist, reviewer) turn a vague idea into a working skill | `/skillers-suda create a translation skill` |
+| **nopal** | Orchestrate 9 Google Workspace services (Gmail, Calendar, Drive, Sheets, Docs, etc.) with natural language | `/nopal schedule a meeting for tomorrow` |
+| **insane-search** | Auto-bypasses blocked sites (X/Twitter, Reddit, YouTube, etc.) with platform-specific access strategies | Auto-detected |
+| **insane-design** | Extracts real CSS-based design systems from any URL. Generates design.md + interactive HTML report | `/insane-design [URL]` |
 
 ---
 

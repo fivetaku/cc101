@@ -72,11 +72,14 @@ Claude Code 안에서 `/plugin` 을 입력하면 <strong>Discover 탭</strong>�
 | **docs-guide** | 라이브러리 공식 문서 기반으로 정확한 답변 제공. Claude가 최신 공식 문서를 참고해 할루시네이션 없이 답변 | `/docs-guide:explain React hooks` |
 | **바르다 깃선생** (git-teacher) | 비개발자를 위한 Git 온보딩 가이드. "커밋이 뭐야?"부터 시작해서 실무 Git 워크플로우까지 단계별 안내 | `/git-teacher:what-is-commit` |
 | **바선생** (vibe-sunsang) | Claude Code 대화 로그를 자동 수집해 요청 품질을 A~D로 평가하고 성장 보고서 생성. AI 사용 패턴을 분석해 더 잘 쓰는 법을 코칭 | `/vibe-sunsang 시작` |
-| **deep-research-kit** | 멀티에이전트 7단계 리서치 자동화. 웹/학술/기술 출처 병렬 수집 → 교차검증 → 보고서 생성 | `/deep-research [주제]` |
+| **deep-research** | 멀티에이전트 7단계 리서치 자동화. 웹/학술/기술 출처 병렬 수집 → 교차검증 → 보고서 생성 | `/deep-research [주제]` |
 | **품앗이** (pumasi) | Claude(PM)가 작업을 분담하고 병렬 처리. Codex가 설치되어 있으면 Codex가 개발자 역할, 없으면 Claude만으로 동작 | `/pumasi [작업 설명]` |
 | **쇼미더피알디** (show-me-the-prd) | 인터뷰 5~6번으로 4종 디자인 문서(PRD, 데이터 모델, Phase 분리, 프로젝트 스펙) 자동 생성. 기획을 못 해도 OK | `/show-me-the-prd 사진 정리 앱 만들고 싶어` |
 | **끼리끼리** (kkirikkiri) | 자연어 한마디로 Claude Code Agent Teams를 자동 구성하고 실행. 리서치/개발/분석/콘텐츠 4종 프리셋 | `/kkirikkiri 리서치 팀 만들어줘` |
 | **스킬러들의 수다** (skillers-suda) | 4명의 전문가(기획자/사용자/전문가/검수자)가 모호한 아이디어를 동작하는 스킬로 변환 | `/skillers-suda 번역 스킬 만들어줘` |
+| **노팔** (nopal) | 자연어로 Google Workspace 9개 서비스(Gmail, Calendar, Drive, Sheets, Docs 등)를 자동 조합 실행 | `/nopal 내일 회의 일정 잡아줘` |
+| **insane-search** | WebFetch가 차단될 때 X/Twitter, Reddit, YouTube 등 플랫폼별 우회 접근 전략 자동 적용 | 자동 감지 |
+| **insane-design** | URL 하나로 실제 CSS 기반 디자인 시스템 분석. design.md + 인터랙티브 HTML 리포트 생성 | `/insane-design [URL]` |
 
 ---
 
@@ -176,7 +179,7 @@ Claude Code 커뮤니티에서 가장 많이 쓰이는 서드파티 플러그인
 - **외부 AI 연동**: Codex(OpenAI), Gemini(Google)와 협업해 다각도 분석
 - **Skills 시스템**: 자주 쓰는 워크플로를 재사용 가능한 명령어로 저장
 
-설치: GitHub 저장소([github.com/wshf/oh-my-claudecode](https://github.com/wshf/oh-my-claudecode))의 README 참조
+설치: GitHub 저장소([github.com/Yeachan-Heo/oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode))의 README 참조
 
 <details>
 <summary>🖥️ 개발자용 커뮤니티 플러그인 (LSP / chrome-devtools)</summary>

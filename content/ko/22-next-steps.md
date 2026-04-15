@@ -117,7 +117,7 @@ CC101에서 배운 기초를 조합해 실제 업무에 적용해보세요.
 | 리소스 | URL | 설명 |
 |--------|-----|------|
 | **CC101 GitHub** | [github.com/fivetaku/cc101](https://github.com/fivetaku/cc101) | 이 가이드 저장소. 오타·내용 추가 기여 환영 |
-| **gptaku_plugins** | [github.com/fivetaku/gptaku_plugins](https://github.com/fivetaku/gptaku_plugins) | 바이브코더를 위한 8개 플러그인 모음: 기획(show-me-the-prd), Git(깃선생), 멘토(바선생), 리서치(deep-research), 병렬개발(품앗이), 팀 구성(끼리끼리), 스킬 생성(스킬러들의 수다), 공식문서(docs-guide) |
+| **gptaku_plugins** | [github.com/fivetaku/gptaku_plugins](https://github.com/fivetaku/gptaku_plugins) | 바이브코더를 위한 11개 플러그인 모음: 기획(show-me-the-prd), Git(깃선생), 멘토(바선생), 리서치(deep-research), 병렬개발(품앗이), 팀 구성(끼리끼리), 스킬 생성(스킬러들의 수다), 공식문서(docs-guide), Google Workspace(nopal), 우회검색(insane-search), 디자인분석(insane-design) |
 
 이 가이드가 도움이 됐다면 **Star** 를 눌러주세요! 업데이트와 발전에 큰 힘이 됩니다.
 

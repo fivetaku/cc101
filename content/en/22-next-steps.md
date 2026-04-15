@@ -174,7 +174,7 @@ on:
 | Resource | URL | Description |
 |----------|-----|-------------|
 | **CC101 GitHub** | [github.com/fivetaku/cc101](https://github.com/fivetaku/cc101) | This guide's repository. Typo fixes and content contributions welcome |
-| **gptaku_plugins** | [github.com/fivetaku/gptaku_plugins](https://github.com/fivetaku/gptaku_plugins) | 8 plugins for vibe coders: planning (show-me-the-prd), Git (git-teacher), mentor (vibe-sunsang), research (deep-research), parallel dev (pumasi), team setup (kkirikkiri), skill creation (skillers-suda), official docs (docs-guide) |
+| **gptaku_plugins** | [github.com/fivetaku/gptaku_plugins](https://github.com/fivetaku/gptaku_plugins) | 11 plugins for vibe coders: planning (show-me-the-prd), Git (git-teacher), mentor (vibe-sunsang), research (deep-research), parallel dev (pumasi), team setup (kkirikkiri), skill creation (skillers-suda), official docs (docs-guide), Google Workspace (nopal), bypass search (insane-search), design analysis (insane-design) |
 
 If this has been helpful, please give it a **Star**. It helps the community grow.
 
