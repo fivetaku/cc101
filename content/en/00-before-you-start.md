@@ -17,9 +17,9 @@ In short, **Claude Code is a building tool** and **Cowork is a task-processing t
 
 ### Cowork's Sandbox — Safe but Slow and Expensive
 
-Cowork runs inside an **isolated virtual environment (local VM)** on your machine. This sandbox keeps things safe, but it comes with structural limitations.
+Cowork runs inside an **isolated execution environment (sandbox)**. This sandbox keeps things safe, but it comes with structural limitations.
 
-**High token consumption.** When Cowork interacts with the screen, it takes screenshots and has the AI analyze them. What could be done with a single line of text gets processed as an image, consuming far more tokens. Claude Code reads and writes files as text, handling the same work with far fewer tokens.
+**High token consumption.** When Cowork interacts with the screen, it takes screenshots and has the AI analyze them. What could be done with a single line of text gets processed as an image, consuming far more tokens (the unit of text AI reads and writes — usage is measured in tokens). Claude Code reads and writes files as text, handling the same work with far fewer tokens.
 
 **Slow operation.** Screen interaction requires a cycle of screenshot capture, AI analysis, click, and screen wait — repeated every time. Claude Code runs commands and returns text results, making it significantly faster.
 
@@ -31,7 +31,7 @@ Cowork runs inside an **isolated virtual environment (local VM)** on your machin
 
 ## Q2. There's a desktop app and VS Code extension — do I really need the terminal?
 
-When the desktop app and VS Code extension first launched, they had limited features and lagged behind the terminal in updates. But as of April 2026, **most features are available across all platforms**, and since they share the same engine, MCP, Hooks, Skills, plugins, and more work nearly identically everywhere.
+When the desktop app and VS Code extension first launched, they had limited features and lagged behind the terminal in updates. But today, **most features are available across all platforms**, and since they share the same engine, MCP, Hooks, Skills, plugins, and more work nearly identically everywhere.
 
 **That said, there are still reasons to prefer the terminal.**
 
@@ -69,7 +69,7 @@ These are structurally impossible in the GUI environments of the desktop app or 
 
 ### Stability
 
-As of April 2026, features are nearly identical, but **stability still varies**:
+Features are nearly identical, but **stability can still vary depending on the moment**:
 
 | | Terminal (CLI) | Desktop App | VS Code Extension |
 |---|---|---|---|
@@ -125,7 +125,7 @@ To be honest, **Claude Code is more expensive than most other AI tools**. And th
 
 Pro's 5-hour usage limit runs out faster than you'd expect. When working intensively, **hitting the limit within 1 hour is common.** You end up stopping before you get the results you want, waiting for the limit to reset — over and over.
 
-- The most powerful **Opus model is effectively unusable** on Pro. The limit fills up too quickly.
+- **Higher-tier models (Opus, Fable, etc.) are effectively unusable** on Pro. The limit fills up too quickly.
 - The default Sonnet model works for simple tasks, but has limitations on complex projects.
 
 ### Try Max ($100) at Least Once
@@ -134,18 +134,10 @@ Claude Code's real productivity comes from **combining advanced features**:
 
 - **Multi-session**: Running multiple Claude instances simultaneously for parallel work, which burns through tokens quickly
 - **Agent Teams**: Multiple AIs collaborating with divided roles, consuming several times more tokens
-- **Opus model**: Essential for complex architecture design and debugging, but virtually impossible on Pro
+- **Higher-tier models (Opus, Fable)**: Essential for complex architecture design and debugging, but virtually impossible on Pro
 
 To use these features, you need at least **Max $100, which provides 5x the Pro usage limit**.
 
 If you've been frustrated by hitting limits on Pro, try Max for just one month. Once you experience Claude Code running at full capacity without limits, you'll have a **"wait, it could do all this?"** moment. You can always decide whether to go back to Pro after that experience.
 
-### Plan Selection Guide
-
-| Situation | Recommended Plan |
-|-----------|-----------------|
-| "I just want to try Claude Code out" | Pro $20 for exploration |
-| "I want to use it seriously for work/projects" | **Max $100 (strongly recommended)** |
-| "I use it all day, every day" | Max $200 |
-
-> **Think of Pro $20 as a "trial."** It's enough to see Claude Code's potential. But for real productivity, you'll need the Max plan.
+> **Think of Pro $20 as a "trial."** It's enough to see Claude Code's potential. But for real productivity, you'll need the Max plan. See [03. Plans & Pricing](#plans-and-pricing) for the full plan guide.

@@ -21,7 +21,7 @@
 If you plan to use Claude Code seriously, the **Max $100 plan** is the recommended starting point.
 
 - The Pro ($20) usage limit fills up quickly, making focused work difficult.
-- The most powerful Opus model is effectively unusable on Pro.
+- Higher-tier models (Opus, Fable, etc. — the lineup changes over time) are effectively unusable on Pro.
 - Productivity features like multi-session and agent teams burn through tokens quickly.
 - Max $100 is sufficient for most individual users.
 
@@ -36,7 +36,7 @@ If limit is reached → Responses are throttled (no extra charge)
 
 - No need to track token counts
 - Usage limit resets after a period
-- Use the `/cost` command to check your current session usage
+- Use the `/usage` command to check your plan usage and session stats
 
 ---
 

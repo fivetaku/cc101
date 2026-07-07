@@ -62,32 +62,32 @@
 
 ## 내장 서브에이전트
 
-Claude Code는 기본적으로 3개의 서브에이전트를 포함합니다:
+Claude Code는 Explore, Plan, general-purpose 같은 내장 서브에이전트를 포함합니다:
 
 | 에이전트 | 모델 | 허용 도구 | 용도 |
 |---------|------|----------|------|
-| **Explore** | Haiku (빠름) | 읽기 전용 | 파일 탐색, 코드 검색 |
+| **Explore** | 메인 상속 (Opus 상한) | 읽기 전용 | 파일 탐색, 코드 검색 |
 | **Plan** | 메인 상속 | 읽기 전용 | Plan 모드에서 컨텍스트 수집 |
 | **general-purpose** | 메인 상속 | 모든 도구 | 복잡한 다단계 작업 |
 
 Claude가 코드를 탐색해야 할 때는 자동으로 **Explore** 서브에이전트를 씁니다. 탐색 결과(수천 줄의 파일 내용)가 메인 대화를 오염시키지 않고, 요약만 메인으로 돌아옵니다.
 
+> 참고: Explore는 예전엔 항상 Haiku로 돌았지만, 지금은 메인 대화의 모델을 물려받습니다. 탐색을 계속 저렴한 모델로 돌리고 싶다면 `model: haiku`를 지정한 `Explore`라는 이름의 커스텀 서브에이전트를 만들면 내장을 덮어씁니다.
+
 ---
 
 ## 나만의 서브에이전트 만들기
 
-### 방법 1: /agents 인터랙티브 메뉴 (권장)
+### 방법 1: Claude에게 만들어달라고 하기 (권장)
+
+가장 쉬운 방법은 대화로 요청하는 것입니다:
 
 ```
-/agents
+"~/.claude/agents/에 리서치 요약 전담 서브에이전트를 만들어줘.
+ 읽기 전용 도구만 쓰고, 결론 먼저 5줄 요약하는 스타일로."
 ```
 
-1. **Create new agent** 선택
-2. **User-level** (모든 프로젝트) 또는 **Project-level** (현재 프로젝트) 선택
-3. **Generate with Claude** 선택 후 역할 설명
-4. 허용 도구 선택
-5. 모델 선택 (Haiku/Sonnet/Opus)
-6. 저장
+Claude가 아래 형식의 파일을 대신 만들어줍니다. (예전의 `/agents` 인터랙티브 생성 마법사는 제거되었습니다 — 지금 `/agents`를 입력하면 "Claude에게 요청하거나 `.claude/agents/`를 직접 편집하라"는 안내가 나옵니다.)
 
 ### 방법 2: 파일 직접 작성
 
@@ -186,8 +186,8 @@ name: my-agent           # 소문자 + 하이픈 (필수)
 description: 설명        # Claude가 언제 위임할지 판단 기준 (필수)
 tools: Read, Grep, Glob  # 허용 도구 목록 (생략 시 모든 도구 상속)
 disallowedTools: Write   # 제외할 도구
-model: haiku             # haiku / sonnet / opus / inherit(기본값)
-permissionMode: default  # default / acceptEdits / dontAsk / bypassPermissions
+model: haiku             # haiku / sonnet / opus / fable / 전체 모델 ID / inherit(기본값)
+permissionMode: default  # default / acceptEdits / plan / dontAsk / bypassPermissions
 maxTurns: 20             # 최대 실행 턴 수
 memory: user             # 영구 메모리: user / project / local
 background: false        # true면 항상 백그라운드 실행
@@ -309,26 +309,31 @@ memory: user
 Ctrl+B
 ```
 
-> **주의**: 백그라운드 서브에이전트는 MCP 도구를 사용할 수 없습니다.
-
 ---
 
 ## Agent Teams란?
 
-<strong>Agent Teams</strong>는 서브에이전트보다 한 단계 더 나아간 개념입니다. 여러 에이전트가 각자의 완전히 독립된 세션에서 실행되며 협력합니다.
+<strong>Agent Teams</strong>는 서브에이전트보다 한 단계 더 나아간 개념입니다. 여러 에이전트가 각자의 완전히 독립된 세션에서 실행되며, 서로 직접 메시지를 주고받으며 협력합니다.
+
+> ⚠️ **실험 기능**: Agent Teams는 현재 실험 기능이라 기본적으로 꺼져 있습니다. 사용하려면 settings.json 또는 환경변수에 `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1`을 설정해야 합니다. 이 설정 없이는 팀 생성 요청이 동작하지 않습니다.
+
+<img src="/images/subagents-vs-agent-teams-light.png" alt="서브에이전트는 메인 에이전트에게 결과만 보고하고, 에이전트 팀은 공유 작업 목록과 직접 메시지로 협업하는 구조 비교" className="dark:hidden" style={{width:'100%', borderRadius:'12px', margin:'1rem 0'}} />
+<img src="/images/subagents-vs-agent-teams-dark.png" alt="서브에이전트는 메인 에이전트에게 결과만 보고하고, 에이전트 팀은 공유 작업 목록과 직접 메시지로 협업하는 구조 비교" className="hidden dark:block" style={{width:'100%', borderRadius:'12px', margin:'1rem 0'}} />
+
+*이미지 출처: [Claude Code 공식 문서](https://code.claude.com/docs)*
 
 | | Sub-agents | Agent Teams |
 |---|---|---|
 | **실행 단위** | 메인 세션 내부 | 완전히 독립된 세션 |
-| **컨텍스트** | 메인과 공유 | 각자 독립 |
-| **적합한 작업** | 단일 세션 내 위임 | 장시간 병렬 작업 |
-| **통신** | 결과 요약 반환 | 세션 간 조율 |
+| **컨텍스트** | 독립 (결과 요약만 메인에 반환) | 각자 완전 독립 |
+| **통신** | 메인에게만 보고, 서로 대화 불가 | 팀원끼리 직접 메시지 + 공유 작업 목록 |
+| **적합한 작업** | 결과만 필요한 위임 작업 | 토론·협업이 필요한 복잡한 작업 |
 
-> 서브에이전트로 컨텍스트 창이 부족하거나, 작업이 여러 세션에 걸쳐 지속되어야 할 때 Agent Teams를 고려합니다.
+> 서브에이전트도 각자 독립 컨텍스트에서 돕니다. 차이는 "서로 대화할 수 있느냐"입니다 — 일꾼들끼리 협의가 필요하면 Agent Teams, 결과만 받으면 되면 서브에이전트.
 
 ### 플러그인으로 쉽게 시작하기: 끼리끼리
 
-Agent Teams를 직접 설정하는 게 어렵다면, **끼리끼리(kkirikkiri)** 플러그인이 대신 해줍니다.
+Agent Teams를 직접 설정하는 게 어렵다면, **끼리끼리(kkirikkiri)** 플러그인이 대신 해줍니다. (위의 환경변수 설정은 여전히 선행되어야 합니다.)
 
 ```
 /kkirikkiri 리서치 팀 만들어줘

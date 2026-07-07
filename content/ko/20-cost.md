@@ -15,7 +15,7 @@ Claude Code의 비용 방식은 크게 두 가지입니다.
 
 <strong>Claude.ai Pro/Max 구독자</strong>는 구독료 안에 Claude Code 사용이 포함되어 있어 API 비용이 따로 청구되지 않습니다. `/cost` 명령어가 표시하는 숫자는 API 사용자를 위한 것이므로 구독자는 참고용으로만 보면 됩니다.
 
-<strong>API 사용자</strong>는 사용량에 따라 요금이 발생합니다. 공식 문서에 따르면 평균적으로 개발자 1인당 하루 약 $6, 90%의 사용자는 하루 $12 이하의 비용이 발생합니다.
+<strong>API 사용자</strong>는 사용량에 따라 요금이 발생합니다. 공식 문서에 따르면 평균적으로 개발자 1인당 활동일 기준 하루 약 $13(월 $150~250), 90%의 사용자는 하루 $30 이하의 비용이 발생합니다.
 
 ---
 
@@ -51,7 +51,7 @@ GitHub Actions 등으로 자동화하면 사람의 개입 없이 대량의 토�
 
 ---
 
-## 절약 팁 5가지
+## 절약 팁 7가지
 
 ### 팁 1: `/compact`로 컨텍스트 정리하기
 
@@ -63,7 +63,7 @@ GitHub Actions 등으로 자동화하면 사람의 개입 없이 대량의 토�
 
 이렇게 하면 중요한 정보는 유지하면서 불필요한 대화 내용은 압축됩니다.
 
-CLAUDE.md에 압축 방식을 미리 지정할 수도 있습니다:
+CLAUDE.md에 압축 방식을 미리 지정할 수도 있습니다 (아래는 "압축할 때 테스트 결과와 코드 변경 위주로 남겨줘"라는 지침입니다):
 
 ```markdown
 # Compact instructions
@@ -120,7 +120,7 @@ claude --model haiku
 
 ### 팁 4: Fast Mode 이해하고 활용하기
 
-`/fast` 명령어로 Fast Mode를 켜면 Opus 4.6이 약 2.5배 빠르게 응답합니다.
+`/fast` 명령어로 Fast Mode를 켜면 Opus 모델(현재 Opus 4.8 지원)이 최대 약 2.5배 빠르게 응답합니다.
 
 ```
 /fast
@@ -132,15 +132,15 @@ claude --model haiku
 
 ---
 
-### 팁 5: `/cost`로 주기적으로 확인하기
+### 팁 5: `/usage`로 주기적으로 확인하기
 
-API 사용자라면 현재 세션의 토큰 사용량을 확인할 수 있습니다:
+현재 세션의 토큰 사용량과 플랜 한도를 확인할 수 있습니다 (`/cost`, `/stats`는 같은 화면을 여는 별칭입니다):
 
 ```
-/cost
+/usage
 ```
 
-출력 예시:
+출력 예시 (세션 블록):
 ```
 Total cost:            $0.55
 Total duration (API):  6m 19.7s
@@ -148,9 +148,15 @@ Total duration (wall): 6h 33m 10.2s
 Total code changes:    0 lines added, 0 lines removed
 ```
 
-구독자는 `/stats`로 사용 패턴을 확인할 수 있습니다.
+구독자는 상단 세션 비용은 참고용으로만 보고, 같은 화면의 <strong>플랜 사용량 바와 활동 통계</strong>를 확인하면 됩니다. 스킬·서브에이전트·플러그인·MCP 서버별 사용 비중도 나옵니다.
 
-상태 표시줄(status line)을 설정하면 컨텍스트 사용량을 실시간으로 볼 수도 있습니다.
+상태 표시줄(status line)을 설정하면 아래처럼 비용과 컨텍스트 사용량을 실시간으로 볼 수도 있습니다:
+
+<img src="/images/statusline-cost-tracking.png" alt="터미널 하단 상태 표시줄에 세션 비용이 표시된 화면" style={{width:'100%', maxWidth:'640px', borderRadius:'8px', margin:'0.75rem 0'}} />
+
+<img src="/images/statusline-context-window-usage.png" alt="상태 표시줄에 컨텍스트 사용량 퍼센트가 표시된 화면" style={{width:'100%', maxWidth:'640px', borderRadius:'8px', margin:'0.75rem 0'}} />
+
+*이미지 출처: [Claude Code 공식 문서](https://code.claude.com/docs)*
 
 ---
 
@@ -180,28 +186,38 @@ CLAUDE.md는 Claude가 **매 응답마다** 읽는 파일입니다. 길면 길�
 
 ---
 
-### 팁 7: `.claudeignore`로 불필요한 파일 제외
+### 팁 7: 불필요한 파일 읽기 차단하기
 
-`node_modules`, `.git`, 빌드 결과물 등 Claude가 읽을 필요 없는 파일을 명시적으로 제외하면, Claude가 실수로 대용량 파일을 읽는 것을 방지합니다.
+`node_modules`, 빌드 결과물, 대용량 로그처럼 Claude가 읽을 필요 없는 파일은 <strong>권한 거부 규칙</strong>으로 차단할 수 있습니다. (`.claudeignore` 같은 전용 파일은 공식 기능이 아닙니다 — 파일 제외는 settings의 deny 규칙으로 합니다.)
 
-`.gitignore`와 같은 문법으로 프로젝트 루트에 `.claudeignore` 파일을 만드세요:
+프로젝트의 `.claude/settings.json`에 추가하세요:
 
-```
-# .claudeignore
-node_modules/
-.next/
-dist/
-build/
-coverage/
-*.log
-*.lock
-.git/
+```json
+{
+  "permissions": {
+    "deny": [
+      "Read(./node_modules/**)",
+      "Read(./dist/**)",
+      "Read(./build/**)",
+      "Read(./coverage/**)",
+      "Read(**/*.log)"
+    ]
+  }
+}
 ```
 
 **언제 특히 효과적인가**
 - 모노레포처럼 파일 수가 많은 프로젝트
 - "이 프로젝트를 전체적으로 분석해줘" 요청을 자주 할 때
 - GitHub Actions 등으로 Claude를 반복 실행할 때
+
+### 팁 8: 확장 사고(Extended Thinking) 조절하기
+
+Claude Code는 기본적으로 <strong>확장 사고</strong>(답하기 전에 깊이 생각하는 기능)가 켜져 있고, 이 사고 토큰도 출력 토큰으로 과금됩니다. 복잡한 작업엔 도움이 되지만, 단순 작업에서는 비용이 커지는 대표 원인입니다.
+
+- `/effort` 명령어로 사고 깊이를 조절할 수 있습니다 (low / medium / high 등)
+- 간단한 작업이 많은 날엔 `/effort low`로 낮추면 토큰이 크게 절약됩니다
+- 복잡한 설계·디버깅 때만 high 이상으로 올리세요
 
 ---
 
@@ -211,10 +227,11 @@ coverage/
 |------|------|----------|
 | Haiku | 빠르고 저렴, 간단한 작업 | 가장 저렴 |
 | Sonnet | 균형 잡힌 성능, 일반 코딩 작업 | 중간 |
-| Opus | 최고 성능, 복잡한 추론 | 가장 비쌈 |
-| Opus (Fast Mode) | Opus 속도 2.5배, 토큰 비용 높음 | Opus보다 비쌈 |
+| Opus | 고성능, 복잡한 추론 | 비쌈 |
+| Fable | 최상위 모델, 가장 어려운 장기 작업 | 가장 비쌈 |
+| Opus (Fast Mode) | Opus 속도 최대 2.5배, 토큰 비용 높음 | Opus보다 비쌈 |
 
-> 정확한 토큰 가격은 [Anthropic 가격 페이지](https://www.anthropic.com/pricing)를 참고하세요.
+> 정확한 토큰 단가는 [Claude Platform 가격 문서](https://platform.claude.com/docs/en/about-claude/pricing)를, 구독 요금제는 [claude.com/pricing](https://claude.com/pricing)을 참고하세요.
 
 ---
 
@@ -237,7 +254,7 @@ API를 팀 단위로 사용하는 경우:
 
 - **Workspace 지출 한도 설정**: [Anthropic Console](https://platform.claude.com)에서 팀 전체 지출 한도를 설정할 수 있습니다.
 - **사용량 대시보드**: Console에서 팀원별 비용과 사용량을 확인할 수 있습니다.
-- **에이전트 팀 주의**: Agent Teams(여러 Claude 인스턴스 동시 실행) 기능은 표준 세션보다 약 7배 많은 토큰을 소모합니다.
+- **에이전트 팀 주의**: Agent Teams(여러 Claude 인스턴스 동시 실행)는 실험 기능으로 기본 비활성화되어 있으며(`CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` 설정 필요), 팀원들이 Plan Mode로 돌 때 표준 세션보다 약 7배 많은 토큰을 소모합니다.
 
 > 💡 **끼리끼리** 플러그인은 작업 특성에 맞게 에이전트 팀을 자동 구성하고, **품앗이**는 Codex가 설치되어 있으면 저렴한 모델로 병렬 개발하고, 없으면 Claude만으로도 동작합니다.
 
@@ -251,8 +268,9 @@ API를 팀 단위로 사용하는 경우:
 ✅ 구체적인 파일명과 함수명을 명시
 ✅ 간단한 작업은 Haiku 모델 사용
 ✅ Fast Mode는 필요할 때만 켜기
-✅ /cost 또는 /stats로 주기적으로 확인
+✅ /usage로 주기적으로 확인
 ✅ CLAUDE.md에 compact 지침 설정
 ✅ CLAUDE.md는 핵심 규칙만 남기고 주기적으로 다이어트
-✅ .claudeignore로 node_modules, 빌드 결과물 제외
+✅ permissions.deny 규칙으로 node_modules, 빌드 결과물 차단
+✅ 단순 작업이 많을 땐 /effort low로 사고 깊이 낮추기
 ```

@@ -67,17 +67,21 @@ Type `/plugin` inside Claude Code and go to the **Discover tab** to browse offic
 
 | Plugin Name | Role | Example Usage |
 |-------------|------|---------------|
-| **docs-guide** | Answers questions based on official library documentation — no hallucinations, just accurate info | `/docs-guide:explain React hooks` |
-| **git-teacher** | Git onboarding for non-developers. Guides you step by step from "what is a commit?" to real-world workflows | `/git-teacher:what-is-commit` |
-| **vibe-sunsang** | Auto-collects Claude Code conversation logs, rates your prompt quality A~D, and generates growth reports. Coaches you on better AI usage patterns | `/vibe-sunsang start` |
-| **deep-research** | Multi-agent 7-step research automation. Collects web/academic/technical sources in parallel → cross-validates → generates report | `/deep-research [topic]` |
-| **pumasi** | Claude (PM) distributes tasks for parallel processing. Uses Codex if installed, otherwise works with Claude alone | `/pumasi [task description]` |
+| **docs-guide** | Answers questions based on official library documentation — no hallucinations, just accurate info | `/docs-guide explain React hooks` |
+| **git-teacher** | Git onboarding for non-developers. Guides you step by step from "what is a commit?" to real-world workflows | `/git-teacher-setup` (first run), then just say "save this" / "upload it" |
+| **vibe-sunsang** | Auto-collects Claude Code conversation logs, rates your prompt quality A~D, and generates growth reports. Coaches you based on 4 user types (Builder/Explorer/Designer/Operator) | `/vibe-sunsang start` |
+| **insane-research** | Multi-agent 7-step research automation. Collects web/academic/technical sources in parallel → cross-validates → generates report | `/insane-research [topic]` |
+| **pumasi** | Claude (PM) distributes tasks for parallel processing. Uses Codex if installed, otherwise works with Claude alone. Also includes image generation (`/pumasi-image`) | `/pumasi [task description]` |
 | **show-me-the-prd** | 5-6 interview questions automatically generate 4 design documents (PRD, data model, phase breakdown, project spec). No planning skills needed | `/show-me-the-prd I want to build a photo organizer app` |
 | **kkirikkiri** | One sentence in natural language auto-configures and runs Claude Code Agent Teams. 4 presets: research, development, analysis, content | `/kkirikkiri create a research team` |
 | **skillers-suda** | 4 experts (planner, user, specialist, reviewer) turn a vague idea into a working skill | `/skillers-suda create a translation skill` |
 | **nopal** | Orchestrate 9 Google Workspace services (Gmail, Calendar, Drive, Sheets, Docs, etc.) with natural language | `/nopal schedule a meeting for tomorrow` |
 | **insane-search** | Auto-bypasses blocked sites (X/Twitter, Reddit, YouTube, etc.) with platform-specific access strategies | Auto-detected |
 | **insane-design** | Extracts real CSS-based design systems from any URL. Generates design.md + interactive HTML report | `/insane-design [URL]` |
+| **dd** | Sends whatever is on your clipboard (text or image) straight to Claude — no pasting. Perfect for error logs and screenshots | `/dd` |
+| **insane-review** | Packs only the relevant code and gets a second opinion from your ChatGPT Pro subscription (GPT-5.5 Pro, web-only — no API key needed) | `/insane-review what do you think of this structure?` |
+| **goaljaby** | Turns a PRD into a long-running autonomous goal (/goal) — auto-generates 5 validation/recovery docs, runs after your approval | `/goaljaby [PRD folder]` |
+| **insane-loop** | Idea-to-done pipeline: interview → PRD → goal setup → verify/review/improve cycles until the definition of done is met | `/insane-loop [idea]` |
 
 ---
 
@@ -139,11 +143,14 @@ Once installed, plugins are ready to use immediately:
 # Auto-generate skills
 /skillers-suda create a translation skill
 
-# Git onboarding
-/git-teacher:what-is-commit
+# Git onboarding (first run)
+/git-teacher-setup
 
 # Official docs-based answers
-/docs-guide:explain React hooks
+/docs-guide explain React hooks
+
+# Send your clipboard (screenshot/error) straight to Claude
+/dd analyze this error
 
 # AI usage pattern analysis
 /vibe-sunsang start
@@ -165,11 +172,11 @@ Once installed, plugins are ready to use immediately:
 
 ## Community Plugins
 
-Beyond the official marketplace, you can install community-built plugins directly from GitHub. These offer diverse features — just check the code and confirm the repository is trustworthy before installing.
+Beyond the official marketplace, there's also a community marketplace maintained by Anthropic (`claude-community`, [anthropics/claude-plugins-community](https://github.com/anthropics/claude-plugins-community)), and you can install plugins directly from GitHub repositories too. Because the features are so varied, check the code and confirm the repository is trustworthy before installing.
 
 ### oh-my-claudecode
 
-The most widely used third-party plugin in the Claude Code community. It transforms Claude Code itself into an **orchestrator**.
+The most widely used third-party plugin in the Claude Code community. It transforms Claude Code itself into an **orchestrator** (a conductor who assigns work to multiple AI workers and directs them).
 
 Key features:
 - **Autopilot**: Say "build this" and it auto-handles planning → implementation → verification

@@ -1,4 +1,4 @@
-# Useful Features to Know
+# 14. Useful Features to Know
 
 > A collection of features that make Claude Code more convenient to use.
 
@@ -10,9 +10,10 @@
 
 You can show Claude error screenshots, UI design mockups, and more directly.
 
-- **Ctrl+V** — Paste an image from clipboard (on macOS, use Ctrl+V, not Cmd+V)
+- **Ctrl+V** — Paste an image from clipboard (Cmd+V also works in iTerm2; Alt+V on Windows/WSL) — an `[Image #1]` chip appears in the input box
 - **Drag and drop** — Drag an image file into the terminal window
 - **File path** — `"Analyze this image: /path/to/image.png"`
+- **/dd plugin** — with gptaku's dd installed, one `/dd` command sends whatever is on your clipboard (text or image) without pasting
 - Supported formats: JPEG, PNG, GIF, WebP (max 5MB)
 
 ```
@@ -27,7 +28,7 @@ You can give instructions by speaking instead of typing.
 - Type `/voice`, then **hold the spacebar** and speak
 - Supports 20 languages including Korean
 - You can mix voice and typed input
-- Beta feature (gradually expanding)
+- Requires a Claude.ai account login (not available with API-key auth); not available over SSH
 
 > Especially useful when you have a long explanation and don't feel like typing it out.
 
@@ -35,25 +36,21 @@ You can give instructions by speaking instead of typing.
 
 ## Undo Mistakes
 
-### Checkpoint (Esc Esc)
+### Checkpoint & Rewind (Esc Esc, /rewind)
 
 Claude automatically saves a snapshot before modifying files.
 
-- Press **Esc twice** to revert to the previous state
-- Works automatically with no setup required
-- The fastest way to undo changes, even if you don't know git
-
-### /rewind
-
-Rewinds both the conversation and code to a previous point.
-
-- Useful when you need to go back multiple steps
-- If `Esc Esc` is a one-step undo, `/rewind` lets you go back to any point you choose
+- Press **Esc twice** (with an empty input box) or type `/rewind` — both open the same **rewind menu**
+- Pick a point to go back to, then choose to restore the code only, the conversation only, or both
+- Works automatically with no setup required — the fastest way to undo changes, even if you don't know git
 
 ```
 > /rewind
-→ A list of checkpoints appears — select where you want to go back to
+→ A list of restore points appears — select where you want to go back to
+→ Choose the restore scope: code / conversation / both
 ```
+
+> ⚠️ Rewind only undoes what Claude changed with its file-editing tools. Files changed or deleted by terminal commands (bash), or edited outside Claude Code, are not restored. Use Git for permanent backups.
 
 ---
 
@@ -86,7 +83,7 @@ Sets Claude to think more deeply on complex problems.
 - Enabled by default (no setup needed)
 - `/effort high` — Deep thinking for hard problems (slower but more accurate)
 - `/effort low` — Quick responses for simple questions
-- Adding "ultrathink" to your prompt activates maximum thinking depth for that turn only
+- Adding "ultrathink" to your prompt nudges Claude to think more deeply for that turn
 
 ---
 
@@ -116,3 +113,5 @@ Claude asks for confirmation before modifying files or running commands.
 **Chrome Integration** — Claude directly controls the Chrome browser. Useful for web testing, data extraction, and automated form filling.
 
 **Scheduled Tasks (/loop)** — Run a specific prompt at set intervals. Useful for monitoring and regular checks.
+
+**Image Generation (/pumasi-image)** — With gptaku's pumasi plugin installed, generate images right from the terminal, e.g. `/pumasi-image make a thumbnail for my talk` (uses Codex image generation).

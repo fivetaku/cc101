@@ -206,7 +206,7 @@ export function Hero({ lang }: HeroProps) {
         {/* Stats */}
         <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-zinc-400 dark:text-zinc-500">
           <div className="flex items-center gap-2">
-            <span className="text-orange-500 dark:text-orange-400">20</span>
+            <span className="text-orange-500 dark:text-orange-400">23</span>
             <span>{ko ? '섹션' : 'Sections'}</span>
           </div>
           <div className="flex items-center gap-2">

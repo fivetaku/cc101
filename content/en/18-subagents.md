@@ -60,28 +60,29 @@ Claude Code ships with three built-in sub-agents:
 
 | Agent | Model | Allowed tools | Purpose |
 |-------|-------|--------------|---------|
-| **Explore** | Haiku (fast) | Read-only | File discovery, code search |
+| **Explore** | Inherits main model (capped at Opus) | Read-only | File discovery, code search |
 | **Plan** | Inherits from main | Read-only | Context gathering in plan mode |
 | **general-purpose** | Inherits from main | All tools | Complex multi-step operations |
 
 When Claude needs to search through a codebase, it automatically delegates to **Explore**. Thousands of lines of file content stay in Explore's context — only the relevant findings return to your conversation.
 
+> Note: Explore used to always run on Haiku, but now it inherits the main conversation's model. To keep exploration cheap, define a custom sub-agent named `Explore` with `model: haiku` — it overrides the built-in.
+
 ---
 
 ## Creating your own sub-agent
 
-### Option 1: Interactive /agents menu (recommended)
+### Option 1: Ask Claude to create it (recommended)
+
+The easiest way is to just ask in conversation:
 
 ```
-/agents
+"Create a sub-agent in ~/.claude/agents/ dedicated to research summaries.
+ Have it use read-only tools only, and write in a conclusion-first,
+ 5-line-summary style."
 ```
 
-1. Select **Create new agent**
-2. Choose **User-level** (all projects) or **Project-level** (this project)
-3. Select **Generate with Claude** and describe the agent's role
-4. Select allowed tools
-5. Choose a model (Haiku / Sonnet / Opus)
-6. Save — available immediately, no restart needed
+Claude writes the file for you in the format shown below. (The old `/agents` interactive creation wizard has been removed — typing `/agents` now just prints a reminder to ask Claude or edit `.claude/agents/` directly.)
 
 ### Option 2: Write the file directly
 
@@ -125,8 +126,8 @@ name: my-agent              # Lowercase letters and hyphens (required)
 description: When to use    # How Claude decides when to delegate (required)
 tools: Read, Grep, Glob     # Allowed tools (inherits all if omitted)
 disallowedTools: Write      # Tools to explicitly block
-model: haiku                # haiku / sonnet / opus / inherit (default)
-permissionMode: default     # default / acceptEdits / dontAsk / bypassPermissions
+model: haiku                # haiku / sonnet / opus / fable / full model ID / inherit (default)
+permissionMode: default     # default / acceptEdits / plan / dontAsk / bypassPermissions
 maxTurns: 20                # Maximum agentic turns before the agent stops
 memory: user                # Persistent memory: user / project / local
 background: false           # true = always run as a background task
@@ -228,24 +229,29 @@ consult your memory before beginning a review.
 Ctrl+B
 ```
 
-> **Note**: Background sub-agents cannot use MCP tools.
-
 If a background sub-agent fails due to missing permissions, you can resume it in the foreground to retry with interactive prompts.
 
 ---
 
 ## What are Agent Teams?
 
-**Agent Teams** take sub-agents a step further. Multiple agents run in fully independent sessions and coordinate with each other — each with its own complete context window.
+**Agent Teams** take sub-agents a step further. Multiple agents run in fully independent sessions and coordinate with each other by exchanging messages directly — each with its own complete context window.
+
+> ⚠️ **Experimental feature**: Agent Teams is currently experimental and disabled by default. To use it, set `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` in your settings.json or as an environment variable. Without it, requests to create a team won't work.
+
+<img src="/images/subagents-vs-agent-teams-light.png" alt="Comparison: sub-agents only report results back to the main agent, while agent teams collaborate via a shared task list and direct messages" className="dark:hidden" style={{width:'100%', borderRadius:'12px', margin:'1rem 0'}} />
+<img src="/images/subagents-vs-agent-teams-dark.png" alt="Comparison: sub-agents only report results back to the main agent, while agent teams collaborate via a shared task list and direct messages" className="hidden dark:block" style={{width:'100%', borderRadius:'12px', margin:'1rem 0'}} />
+
+*Image source: [Claude Code official docs](https://code.claude.com/docs)*
 
 | | Sub-agents | Agent Teams |
 |---|---|---|
 | **Execution unit** | Inside the main session | Fully independent sessions |
-| **Context** | Shared with main | Fully isolated per agent |
-| **Best for** | Single-session delegation | Long-running parallel work |
-| **Communication** | Summary returned to main | Coordinated across sessions |
+| **Context** | Independent (only a summary returns to main) | Fully isolated per agent |
+| **Communication** | Report to main only, can't talk to each other | Teammates message each other directly + shared task list |
+| **Best for** | Delegation where you only need the result | Complex work that needs discussion and collaboration |
 
-Consider Agent Teams when sub-agent results overflow your context window, or when work needs to span multiple sessions.
+> Sub-agents also each run in an isolated context. The difference is whether they can talk to each other — use Agent Teams when the workers need to coordinate, sub-agents when you just need the results back.
 
 ---
 
@@ -266,7 +272,7 @@ Each sub-agent is an independent Claude instance. **Every agent consumes tokens 
 
 ## Getting Started Easily: kkirikkiri Plugin
 
-If setting up Agent Teams manually feels overwhelming, the **kkirikkiri** plugin does it for you.
+If setting up Agent Teams manually feels overwhelming, the **kkirikkiri** plugin does it for you. (The environment variable above must still be set first.)
 
 ```
 /kkirikkiri create a research team

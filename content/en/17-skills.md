@@ -54,6 +54,8 @@ mkdir -p .claude/skills/commit
 
 `.claude/skills/commit/SKILL.md`:
 
+> Structure note: Only the part between the `---` markers is YAML config; the body below is plain markdown. The code block below is one complete file.
+
 ```yaml
 ---
 name: commit

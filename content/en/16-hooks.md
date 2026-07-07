@@ -24,7 +24,7 @@ Claude Code is powerful. It creates, edits, deletes files, and runs Git commands
 | Event | When it fires | Common use |
 |-------|--------------|------------|
 | `PreToolUse` | **Before** a tool executes | Block dangerous commands |
-| `PostToolUse` | After a tool succeeds | Auto-format, log activity |
+| `PostToolUse` | Right after a tool **succeeds** (failures fire `PostToolUseFailure`) | Auto-format, log activity |
 | `Stop` | When Claude finishes responding | Completion notification |
 | `Notification` | When Claude sends a notification | Desktop alerts |
 | `SessionStart` | When a session starts or resumes | Inject context |
@@ -32,6 +32,14 @@ Claude Code is powerful. It creates, edits, deletes files, and runs Git commands
 | `PreCompact` | Before context compaction | Preserve critical info |
 
 > Key: `exit 0` = allow, `exit 2` = **block** (stderr message is sent to Claude)
+>
+> This table lists common beginner events; the full list (30+) is in the [official Hooks docs](https://code.claude.com/docs/en/hooks).
+
+Here's when each event fires across a full session, at a glance:
+
+<img src="/images/hooks-lifecycle.svg" alt="Lifecycle diagram showing when each Hook event fires from session start to end" style={{width:'100%', maxWidth:'560px', display:'block', margin:'1rem auto', borderRadius:'12px'}} />
+
+*Image source: [Claude Code official docs](https://code.claude.com/docs)*
 
 ---
 
@@ -62,6 +70,10 @@ import json, re, sys
 
 BLOCKED_PATTERNS = [
     # Block file deletion — use trash instead (recoverable)
+    # ⚠️ This is a broad rule that blocks any command containing "rm".
+    #    It can catch the string "rm" inside a search command or a
+    #    legitimate rm inside a script — narrow the pattern or drop this
+    #    line if it gets in your way.
     (r"\brm\s+", "Use trash instead of rm (brew install trash)"),
     (r"\bunlink\s+", "Use trash instead of unlink"),
 
@@ -130,6 +142,10 @@ When Claude tries to run `rm -rf node_modules`:
 2. The command matches the `rm` pattern
 3. Script exits with code `2` → **blocked** + "Use trash instead" message sent to Claude
 4. Claude receives the message and runs `trash node_modules` instead
+
+<img src="/images/hook-resolution.svg" alt="How multiple hook outcomes are combined into a final allow/block decision" style={{width:'100%', borderRadius:'12px', margin:'1rem 0'}} />
+
+*Image source: [Claude Code official docs](https://code.claude.com/docs)*
 
 > **trash** sends files to the system trash so you can recover from mistakes. Install with `brew install trash` (macOS) or `npm install -g trash-cli`.
 

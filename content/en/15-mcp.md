@@ -12,6 +12,10 @@ By default, Claude Code only works with your local files and terminal. Connect a
 
 > **Analogy**: MCP is like giving Claude a USB port. Plug in any compatible tool and Claude can use it natively.
 
+<img src="/images/claude-code-data-flow.svg" alt="How Claude Code exchanges data with files, the terminal, and external tools" style={{width:'100%', borderRadius:'12px', margin:'1rem 0'}} />
+
+*Image source: [Claude Code official docs](https://code.claude.com/docs)*
+
 ---
 
 ## Manual work MCP eliminates
@@ -31,8 +35,9 @@ By default, Claude Code only works with your local files and terminal. Connect a
 ### GitHub — Direct PR and issue operations
 
 ```bash
-# Add the GitHub MCP server
-claude mcp add --transport http github https://api.githubcopilot.com/mcp/
+# Add the GitHub MCP server (requires a GitHub personal access token / PAT)
+claude mcp add --transport http github https://api.githubcopilot.com/mcp/ \
+  --header "Authorization: Bearer YOUR_GITHUB_PAT"
 
 # Once connected
 > "Review PR #456 and suggest improvements"
@@ -71,7 +76,7 @@ With the Slack integration, Claude receives the full thread context from your wo
 
 ### Notion, Asana, Figma, and more
 
-The [MCP registry](https://api.anthropic.com/mcp-registry/docs) lists hundreds of available servers. You can also [build your own](https://modelcontextprotocol.io/quickstart/server) using the open-source MCP SDK.
+The [Anthropic directory](https://claude.ai/directory) lists hundreds of available MCP servers and connectors. You can also [build your own](https://modelcontextprotocol.io/quickstart/server) using the open-source MCP SDK.
 
 ---
 
@@ -99,8 +104,8 @@ Runs as a local process on your machine. Ideal for tools that need direct system
 # Basic syntax
 claude mcp add [options] <name> -- <command> [args...]
 
-# Example: Add Airtable
-claude mcp add --transport stdio --env AIRTABLE_API_KEY=YOUR_KEY airtable \
+# Example: Add Airtable (put the server name before --env)
+claude mcp add --transport stdio airtable --env AIRTABLE_API_KEY=YOUR_KEY \
   -- npx -y airtable-mcp-server
 ```
 
@@ -151,7 +156,9 @@ Recommended by practical value for most developers:
 ### 1. GitHub MCP
 
 ```bash
-claude mcp add --transport http github https://api.githubcopilot.com/mcp/
+# Requires a GitHub personal access token (PAT)
+claude mcp add --transport http github https://api.githubcopilot.com/mcp/ \
+  --header "Authorization: Bearer YOUR_GITHUB_PAT"
 ```
 
 **Eliminates**: copying PR content, manually browsing issues, assembling code review context
@@ -177,7 +184,7 @@ claude mcp add --transport http sentry https://mcp.sentry.dev/mcp
 
 ## Official Claude Code connectors
 
-If you sign into Claude Code with a Claude.ai account, any MCP servers configured at [claude.ai/settings/connectors](https://claude.ai/settings/connectors) are automatically available in Claude Code.
+If you sign into Claude Code with a Claude.ai account, any MCP servers configured at [claude.ai/customize/connectors](https://claude.ai/customize/connectors) are automatically available in Claude Code.
 
 Officially supported connectors include:
 - **Slack**: read and write channel messages
@@ -187,7 +194,7 @@ Officially supported connectors include:
 
 ## Authenticating with OAuth-protected servers
 
-Many cloud MCP servers require OAuth authentication:
+Cloud servers like Sentry and Notion require OAuth authentication (browser login). (The GitHub MCP uses the PAT header shown above instead.)
 
 ```bash
 # Step 1: Add the server
@@ -252,7 +259,7 @@ The GPTaku plugins you've already installed also use MCP internally:
 |--------|----------|------|
 | **docs-guide** | Context7 MCP | Queries official documentation in real-time for accurate answers |
 | **pumasi** | Codex MCP (optional) | Claude as PM, Codex for parallel dev / works with Claude alone if Codex unavailable |
-| **deep-research** | Web search MCP | Multi-agents investigate multiple sources simultaneously |
+| **insane-research** | Web search MCP | Multi-agents investigate multiple sources simultaneously |
 
 > When you install a plugin, MCP configurations are added automatically. No separate MCP setup required — the plugin handles it.
 

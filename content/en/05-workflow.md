@@ -160,6 +160,15 @@ Asking for too many things at once causes Claude to lose track.
 > Add JSDoc comments to all functions in @src/api/
 ```
 
+### Transcribing Audio
+
+```
+> I have a file at ~/Downloads/meeting-250225.mp3.
+  Transcribe the meeting and summarize it
+```
+
+> Claude Code installs and runs the tools needed for speech-to-text (STT) itself — you don't need to know Python or any libraries. Note that, depending on your environment, installing the tools can take a few minutes, and you'll be asked to approve some steps along the way.
+
 ---
 
 ## Using Plan Mode

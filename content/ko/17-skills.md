@@ -55,6 +55,8 @@ mkdir -p .claude/skills/commit
 
 `.claude/skills/commit/SKILL.md`:
 
+> 파일 구조 참고: 맨 위 `---` 사이 부분만 설정(YAML)이고, 그 아래 본문은 평범한 마크다운으로 씁니다. 아래 코드 블록 전체가 한 파일의 내용입니다.
+
 ```yaml
 ---
 name: commit

@@ -29,7 +29,7 @@
 
 **아닙니다.** Claude Code는 네이티브(Native) 설치 방식을 사용합니다. Node.js를 따로 설치할 필요가 없습니다.
 
-> ⚠️ **npm 설치는 deprecated(구식)입니다.** 예전에는 `npm install -g @anthropic-ai/claude-code`로 설치했지만, 지금은 공식적으로 아래 방법을 권장합니다. npm 방식은 사용하지 마세요.
+> ⚠️ **npm 설치는 권장하지 않는 고급 옵션입니다.** 예전에는 `npm install -g @anthropic-ai/claude-code`가 기본이었지만, 지금 공식 권장은 아래 네이티브 설치입니다. 입문자는 npm 방식을 쓸 이유가 없습니다.
 
 ---
 
@@ -89,6 +89,16 @@ winget install Anthropic.ClaudeCode
 apk add libgcc libstdc++ ripgrep
 ```
 
+추가로 `settings.json`에 아래 설정이 필요합니다 (없으면 파일 검색이 동작하지 않습니다):
+
+```json
+{
+  "env": {
+    "USE_BUILTIN_RIPGREP": "0"
+  }
+}
+```
+
 ---
 
 ## 설치 후 인증 (로그인)
@@ -103,15 +113,7 @@ claude
 
 ### 인증 흐름 요약
 
-```
-터미널에서 claude 실행
-       ↓
-브라우저 자동 오픈 (OAuth 페이지)
-       ↓
-Claude.ai 계정으로 로그인
-       ↓
-터미널로 자동 복귀 → 인증 완료
-```
+<img src="/images/auth-flow-ko.svg" alt="터미널에서 claude 실행 → 브라우저 OAuth 로그인 → Claude.ai 계정 로그인 → 인증 완료" style={{width:'100%', borderRadius:'12px', margin:'1rem 0'}} />
 
 ### 자격 증명 보안
 
@@ -173,7 +175,7 @@ apk add curl
 
 **원인**: 설치 경로가 셸의 PATH에 등록되지 않은 경우.
 
-**해결법**:
+**해결법** (PATH는 "터미널이 프로그램을 찾는 경로 목록", 셸은 터미널 안에서 명령을 해석하는 프로그램입니다):
 ```bash
 # 현재 셸 세션에 PATH 즉시 반영
 source ~/.bashrc

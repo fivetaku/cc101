@@ -14,6 +14,10 @@
 
 > **비유**: MCP는 Claude에게 USB 포트를 달아주는 것과 같습니다. 어떤 도구든 꽂으면 사용할 수 있게 됩니다.
 
+<img src="/images/claude-code-data-flow.svg" alt="Claude Code가 파일·터미널·외부 도구와 데이터를 주고받는 흐름" style={{width:'100%', borderRadius:'12px', margin:'1rem 0'}} />
+
+*이미지 출처: [Claude Code 공식 문서](https://code.claude.com/docs)*
+
 ---
 
 ## MCP로 없어지는 노가다
@@ -48,8 +52,9 @@ MCP 없이는 이런 일들을 직접 해야 합니다:
 ### GitHub — PR/이슈 직접 조작
 
 ```bash
-# GitHub MCP 서버 연결
-claude mcp add --transport http github https://api.githubcopilot.com/mcp/
+# GitHub MCP 서버 연결 (GitHub 개인 액세스 토큰(PAT) 필요)
+claude mcp add --transport http github https://api.githubcopilot.com/mcp/ \
+  --header "Authorization: Bearer YOUR_GITHUB_PAT"
 
 # 연결 후 이런 요청이 가능해집니다
 > "PR #456 검토하고 개선점 제안해줘"
@@ -88,7 +93,7 @@ Slack 연동을 통해 슬랙 채널의 맥락을 그대로 Claude에게 전달�
 
 ### Notion, Asana, Figma 등
 
-MCP 레지스트리([api.anthropic.com/mcp-registry/docs](https://api.anthropic.com/mcp-registry/docs))에서 수백 가지 MCP 서버를 찾을 수 있습니다.
+Anthropic 디렉토리([claude.ai/directory](https://claude.ai/directory))에서 수백 가지 MCP 서버·커넥터를 찾을 수 있습니다.
 
 ---
 
@@ -116,8 +121,8 @@ claude mcp add --transport http secure-api https://api.example.com/mcp \
 # 기본 문법
 claude mcp add [옵션] <이름> -- <커맨드> [인자...]
 
-# 예시: Airtable 연결
-claude mcp add --transport stdio --env AIRTABLE_API_KEY=YOUR_KEY airtable \
+# 예시: Airtable 연결 (서버 이름을 --env보다 먼저 쓰는 게 안전합니다)
+claude mcp add --transport stdio airtable --env AIRTABLE_API_KEY=YOUR_KEY \
   -- npx -y airtable-mcp-server
 ```
 
@@ -179,7 +184,7 @@ claude mcp add --transport http notion https://mcp.notion.com/mcp
 
 ### 2. Slack MCP
 
-claude.ai 계정 연결 후 [claude.ai/settings/connectors](https://claude.ai/settings/connectors)에서 바로 설정 가능
+claude.ai 계정 연결 후 [claude.ai/customize/connectors](https://claude.ai/customize/connectors)에서 바로 설정 가능
 
 **없어지는 노가다**: 채널 스레드 수동 읽기, 요약 요청을 위한 복붙, 공지 초안 직접 작성
 
@@ -188,7 +193,7 @@ claude.ai 계정 연결 후 [claude.ai/settings/connectors](https://claude.ai/se
 
 ### 3. Google Chrome (웹 리서치)
 
-claude.ai 계정 연결 후 [claude.ai/settings/connectors](https://claude.ai/settings/connectors)에서 바로 설정 가능
+claude.ai 계정 연결 후 [claude.ai/customize/connectors](https://claude.ai/customize/connectors)에서 바로 설정 가능
 
 **없어지는 노가다**: 웹사이트 방문해서 정보 수동 복사, 여러 사이트 비교를 위한 반복 탭 전환
 
@@ -203,7 +208,8 @@ claude.ai 계정 연결 후 [claude.ai/settings/connectors](https://claude.ai/se
 ### GitHub MCP
 
 ```bash
-claude mcp add --transport http github https://api.githubcopilot.com/mcp/
+claude mcp add --transport http github https://api.githubcopilot.com/mcp/ \
+  --header "Authorization: Bearer YOUR_GITHUB_PAT"
 ```
 
 **없어지는 노가다**: PR 내용 복붙, 이슈 수동 조회, 코드 리뷰 컨텍스트 전달
@@ -231,7 +237,7 @@ claude mcp add --transport http sentry https://mcp.sentry.dev/mcp
 
 ## Claude Code 공식 커넥터
 
-Claude.ai 계정으로 Claude Code에 로그인한 경우, [claude.ai/settings/connectors](https://claude.ai/settings/connectors)에서 설정한 MCP 서버가 Claude Code에 자동으로 연결됩니다.
+Claude.ai 계정으로 Claude Code에 로그인한 경우, [claude.ai/customize/connectors](https://claude.ai/customize/connectors)에서 설정한 MCP 서버가 Claude Code에 자동으로 연결됩니다.
 
 공식적으로 지원되는 커넥터:
 - **Slack**: 채널 메시지 읽기/쓰기
@@ -241,7 +247,7 @@ Claude.ai 계정으로 Claude Code에 로그인한 경우, [claude.ai/settings/c
 
 ## OAuth 인증이 필요한 서버 연결 방법
 
-Sentry, GitHub 같은 클라우드 서버는 OAuth 인증이 필요합니다:
+Sentry, Notion 같은 클라우드 서버는 OAuth 인증(브라우저 로그인)이 필요합니다. (GitHub MCP는 위처럼 PAT 헤더 방식을 씁니다.)
 
 ```bash
 # 1단계: 서버 추가
@@ -293,7 +299,7 @@ MCP 서버가 프롬프트를 제공하는 경우, Claude Code에서 `/mcp__서�
 |---------|-------------|------|
 | **docs-guide** | Context7 MCP | 공식 문서를 실시간으로 조회해 정확한 답변 제공 |
 | **품앗이** | Codex MCP (선택) | Claude가 PM 역할, Codex가 있으면 병렬 개발 / 없으면 Claude만으로 동작 |
-| **deep-research** | 웹 검색 MCP | 멀티에이전트가 여러 소스를 동시에 조사 |
+| **insane-research** | 웹 검색 MCP | 멀티에이전트가 여러 소스를 동시에 조사 |
 
 > 💡 플러그인을 설치하면 MCP 설정이 자동으로 추가됩니다. 별도로 MCP를 설정할 필요 없이, 플러그인이 알아서 처리합니다.
 

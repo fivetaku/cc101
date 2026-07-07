@@ -24,7 +24,7 @@ Claude Code는 강력합니다. 파일을 만들고, 수정하고, 삭제하고,
 | 이벤트 | 발생 시점 | 주요 용도 |
 |--------|----------|----------|
 | `PreToolUse` | 도구 실행 **직전** | 위험한 명령어 차단 |
-| `PostToolUse` | 도구 실행 직후 | 자동 포매팅, 로그 기록 |
+| `PostToolUse` | 도구가 **성공한** 직후 (실패 시엔 `PostToolUseFailure`) | 자동 포매팅, 로그 기록 |
 | `Stop` | Claude가 응답 완료 시 | 완료 알림 |
 | `Notification` | Claude가 알림 보낼 때 | 데스크탑 알림 |
 | `SessionStart` | 세션 시작/재개 시 | 컨텍스트 주입 |
@@ -32,6 +32,14 @@ Claude Code는 강력합니다. 파일을 만들고, 수정하고, 삭제하고,
 | `PreCompact` | 컨텍스트 압축 전 | 중요 정보 보존 |
 
 > 핵심: `exit 0` = 허용, `exit 2` = **차단** (stderr 메시지가 Claude에게 전달됨)
+>
+> 위 표는 입문용으로 자주 쓰는 이벤트만 추린 것입니다. 전체 이벤트 목록(30개 이상)은 [공식 Hooks 문서](https://code.claude.com/docs/en/hooks)를 참고하세요.
+
+세션 전체에서 각 이벤트가 언제 발생하는지 한눈에 보면:
+
+<img src="/images/hooks-lifecycle.svg" alt="세션 시작부터 종료까지 Hook 이벤트가 발생하는 시점을 나타낸 수명주기 다이어그램" style={{width:'100%', maxWidth:'560px', display:'block', margin:'1rem auto', borderRadius:'12px'}} />
+
+*이미지 출처: [Claude Code 공식 문서](https://code.claude.com/docs)*
 
 ---
 
@@ -62,6 +70,9 @@ import json, re, sys
 
 BLOCKED_PATTERNS = [
     # 파일 삭제 차단 — rm 대신 trash 사용 (휴지통으로 이동, 복구 가능)
+    # ⚠️ 이 패턴은 "rm"이라는 글자가 들어간 명령을 전부 막는 강한 규칙입니다.
+    #    검색 명령 안의 rm 문자열, 스크립트 내부의 정상적인 rm까지 차단될 수 있으니
+    #    불편하면 패턴을 좁히거나 이 줄만 빼세요.
     (r"\brm\s+", "rm 대신 trash를 사용하세요 (brew install trash)"),
     (r"\bunlink\s+", "unlink 대신 trash를 사용하세요"),
 
@@ -130,6 +141,10 @@ Claude가 `rm -rf node_modules`를 실행하려고 하면:
 2. 명령어가 `rm` 패턴에 매치됨
 3. `exit 2`로 **차단** + "rm 대신 trash를 사용하세요" 메시지 전달
 4. Claude가 메시지를 받고 `trash node_modules`로 대안 실행
+
+<img src="/images/hook-resolution.svg" alt="여러 훅이 실행됐을 때 차단·허용 결과가 합쳐져 최종 결정되는 과정" style={{width:'100%', borderRadius:'12px', margin:'1rem 0'}} />
+
+*이미지 출처: [Claude Code 공식 문서](https://code.claude.com/docs)*
 
 > <strong>trash</strong>는 파일을 휴지통으로 보내서 실수해도 복구할 수 있습니다. `brew install trash` (macOS) 또는 `npm install -g trash-cli`로 설치하세요.
 

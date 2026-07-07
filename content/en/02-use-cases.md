@@ -6,15 +6,7 @@
 
 ## First: How Is It Different from the Web UI (Claude.ai)?
 
-| | Claude.ai (Web) | Claude Code (Terminal) |
-|--|----------------|----------------------|
-| File access | Attach files only | Read & modify entire folders |
-| Work scope | One conversation | Dozens of files simultaneously |
-| External execution | Not possible | Run terminal commands directly |
-| Automation | Manual every time | Automate with Skills & Hooks |
-| Memory | Within conversation only | Permanent memory via CLAUDE.md |
-
-In short: **If Claude.ai is a conversation partner, Claude Code is an AI colleague working inside your computer.**
+In short: **If Claude.ai is a conversation partner, Claude Code is an AI colleague working inside your computer.** It reads entire folders, runs terminal commands directly, and automates repetitive work. (See the comparison table in [01. What is Claude Code?](#what-is-claude-code).)
 
 ---
 
@@ -36,7 +28,7 @@ Code writing, bug fixing, refactoring, testing, code review — you can give nat
 
 The most important thing in vibe coding isn't coding skill — it's **"the ability to clearly explain what you want to build."**
 
-**What you can really do**: Prototypes, MVPs, personal tools, websites, simple apps, data processing automation. **This very site (CC101) was built with vibe coding.**
+**What you can really do**: Prototypes, MVPs (minimum viable products), personal tools, websites, simple apps, data processing automation. **This very site (CC101) was built with vibe coding.**
 
 **Honest limitations**: Large-scale production services still require expert developer review. For security, payments, and other sensitive logic, always get a professional review. Start with vibe coding, but as the service grows, collaborating with developers is the smart move.
 
@@ -58,7 +50,7 @@ The most important thing in vibe coding isn't coding skill — it's **"the abili
 - Competitor analysis, market research, tech trend tracking
 - Batch summarize dozens of PDFs and documents
 
-> The **deep-research** plugin lets multi-agents investigate multiple sources in parallel and automatically generate comprehensive reports.
+> The **insane-research** plugin lets multi-agents investigate multiple sources in parallel and automatically generate comprehensive reports.
 
 ### Documents & Content Creation
 - Blog posts, newsletters, social media content drafts

@@ -35,13 +35,11 @@ These commands launch or control Claude Code from your terminal prompt.
 ### Specifying a Model
 
 ```bash
-# Start with a specific model
-claude --model claude-opus-4-6
-
-# Short aliases also work
+# Start with a model alias (aliases always resolve to the latest version)
 claude --model opus
 claude --model sonnet
 claude --model haiku
+claude --model fable   # highest-tier model (availability depends on your plan)
 ```
 
 ### Useful Startup Options
@@ -72,7 +70,7 @@ Type `/` at the prompt inside Claude Code to access built-in commands.
 | `/help` | Show all available commands |
 | `/compact` | Compress the conversation (essential for long sessions!) |
 | `/clear` | Clear conversation history and start fresh |
-| `/cost` | Show token usage for the current session |
+| `/usage` | Check session cost + plan usage + activity stats (`/cost` and `/stats` are aliases of this command) |
 | `/model` | Change the AI model |
 | `/permissions` | View and manage tool permissions |
 | `/memory` | Edit CLAUDE.md memory files |
@@ -80,10 +78,12 @@ Type `/` at the prompt inside Claude Code to access built-in commands.
 | `/plan` | Enter Plan Mode |
 | `/init` | Generate a CLAUDE.md file for the project |
 | `/doctor` | Check installation health |
-| `/stats` | View usage statistics (subscription users) |
-| `/vim` | Toggle vim editing mode |
 | `/theme` | Change the color theme |
-| `/rename <name>` | Name the current session for easy resumption |
+| `/branch [name]` | Clone the current conversation into an independent branch — the original stays available via `/resume` (great for experiments) |
+| `/fork <directive>` | Hand a separate task to a background subagent that inherits the whole conversation |
+| `/context` | Visualize context-window token usage |
+| `/rename [name]` | Name the current session (resume with `--resume name`) |
+| `/feedback` | Send feedback / a bug report to Anthropic (`/bug` is the same command) |
 | `/login` | Log in to Anthropic account |
 | `/logout` | Log out of Anthropic account |
 | `/rewind` | Restore conversation and code to a previous state |
@@ -102,6 +102,59 @@ Type `/` at the prompt inside Claude Code to access built-in commands.
 ```
 
 > **Tip**: Type `/` alone to see an autocomplete list of all available commands.
+
+---
+
+## Conversation Branching & Experiment Strategy
+
+Use these features when you want to change direction mid-conversation or try a risky experiment safely.
+
+### `/branch` — Experiment While Keeping the Original
+
+Switches to a branch that clones the current conversation. Create a branch before attempting a complex refactor or structural change, and if it fails you can return to the original conversation with `/resume`.
+
+```
+> /branch experiment
+→ Switches to a branch with the current conversation state intact
+→ The original conversation is preserved (return with /resume)
+```
+
+**Use it when**
+- You want to try one of several implementation approaches first
+- You're tempted to try "what if I fixed it this way" but worried about failing
+- You want to compare different approaches to the same problem
+
+### `/fork` — A Background Helper That Inherits the Conversation
+
+Spins up a **background subagent** that inherits the entire conversation so far and hands it a separate task. You keep working, and the result comes back to your conversation when it's done.
+
+```
+> /fork Write up everything we've discussed so far as a document
+→ Runs separately in the background while you keep working
+→ The result arrives in your conversation when complete
+```
+
+`/branch` switches you onto a branch yourself; `/fork` hands a branch off to another worker.
+
+### `/context` — Check Context Usage
+
+```
+> /context
+→ [■■■■■■■□□□] 70% used
+```
+
+Visually shows what percentage of the context window your current conversation is using. When it's over 80%, consider `/compact` (compress) or `/clear` (reset).
+
+### `/rename` — Name a Session
+
+Name an important work session so you can easily resume it later.
+
+```
+> /rename competitor-research-feb
+
+# Later, resume from the terminal
+$ claude --resume competitor-research-feb
+```
 
 ---
 
@@ -128,15 +181,18 @@ Control Claude Code quickly without leaving the keyboard.
 | `Option+Enter` (macOS) | Insert a newline (macOS default) |
 | `\` + `Enter` | Insert a newline (works in all terminals) |
 | `↑` / `↓` arrow keys | Navigate command history |
-| `Esc` + `Esc` (double) | Rewind to a previous conversation state |
+| `Esc` + `Esc` (double) | Opens the rewind menu — pick a point to restore conversation/code (when the input box is empty) |
 
 ### Mode Switching Shortcuts
 
 | Shortcut | Description |
 |----------|-------------|
-| `Shift+Tab` | Toggle between Plan Mode and normal mode |
+| `Shift+Tab` | Cycles permission modes (default → auto-accept → plan → default …) |
 | `Option+P` (macOS) / `Alt+P` | Switch model |
 | `Option+T` (macOS) / `Alt+T` | Toggle extended thinking |
+| `Ctrl+B` | Move a running task to the background |
+
+> **macOS note**: Option-combo shortcuts like `Option+P` only work if your terminal is set to treat the Option key as Meta (in iTerm2: Settings → Profiles → Keys → set Option key to "Esc+"). `Option+T` works without any setup in recent versions.
 
 ---
 
@@ -177,13 +233,13 @@ Create a login page with:
 - Form validation with error messages
 ```
 
-### 5. `/cost` — Check Token Usage
+### 5. `/usage` — Check Your Usage
 
 ```
-> /cost
+> /usage
 ```
 
-Shows how much you have spent in the current session. (For API key users. Subscription users should use `/stats`.)
+Shows session cost, plan usage limits, and activity stats in one screen. Typing `/cost` or `/stats` opens the same screen. For subscription users, the session cost at the top (shown in dollars) is just a reference — look at the plan usage bar instead.
 
 ---
 
@@ -235,11 +291,12 @@ Restart PowerShell to apply.
 
 ```
 Terminal (before starting):
-  claude              → Start
-  claude -v           → Check version
-  claude --help       → Help
-  claude -c           → Continue last conversation
-  claude --resume     → Pick session from list
+  claude                 → Start
+  claude -v              → Check version
+  claude --help          → Help
+  claude -c              → Continue last conversation
+  claude --resume [name] → Resume a named session
+  claude --add-dir [path]→ Include an extra directory
 
 Aliases (after setup):
   cc                  → claude (basic)
@@ -250,14 +307,20 @@ Inside a session:
   /help               → All commands
   /compact            → Compress conversation (use often!)
   /clear              → Reset conversation
-  /cost               → Check usage cost
+  /branch [name]      → Create a conversation branch (original preserved)
+  /fork <directive>   → Background branch task
+  /context            → Check context usage
+  /usage              → Check cost & usage (/cost, /stats same)
   /model              → Change model
+  /rename [name]      → Name the session
+  /feedback           → Send feedback / bug report
   /quit               → Exit
 
 Keyboard shortcuts:
   Ctrl+C              → Cancel current action
   Ctrl+D              → Exit
+  Ctrl+B              → Move running task to background
   Shift+Enter         → New line in prompt
   ↑↓ arrows           → Navigate history
-  Esc Esc             → Rewind to previous state
+  Esc Esc             → Rewind menu (when input box is empty)
 ```

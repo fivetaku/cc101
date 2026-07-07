@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 220" width="100%" fill="none">
+  <style>
+    text { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; fill: #374151; }
+    .label { font-size: 10px; fill: #6B7280; }
+    .title { font-size: 11px; font-weight: 600; fill: #374151; }
+    .box { rx: 8; ry: 8; stroke-width: 1.5; }
+  </style>
+
+  
+  <rect class="box" x="10" y="20" width="140" height="60" fill="#EEF2FF" stroke="#818CF8"/>
+  <text class="title" x="80" y="45" text-anchor="middle">Telegram / Discord</text>
+  <text class="label" x="80" y="62" text-anchor="middle">Bot API</text>
+
+  <rect class="box" x="10" y="130" width="140" height="60" fill="#FEF3C7" stroke="#F59E0B"/>
+  <text class="title" x="80" y="155" text-anchor="middle">CI / Monitoring</text>
+  <text class="label" x="80" y="172" text-anchor="middle">Webhooks</text>
+
+  
+  <rect class="box" x="220" y="35" width="150" height="130" fill="#F0FDF4" stroke="#22C55E"/>
+  <text class="title" x="295" y="60" text-anchor="middle">Your channel server</text>
+  <text class="label" x="295" y="78" text-anchor="middle">Runs locally</text>
+  <line x1="235" y1="89" x2="355" y2="89" stroke="#D1D5DB" stroke-width="1"/>
+  <text class="label" x="295" y="108" text-anchor="middle">Receives events</text>
+  <text class="label" x="295" y="123" text-anchor="middle">Sends replies via API</text>
+  <text class="label" x="295" y="155" text-anchor="middle">mcp.notification()</text>
+
+  
+  <rect class="box" x="440" y="55" width="150" height="90" fill="#FFF7ED" stroke="#F97316"/>
+  <text class="title" x="515" y="85" text-anchor="middle">Claude Code</text>
+  <text class="label" x="515" y="103" text-anchor="middle">Reads events</text>
+  <text class="label" x="515" y="118" text-anchor="middle">Calls reply tool</text>
+
+  
+  <path d="M150 42 L213 58" stroke="#818CF8" stroke-width="1.5" marker-end="url(#arr1)"/>
+  <text class="label" x="180" y="38" text-anchor="middle">poll</text>
+
+  
+  <path d="M213 68 L150 52" stroke="#818CF8" stroke-width="1.5" marker-end="url(#arr1)"/>
+  <text class="label" x="180" y="80" text-anchor="middle">reply</text>
+
+  
+  <path d="M150 155 L213 145" stroke="#F59E0B" stroke-width="1.5" marker-end="url(#arr2)"/>
+  <text class="label" x="178" y="168" text-anchor="middle">POST</text>
+
+  
+  <path d="M370 88 L433 88" stroke="#22C55E" stroke-width="1.5" marker-end="url(#arr3)"/>
+  <text class="label" x="401" y="82" text-anchor="middle">events</text>
+
+  
+  <path d="M433 108 L370 108" stroke="#F97316" stroke-width="1.5" marker-end="url(#arr4)"/>
+  <text class="label" x="401" y="124" text-anchor="middle">tool calls</text>
+
+  <defs>
+    <marker id="arr1" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5" fill="#818CF8"/>
+    </marker>
+    <marker id="arr2" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5" fill="#F59E0B"/>
+    </marker>
+    <marker id="arr3" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5" fill="#22C55E"/>
+    </marker>
+    <marker id="arr4" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5" fill="#F97316"/>
+    </marker>
+  </defs>
+</svg>

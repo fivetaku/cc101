@@ -18,7 +18,7 @@
 
 > **Headless = 사람 없이 자동 실행**
 
-이전에는 "headless mode"라고 불렸지만, 공식적으로는 <strong>Agent SDK CLI</strong>라고도 합니다. `-p` 플래그와 모든 CLI 옵션은 동일하게 작동합니다.
+공식 문서에서는 <strong>비대화형(non-interactive) 모드</strong>라고 부릅니다. 이 방식을 프로그래밍 언어(Python·TypeScript)에서 쓸 수 있게 확장한 것이 <strong>Claude Agent SDK</strong>입니다. `-p` 플래그와 모든 CLI 옵션은 동일하게 작동합니다.
 
 ---
 
@@ -36,7 +36,7 @@
 
 | 상황 | 예시 |
 |------|------|
-| CI/CD 파이프라인 | PR이 열릴 때마다 자동으로 코드 리뷰 |
+| CI/CD 파이프라인 (코드 자동 빌드·배포 절차) | PR이 열릴 때마다 자동으로 코드 리뷰 |
 | 자동화 스크립트 | 매일 밤 코드 품질 리포트 생성 |
 | 배치 처리 | 여러 파일을 한꺼번에 마이그레이션 |
 | 반복 작업 | 테스트 실패 시 자동 수정 시도 |
@@ -60,8 +60,10 @@ claude -p "이 프로젝트가 무엇을 하는지 설명해줘"
 Claude가 파일을 읽고 저장할 수 있도록 도구를 허용합니다:
 
 ```bash
-claude -p "~/Downloads의 PDF를 모두 읽어서 요약집.md로 정리해줘" --allowedTools "Read,Write,Bash"
+claude -p "~/Downloads의 PDF를 모두 읽어서 요약집.md로 정리해줘" --allowedTools "Read,Write"
 ```
+
+> 자동화에서는 꼭 필요한 도구만 허용하세요. 읽고 쓰는 작업이면 `Read,Write`로 충분하고, `Bash`(터미널 명령 실행)는 정말 필요할 때만 추가합니다.
 
 ### JSON 출력 받기
 

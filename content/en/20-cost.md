@@ -13,9 +13,9 @@ Claude Code has two main pricing models:
 | **Claude.ai Pro / Max** | Flat-rate subscription | Fixed monthly fee, no separate API costs |
 | **Anthropic API** | Pay-as-you-go | Charges based on tokens consumed |
 
-**Claude.ai Pro/Max subscribers** have Claude Code usage included in their subscription — no additional API charges. The numbers shown by `/cost` are intended for API users, so subscribers can treat them as informational only.
+**Claude.ai Pro/Max subscribers** have Claude Code usage included in their subscription — no additional API charges. The number shown by `/cost` is intended for API users, so subscribers can treat it as informational only.
 
-**API users** are charged based on usage. According to official documentation, the average cost is approximately $6 per developer per day, with 90% of users staying under $12 per day.
+**API users** are charged based on usage. According to official documentation, the average cost is about $13 per developer per active day ($150–250/month), with 90% of users staying under $30 per day.
 
 ---
 
@@ -24,7 +24,8 @@ Claude Code has two main pricing models:
 A **token** is the unit Claude uses to process text.
 
 - English: roughly 1 word = 1–2 tokens
-- A useful rule of thumb: **~4 characters ≈ 1 token**
+- Korean: roughly 2–3 characters = 1 token
+- A useful rule of thumb: **~4 characters (English) ≈ 1 token**
 
 In practice, tokens are consumed every time Claude reads a file, receives your message, or sends a response. The longer your conversation context grows, the more tokens each message costs.
 
@@ -50,7 +51,7 @@ When running Claude Code through GitHub Actions or similar pipelines without gua
 
 ---
 
-## 5 Tips to Save Costs
+## 8 Tips to Save Costs
 
 ### Tip 1: Compress Context with `/compact`
 
@@ -62,7 +63,7 @@ When a conversation grows long, run `/compact` to summarize prior content and re
 
 This preserves the important information while compressing unnecessary conversation history.
 
-You can also set compaction behavior in advance in your CLAUDE.md:
+You can also set compaction behavior in advance in your CLAUDE.md (the snippet below tells Claude to keep test output and code changes when compacting):
 
 ```markdown
 # Compact instructions
@@ -119,7 +120,7 @@ claude --model haiku
 
 ### Tip 4: Use Fast Mode Wisely
 
-The `/fast` command enables Fast Mode, making Opus 4.6 respond approximately 2.5x faster.
+The `/fast` command enables Fast Mode, making Opus models (currently Opus 4.8) respond up to ~2.5x faster.
 
 ```
 /fast
@@ -131,15 +132,15 @@ However, Fast Mode has **higher per-token pricing**. Use it when speed matters (
 
 ---
 
-### Tip 5: Check Costs Regularly with `/cost`
+### Tip 5: Check Regularly with `/usage`
 
-API users can check token usage for the current session at any time:
+Check the current session's token usage and your plan limits (`/cost` and `/stats` are aliases that open the same view):
 
 ```
-/cost
+/usage
 ```
 
-Example output:
+Example output (session block):
 ```
 Total cost:            $0.55
 Total duration (API):  6m 19.7s
@@ -147,22 +148,92 @@ Total duration (wall): 6h 33m 10.2s
 Total code changes:    0 lines added, 0 lines removed
 ```
 
-Subscribers can use `/stats` to view usage patterns instead.
+Subscribers should treat the session cost at the top as informational and read the **plan usage bars and activity stats** on the same screen instead. It also breaks down usage by skill, sub-agent, plugin, and MCP server.
 
-You can also configure the status line to display context usage in real time.
+Set up a status line and you can watch cost and context usage in real time, like this:
+
+<img src="/images/statusline-cost-tracking.png" alt="Session cost shown in the status line at the bottom of the terminal" style={{width:'100%', maxWidth:'640px', borderRadius:'8px', margin:'0.75rem 0'}} />
+
+<img src="/images/statusline-context-window-usage.png" alt="Context usage percentage shown in the status line" style={{width:'100%', maxWidth:'640px', borderRadius:'8px', margin:'0.75rem 0'}} />
+
+*Image source: [Claude Code official docs](https://code.claude.com/docs)*
+
+---
+
+### Tip 6: Put CLAUDE.md on a Diet
+
+CLAUDE.md is read by Claude on **every response**. The longer it is, the more tokens it costs each time.
+
+**Real impact**: trimming a bloated CLAUDE.md (~19,000 tokens) down to a core-only version (~9,000 tokens) can nearly halve the cost of the same task.
+
+**What to cut**
+
+```
+Safe to delete:
+- Long background explanations ("This project started in 2023...")
+- Obvious repeated filler ("Always do your best")
+- Multiple example code blocks (keep one or none)
+- Vague rules ("Write good code")
+
+Always keep:
+- Prohibitions (what to never do)
+- Project tech stack (1–3 line summary)
+- Frequently referenced file paths
+- Language/format rules (only the specific ones)
+```
+
+Most CLAUDE.md files can be cut by more than half.
+
+---
+
+### Tip 7: Block Unnecessary File Reads
+
+Files Claude never needs to read — `node_modules`, build artifacts, large logs — can be blocked with **permission deny rules**. (There is no official `.claudeignore` file — you exclude files with deny rules in settings instead.)
+
+Add this to your project's `.claude/settings.json`:
+
+```json
+{
+  "permissions": {
+    "deny": [
+      "Read(./node_modules/**)",
+      "Read(./dist/**)",
+      "Read(./build/**)",
+      "Read(./coverage/**)",
+      "Read(**/*.log)"
+    ]
+  }
+}
+```
+
+**When it helps most**
+- Projects with many files, like monorepos
+- When you frequently ask Claude to "analyze this whole project"
+- When running Claude repeatedly via GitHub Actions or similar
+
+---
+
+### Tip 8: Tune Extended Thinking
+
+Claude Code has **extended thinking** (thinking deeply before answering) on by default, and those thinking tokens are billed as output tokens. It helps on complex work, but it's a leading cause of higher costs on simple tasks.
+
+- Use the `/effort` command to adjust thinking depth (low / medium / high, etc.)
+- On days with lots of simple tasks, `/effort low` saves a significant number of tokens
+- Only raise it to high or above for complex design and debugging
 
 ---
 
 ## Model Cost Comparison (Summary)
 
-| Model | Characteristics | Relative Cost |
-|-------|----------------|---------------|
+| Model | Characteristics | API Cost |
+|-------|----------------|----------|
 | Haiku | Fast and cheap, simple tasks | Lowest |
 | Sonnet | Balanced performance, everyday coding | Medium |
-| Opus | Maximum capability, complex reasoning | Highest |
-| Opus (Fast Mode) | 2.5x faster Opus, higher per-token cost | Higher than Opus |
+| Opus | Maximum capability, complex reasoning | Expensive |
+| Fable | Top-tier model, the hardest long-horizon work | Most expensive |
+| Opus (Fast Mode) | Opus speed up to 2.5x, higher per-token cost | Higher than Opus |
 
-> For exact token pricing, see the [Anthropic pricing page](https://www.anthropic.com/pricing).
+> For exact token pricing, see the [Claude Platform pricing docs](https://platform.claude.com/docs/en/about-claude/pricing); for subscription plans, see [claude.com/pricing](https://claude.com/pricing).
 
 ---
 
@@ -175,7 +246,7 @@ Claude.ai Pro and Max subscribers can use Claude Code **without pay-as-you-go AP
 - Freedom to experiment without watching per-token costs
 - Max plan includes higher usage limits
 
-> **Note**: Fast Mode and context usage beyond 200K tokens (1M context window) may be billed as extra usage even on subscription plans.
+> **Note**: Fast Mode and usage beyond the 1M-token context window may be billed as extra usage even on subscription plans.
 
 ---
 
@@ -185,7 +256,9 @@ For teams using the API:
 
 - **Set workspace spend limits**: Configure team-wide spending caps in the [Anthropic Console](https://platform.claude.com).
 - **Usage dashboard**: View per-member cost and usage data in the Console.
-- **Watch out for Agent Teams**: Running multiple Claude instances simultaneously (Agent Teams) uses approximately 7x more tokens than standard sessions.
+- **Watch out for Agent Teams**: Agent Teams (running multiple Claude instances at once) is experimental and disabled by default (requires `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1`); it uses roughly 7x more tokens than a standard session when teammates run in plan mode.
+
+> 💡 The **kkirikkiri** plugin auto-composes an agent team to fit the task, and **pumasi** runs parallel development on a cheaper model when Codex is installed — or works with Claude alone when it isn't.
 
 ---
 
@@ -196,7 +269,10 @@ For teams using the API:
 ✅ Start a new session when switching topics
 ✅ Specify exact file names and function names in prompts
 ✅ Use Haiku for simple tasks
-✅ Enable Fast Mode only when speed is critical
-✅ Check /cost or /stats regularly
+✅ Enable Fast Mode only when needed
+✅ Check /usage regularly
 ✅ Set compact instructions in CLAUDE.md
+✅ Trim CLAUDE.md to core rules and diet it periodically
+✅ Block node_modules and build artifacts with permissions.deny rules
+✅ Lower thinking depth with /effort low when doing lots of simple tasks
 ```

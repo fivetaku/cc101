@@ -10,6 +10,10 @@ Claude Code는 단순한 챗봇이 아닙니다. 여러분이 일을 시키면, 
 
 이 과정을 **에이전트 루프(Agentic Loop)** 라고 합니다.
 
+<img src="/images/agentic-loop.svg" alt="에이전트 루프: 프롬프트 → 컨텍스트 수집 → 행동 → 검증 반복" style={{width:'100%', borderRadius:'12px', margin:'1rem 0'}} />
+
+*이미지 출처: [Claude Code 공식 문서](https://code.claude.com/docs)*
+
 ```
 여러분의 지시
      ↓
@@ -51,6 +55,10 @@ Claude Code는 단순한 챗봇이 아닙니다. 여러분이 일을 시키면, 
 ### 1. Context (컨텍스트) — Claude의 작업 기억
 
 <strong>컨텍스트</strong>는 Claude Code가 현재 기억하고 있는 모든 내용입니다. 대화 내용, 읽은 파일, 실행한 명령어 결과, CLAUDE.md 지시사항 등이 모두 컨텍스트에 담깁니다.
+
+<img src="/images/context-loading.svg" alt="세션 시작 시 CLAUDE.md와 설정이 컨텍스트로 로드되는 구조" style={{width:'100%', borderRadius:'12px', margin:'1rem 0'}} />
+
+*이미지 출처: [Claude Code 공식 문서](https://code.claude.com/docs)*
 
 컨텍스트에는 <strong>토큰 한계</strong>가 있습니다. 대화가 길어지거나 큰 파일을 많이 읽으면 컨텍스트가 가득 찰 수 있습니다. 이 경우 Claude Code가 자동으로 오래된 내용을 정리합니다.
 
@@ -117,6 +125,8 @@ CLAUDE.md는 Claude에게 주는 <strong>지시서</strong>라고 생각하면 �
 | `./CLAUDE.md` | 현재 프로젝트에만 적용 (팀 공유 가능) |
 | `~/.claude/CLAUDE.md` | 내 모든 프로젝트에 적용 (전역 설정) |
 | `./CLAUDE.local.md` | 나만의 프로젝트별 설정 (git에 올라가지 않음) |
+
+> 전체 계층(조직 관리 파일 포함)은 **[08. CLAUDE.md 완전 정복](#claude-md)** 에서 다룹니다.
 
 > CLAUDE.md에 대한 자세한 내용은 **[08. CLAUDE.md 완전 정복](#08-claude-md)** 에서 다룹니다.
 
@@ -212,8 +222,10 @@ Plan Mode:
 Claude Code는 파일을 수정하기 전에 <strong>자동으로 스냅샷</strong>을 저장합니다.
 
 실수로 잘못 수정됐다면:
-- `Esc` 키를 두 번 연속으로 눌러서 이전 상태로 되돌리기
+- 입력창이 빈 상태에서 `Esc` 키를 두 번 누르거나 `/rewind` 입력 → **되감기 메뉴**가 열리고, 돌아갈 시점과 범위(코드/대화/둘 다)를 골라 복원
 - 또는 Claude에게 "방금 한 것 취소해줘"라고 요청
+
+> 단, 터미널 명령(bash)으로 바뀐 파일은 되감기로 복구되지 않습니다. 자세한 내용은 섹션 14에서 다룹니다.
 
 ---
 

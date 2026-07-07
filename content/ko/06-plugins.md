@@ -69,17 +69,21 @@ Claude Code 안에서 `/plugin` 을 입력하면 <strong>Discover 탭</strong>�
 
 | 플러그인 이름 | 역할 | 사용 예시 |
 |------------|------|---------|
-| **docs-guide** | 라이브러리 공식 문서 기반으로 정확한 답변 제공. Claude가 최신 공식 문서를 참고해 할루시네이션 없이 답변 | `/docs-guide:explain React hooks` |
-| **바르다 깃선생** (git-teacher) | 비개발자를 위한 Git 온보딩 가이드. "커밋이 뭐야?"부터 시작해서 실무 Git 워크플로우까지 단계별 안내 | `/git-teacher:what-is-commit` |
-| **바선생** (vibe-sunsang) | Claude Code 대화 로그를 자동 수집해 요청 품질을 A~D로 평가하고 성장 보고서 생성. AI 사용 패턴을 분석해 더 잘 쓰는 법을 코칭 | `/vibe-sunsang 시작` |
-| **deep-research** | 멀티에이전트 7단계 리서치 자동화. 웹/학술/기술 출처 병렬 수집 → 교차검증 → 보고서 생성 | `/deep-research [주제]` |
-| **품앗이** (pumasi) | Claude(PM)가 작업을 분담하고 병렬 처리. Codex가 설치되어 있으면 Codex가 개발자 역할, 없으면 Claude만으로 동작 | `/pumasi [작업 설명]` |
+| **docs-guide** | 라이브러리 공식 문서 기반으로 정확한 답변 제공. Claude가 최신 공식 문서를 참고해 할루시네이션 없이 답변 | `/docs-guide React hooks 설명해줘` |
+| **바르다 깃선생** (git-teacher) | 비개발자를 위한 Git 온보딩 가이드. "커밋이 뭐야?"부터 시작해서 실무 Git 워크플로우까지 단계별 안내 | `/git-teacher-setup` (첫 설정) 후 "저장해줘"·"올려줘" |
+| **바선생** (vibe-sunsang) | Claude Code 대화 로그를 자동 수집해 요청 품질을 A~D로 평가하고 성장 보고서 생성. 사용자 유형 4종(Builder/Explorer/Designer/Operator)에 맞춰 코칭 | `/vibe-sunsang 시작` |
+| **insane-research** | 멀티에이전트 7단계 리서치 자동화. 웹/학술/기술 출처 병렬 수집 → 교차검증 → 보고서 생성 | `/insane-research [주제]` |
+| **품앗이** (pumasi) | Claude(PM)가 작업을 분담하고 병렬 처리. Codex가 설치되어 있으면 Codex가 개발자 역할, 없으면 Claude만으로 동작. 이미지 생성(`/pumasi-image`)도 포함 | `/pumasi [작업 설명]` |
 | **쇼미더피알디** (show-me-the-prd) | 인터뷰 5~6번으로 4종 디자인 문서(PRD, 데이터 모델, Phase 분리, 프로젝트 스펙) 자동 생성. 기획을 못 해도 OK | `/show-me-the-prd 사진 정리 앱 만들고 싶어` |
 | **끼리끼리** (kkirikkiri) | 자연어 한마디로 Claude Code Agent Teams를 자동 구성하고 실행. 리서치/개발/분석/콘텐츠 4종 프리셋 | `/kkirikkiri 리서치 팀 만들어줘` |
 | **스킬러들의 수다** (skillers-suda) | 4명의 전문가(기획자/사용자/전문가/검수자)가 모호한 아이디어를 동작하는 스킬로 변환 | `/skillers-suda 번역 스킬 만들어줘` |
 | **노팔** (nopal) | 자연어로 Google Workspace 9개 서비스(Gmail, Calendar, Drive, Sheets, Docs 등)를 자동 조합 실행 | `/nopal 내일 회의 일정 잡아줘` |
 | **insane-search** | WebFetch가 차단될 때 X/Twitter, Reddit, YouTube 등 플랫폼별 우회 접근 전략 자동 적용 | 자동 감지 |
 | **insane-design** | URL 하나로 실제 CSS 기반 디자인 시스템 분석. design.md + 인터랙티브 HTML 리포트 생성 | `/insane-design [URL]` |
+| **dd** | 방금 복사한 클립보드(텍스트·이미지)를 붙여넣기 없이 바로 Claude에게 전달. 에러 로그·스크린샷을 던질 때 최고 | `/dd` 또는 `/ㅇㅇ` (한글 자판 그대로) |
+| **insane-review** | 관련 코드만 묶어 구독 ChatGPT(GPT-5.5 Pro 웹)에 보내 세컨드 오피니언을 받아옴. API 키 불필요 | `/insane-review 이 구조 어때?` |
+| **골잡이** (goaljaby) | 기획서(PRD)를 장시간 자율 실행 목표(/goal)로 변환. 검증·복구 문서 5종을 자동 생성하고 승인 후 실행 | `/goaljaby [PRD 폴더]` |
+| **insane-loop** | 아이디어→완성까지 한 번에: 인터뷰→PRD→목표 설정→검증·리뷰·개선 반복을 완료 기준 충족까지 자동 순환 | `/insane-loop [아이디어]` |
 
 ---
 
@@ -141,11 +145,14 @@ Claude Code 안에서 다음 명령어를 입력하세요:
 # 스킬 자동 생성
 /skillers-suda 번역 스킬 만들어줘
 
-# Git 온보딩
-/git-teacher:what-is-commit
+# Git 온보딩 (첫 설정)
+/git-teacher-setup
 
 # 공식 문서 기반 답변
-/docs-guide:explain React hooks
+/docs-guide React hooks 설명해줘
+
+# 방금 복사한 스크린샷/에러를 바로 전달
+/dd 이 에러 분석해줘
 
 # AI 사용 패턴 분석
 /vibe-sunsang 시작
@@ -167,11 +174,11 @@ Claude Code 안에서 다음 명령어를 입력하세요:
 
 ## 커뮤니티 플러그인 더 보기
 
-공식 마켓플레이스 외에도 커뮤니티에서 만든 플러그인을 직접 GitHub에서 설치할 수 있습니다. 기능이 다양한 만큼, 설치 전 코드를 확인하고 신뢰할 수 있는 저장소인지 먼저 살펴보세요.
+공식 마켓플레이스 외에 Anthropic이 관리하는 커뮤니티 마켓플레이스(`claude-community`, [anthropics/claude-plugins-community](https://github.com/anthropics/claude-plugins-community))도 있고, GitHub 저장소에서 직접 설치할 수도 있습니다. 기능이 다양한 만큼, 설치 전 코드를 확인하고 신뢰할 수 있는 저장소인지 먼저 살펴보세요.
 
 ### oh-my-claudecode
 
-Claude Code 커뮤니티에서 가장 많이 쓰이는 서드파티 플러그인입니다. 단순한 확장이 아니라 Claude Code 자체를 <strong>오케스트레이터</strong>로 탈바꿈시켜 줍니다.
+Claude Code 커뮤니티에서 가장 많이 쓰이는 서드파티 플러그인입니다. 단순한 확장이 아니라 Claude Code 자체를 <strong>오케스트레이터</strong>(여러 AI 일꾼에게 일을 나눠주고 지휘하는 지휘자 역할)로 탈바꿈시켜 줍니다.
 
 주요 기능:
 - **Autopilot**: "만들어줘"라고 하면 계획 → 구현 → 검증까지 자동 수행

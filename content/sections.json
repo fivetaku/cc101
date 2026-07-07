@@ -4,8 +4,8 @@
     "url": "cc101.axwith.com",
     "description": "Claude Code 한국어 입문 가이드",
     "description_en": "Claude Code Korean Beginner's Guide",
-    "version": "1.2.0",
-    "lastUpdated": "2026-04-16"
+    "version": "1.3.0",
+    "lastUpdated": "2026-07-07"
   },
   "sections": [
     {
@@ -164,8 +164,8 @@
       "order": 11,
       "tier": "core",
       "slug": "git-with-teacher",
-      "title_ko": "GitHub 시작하기",
-      "title_en": "Getting Started with GitHub",
+      "title_ko": "Git & GitHub 시작하기",
+      "title_en": "Getting Started with Git & GitHub",
       "description_ko": "Claude Code에 필수인 Git & GitHub 사용법. 바르다 깃선생으로 저장해줘, 올려줘만 알면 됩니다.",
       "description_en": "Git & GitHub essentials for Claude Code. Just say 'save this' and 'upload it' with git-teacher.",
       "icon": "git-branch",

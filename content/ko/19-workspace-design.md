@@ -70,7 +70,7 @@ Skills:
   /sns [내용]        → 인스타그램·트위터 버전
 ```
 
-> 💡 리서치 워크스페이스를 구성할 때 **deep-research** 플러그인을 활용하면 별도의 Skills 제작 없이 바로 멀티에이전트 리서치가 가능합니다. 콘텐츠 작업에는 <strong>docs-guide</strong>로 공식 문서 기반의 정확한 자료를 확보할 수 있습니다.
+> 💡 리서치 워크스페이스를 구성할 때 **insane-research** 플러그인을 활용하면 별도의 Skills 제작 없이 바로 멀티에이전트 리서치가 가능합니다. 콘텐츠 작업에는 <strong>docs-guide</strong>로 공식 문서 기반의 정확한 자료를 확보할 수 있습니다.
 
 ### 비즈니스 워크플로우
 
@@ -119,7 +119,7 @@ CC101(이 사이트)이 만들어진 워크스페이스를 공개합니다.
 20-sparks/     → 아이디어 포착
 30-research/   → 리서치 결과
 40-foundry/    → 검증 결과
-50-blueprints/ → MVP 설계
+50-blueprints/ → MVP(최소기능제품) 설계
 60-ventures/   → 실행 중
 70-playbook/   → 경험 축적
 90-shelf/      → 보류 아이디어
@@ -128,7 +128,7 @@ CC101(이 사이트)이 만들어진 워크스페이스를 공개합니다.
 ### 사용 중인 Skills
 
 ```
-/spark [아이디어]   → 아이디어 포착 + ICE 스코어 평가
+/spark [아이디어]   → 아이디어 포착 + ICE 스코어(임팩트·확신·난이도 점수) 평가
 /research [주제]    → 7단계 딥리서치
 /validate           → 4페르소나 Council 검증
 /insight [내용]     → 교훈 Playbook 저장
@@ -190,7 +190,7 @@ mkdir -p 01-inbox 02-work 03-output 04-archive
 ### 4단계: 반복 작업 → Skills화
 
 같은 작업을 3번 이상 하게 된다면 Skill로 만드세요.
-→ Skills 만들기는 Skills & 플러그인 만들기 섹션에서 다룹니다
+→ Skills 만들기는 앞의 **[17. Skills & 플러그인 만들기](#skills)** 섹션에서 다뤘습니다
 
 ---
 
@@ -205,7 +205,7 @@ mkdir -p 01-inbox 02-work 03-output 04-archive
 | Slack | 팀 커뮤니케이션 통합 |
 | Google Sheets | 데이터 자동 집계 |
 
-→ MCP 연결은 MCP & 외부 도구 연결 섹션에서 다룹니다
+→ MCP 연결은 앞의 **[15. MCP & 외부 도구 연결](#mcp)** 섹션에서 다뤘습니다
 
 ---
 

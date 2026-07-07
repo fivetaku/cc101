@@ -74,10 +74,11 @@ When prompted during `claude` startup, press `c` to copy the OAuth URL to your c
 # Inside Claude Code
 > /logout
 
-# Or delete the auth file directly
-rm -rf ~/.config/claude-code/auth.json
+# Re-running brings up the login screen again
 claude
 ```
+
+> Note: Credentials live in the macOS Keychain, or in `~/.claude/.credentials.json` on Linux and Windows. Prefer `/logout` → log back in over deleting files directly.
 
 **Run the health check first**
 
@@ -244,10 +245,10 @@ git commit -m "checkpoint before Claude session $(date +%Y%m%d-%H%M)"
 **Check current usage**
 
 ```
-> /cost
+> /usage
 ```
 
-This is for API key users. Subscription users should use `/stats`.
+This shows your session cost and plan usage on one screen (`/cost` and `/stats` are aliases that open the same view). For subscription users, the session dollar figure is informational — read the plan usage bars instead.
 
 **How to reduce costs**
 

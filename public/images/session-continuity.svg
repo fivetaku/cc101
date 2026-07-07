@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="280" viewBox="0 0 560 280" fill="none">
+<rect width="560" height="280" rx="6" fill="#F9F9F7"/>
+
+
+<text x="280" y="28" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#1E1E1E">Session continuity</text>
+
+
+<line x1="40" y1="90" x2="340" y2="90" stroke="#B4D4B8" stroke-width="3"/>
+
+
+<circle cx="60" cy="90" r="8" fill="#D4E4D8" stroke="#718057" stroke-width="2"/>
+<circle cx="120" cy="90" r="8" fill="#D4E4D8" stroke="#718057" stroke-width="2"/>
+<circle cx="180" cy="90" r="8" fill="#D4E4D8" stroke="#718057" stroke-width="2"/>
+<circle cx="240" cy="90" r="8" fill="#D4E4D8" stroke="#718057" stroke-width="2"/>
+<circle cx="300" cy="90" r="8" fill="#D4E4D8" stroke="#718057" stroke-width="2"/>
+
+
+<text x="40" y="65" font-family="ui-monospace, monospace" font-size="10" fill="#757575">session-abc123</text>
+
+
+<rect x="380" y="70" width="160" height="40" rx="4" fill="#D4E4D8"/>
+<text x="460" y="87" text-anchor="middle" font-family="ui-monospace, monospace" font-size="10" fill="#1E1E1E">claude --continue</text>
+<text x="460" y="101" text-anchor="middle" font-family="ui-monospace, monospace" font-size="10" fill="#1E1E1E">claude --resume</text>
+
+
+<path d="M375 90 L315 90" stroke="#718057" stroke-width="2"/>
+<polygon points="315,87 307,90 315,93" fill="#718057"/>
+
+
+<text x="460" y="128" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#757575">appends to same session</text>
+
+
+<text x="40" y="175" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#1E1E1E">Fork creates a new session from any point:</text>
+
+
+<line x1="40" y1="210" x2="220" y2="210" stroke="#E8E8E4" stroke-width="2"/>
+
+
+<circle cx="60" cy="210" r="6" fill="#E8E8E4" stroke="#BDBDBD" stroke-width="1.5"/>
+<circle cx="110" cy="210" r="6" fill="#E8E8E4" stroke="#BDBDBD" stroke-width="1.5"/>
+<circle cx="160" cy="210" r="6" fill="#E8E8E4" stroke="#BDBDBD" stroke-width="1.5"/>
+
+
+<circle cx="160" cy="210" r="10" fill="none" stroke="#D4A27F" stroke-width="2"/>
+
+
+<path d="M160 210 Q180 230 200 250" stroke="#D4A27F" stroke-width="2.5" fill="none"/>
+<line x1="200" y1="250" x2="340" y2="250" stroke="#D4A27F" stroke-width="2.5"/>
+
+
+<circle cx="240" cy="250" r="6" fill="#FDF6F2" stroke="#D4A27F" stroke-width="1.5"/>
+<circle cx="290" cy="250" r="6" fill="#FDF6F2" stroke="#D4A27F" stroke-width="1.5"/>
+
+
+<rect x="380" y="230" width="160" height="40" rx="4" fill="#FDF6F2" stroke="#D4A27F" stroke-width="1.5"/>
+<text x="460" y="247" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9" fill="#1E1E1E">claude --resume abc123</text>
+<text x="460" y="261" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9" fill="#1E1E1E">--fork-session</text>
+
+
+<path d="M375 250 L350 250" stroke="#D4A27F" stroke-width="1.5"/>
+<polygon points="350,247 342,250 350,253" fill="#D4A27F"/>
+
+
+<text x="200" y="235" font-family="ui-monospace, monospace" font-size="9" fill="#D4A27F">session-xyz789</text>
+<text x="290" y="235" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#757575">(new ID)</text>
+
+</svg>

@@ -93,6 +93,17 @@
 | **VS Code / Cursor 확장** | 에디터 안에서 바로 사용 |
 | **웹 브라우저** | claude.ai/code 에서 바로 실행 |
 
+데스크톱 앱의 Code 탭은 이렇게 생겼습니다:
+
+<img src="/images/desktop-code-tab-light.png" alt="Claude 데스크톱 앱의 Code 탭 화면 (라이트 모드)" className="dark:hidden" style={{width:'100%', borderRadius:'12px', margin:'1rem 0'}} />
+<img src="/images/desktop-code-tab-dark.png" alt="Claude 데스크톱 앱의 Code 탭 화면 (다크 모드)" className="hidden dark:block" style={{width:'100%', borderRadius:'12px', margin:'1rem 0'}} />
+
+VS Code 확장은 에디터 옆 패널에서 Claude와 대화하며 작업합니다:
+
+<img src="/images/vs-code-extension-interface.jpg" alt="VS Code 확장에서 Claude Code 패널이 열린 화면" style={{width:'100%', borderRadius:'12px', margin:'1rem 0'}} />
+
+*이미지 출처: [Claude Code 공식 문서](https://code.claude.com/docs)*
+
 ---
 
 ## 한 줄 요약
@@ -101,4 +112,4 @@
 
 코딩을 배우지 않아도 됩니다. 파이썬 몰라도 됩니다. 하고 싶은 작업을 말로 설명하면 됩니다.
 
-플랜 선택부터 설치까지, 다음 섹션에서 이어집니다.
+무엇을 할 수 있는지(활용 사례)부터 요금제·설치까지, 다음 섹션들에서 순서대로 이어집니다.

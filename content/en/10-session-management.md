@@ -6,18 +6,21 @@
 
 ## What Is the Context Window?
 
-Claude Code (like all AI) has a memory limit for how much it can hold at once. This is called the **context window**.
+Claude works while remembering everything exchanged so far in the conversation. But that memory has a limit — the **context window**, the maximum number of tokens an AI model can process at once. As the conversation piles up and approaches the limit, older content starts getting folded into a summary.
+
+That "wait, I said this earlier — why doesn't it remember?" moment happens for exactly this reason. Claude didn't forget on purpose; the notepad filled up, so older content got compressed into a summary and the details fell away.
+
+When Claude Code nears the limit, it uses **auto-compact** to summarize older conversation and free up space — tokens aren't simply cut off, they're replaced by a summary, so details may disappear but the broad context is kept.
 
 ```
 As conversations grow longer:
-  Earlier content starts getting "pushed out"
+  Earlier content starts getting pushed aside
   → Claude may forget work done earlier in the session
   → Response quality starts to drop
+  → It may start repeating the same mistakes
 ```
 
-> **Analogy**: When your desk gets too full, old documents get pushed off. You need to tidy up occasionally.
-
-Managing your context before it fills up keeps quality consistent.
+Left alone, the conversation gradually gets tangled. You need to tidy up occasionally.
 
 ---
 
@@ -36,6 +39,10 @@ Summarizes the current conversation to free up context space.
 ---
 
 ## Resuming Sessions
+
+<img src="/images/session-continuity.svg" alt="Even after you exit, history persists so you can continue work with --continue and --resume" style={{width:'100%', borderRadius:'12px', margin:'1rem 0'}} />
+
+*Image source: [Claude Code official docs](https://code.claude.com/docs)*
 
 ### --continue — Resume the Last Session
 
@@ -78,7 +85,8 @@ Shows a list of previous sessions to choose from.
 When you're about to modify many files or make a large change, turn on Plan Mode first.
 
 ```
-Shift + Tab  →  Toggle Plan Mode
+Shift + Tab twice  →  Enter Plan Mode
+(cycles default → accept edits → plan. You can also jump straight in with /plan)
 ```
 
 In Plan Mode, Claude will:

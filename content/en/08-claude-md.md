@@ -232,17 +232,20 @@ Good things to put in your global CLAUDE.md:
 
 ## Memory Priority
 
-When multiple CLAUDE.md files exist, more specific files take priority.
+When multiple CLAUDE.md files exist, their contents are **all loaded together**, and where instructions overlap, the more specific file tends to take priority.
 
 ```
-Priority (high → low):
-1. CLAUDE.local.md (your personal project overrides)
-2. ./CLAUDE.md (project-level settings)
+Priority tendency among personal settings (specific → general):
+1. CLAUDE.local.md (your personal project settings)
+2. ./CLAUDE.md (project settings)
 3. ~/.claude/CLAUDE.md (global settings)
-4. Organization-managed CLAUDE.md (company-wide policy)
+
+※ The organization-managed CLAUDE.md is the exception — deployed by
+   your company's IT, it can't be turned off by personal settings and
+   is always enforced alongside the rest.
 ```
 
-For example, if your global settings say "2-space indent" but your project's CLAUDE.md says "4-space indent," the project setting wins.
+For example, if your global settings say "2-space indent" but your project's CLAUDE.md says "use tabs," the project setting wins.
 
 ---
 

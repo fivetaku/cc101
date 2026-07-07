@@ -117,7 +117,7 @@ AI partner for discovering, validating, and executing ideas
 20-sparks/     → Idea capture
 30-research/   → Research results
 40-foundry/    → Validation results
-50-blueprints/ → MVP design
+50-blueprints/ → MVP (minimum viable product) design
 60-ventures/   → Active projects
 70-playbook/   → Accumulated experience
 90-shelf/      → On-hold ideas
@@ -126,7 +126,7 @@ AI partner for discovering, validating, and executing ideas
 ### Skills in Use
 
 ```
-/spark [idea]       → Capture idea + ICE score evaluation
+/spark [idea]       → Capture idea + ICE score (Impact, Confidence, Ease) evaluation
 /research [topic]   → 7-step deep research
 /validate           → 4-persona Council validation
 /insight [content]  → Save lesson to Playbook
@@ -188,7 +188,7 @@ mkdir -p 01-inbox 02-work 03-output 04-archive
 ### Step 4: Turn Repetitive Tasks into Skills
 
 If you're doing the same task 3+ times, make it a Skill.
-→ Creating Skills is covered in the Skills & Building Plugins section
+→ Creating Skills is covered earlier in [17. Skills & Building Plugins](#skills)
 
 ---
 
@@ -203,7 +203,7 @@ Connecting MCP to your workspace makes it dramatically more powerful:
 | Slack | Team communication integration |
 | Google Sheets | Automatic data aggregation |
 
-→ MCP connections are covered in the MCP & Integrations section
+→ MCP connections are covered earlier in [15. MCP & Integrations](#mcp)
 
 ---
 

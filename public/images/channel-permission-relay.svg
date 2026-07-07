@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 230" width="100%" fill="none">
+  <style>
+    text { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; fill: #374151; }
+    .label { font-size: 10px; fill: #6B7280; }
+    .mono { font-size: 9px; fill: #6B7280; font-family: ui-monospace, 'SF Mono', Menlo, monospace; }
+    .title { font-size: 11px; font-weight: 600; fill: #374151; }
+    .box { rx: 6; ry: 6; stroke-width: 1.5; }
+    .life { stroke: #D1D5DB; stroke-width: 1; }
+  </style>
+
+  
+  <rect class="box" x="32" y="12" width="136" height="36" fill="#FFF7ED" stroke="#F97316"/>
+  <text class="title" x="100" y="34" text-anchor="middle">Claude Code</text>
+
+  <rect class="box" x="232" y="12" width="136" height="36" fill="#F0FDF4" stroke="#22C55E"/>
+  <text class="title" x="300" y="34" text-anchor="middle">Your channel server</text>
+
+  <rect class="box" x="432" y="12" width="136" height="36" fill="#EEF2FF" stroke="#818CF8"/>
+  <text class="title" x="500" y="34" text-anchor="middle">Chat app</text>
+
+  
+  <line class="life" x1="100" y1="48" x2="100" y2="216"/>
+  <line class="life" x1="300" y1="48" x2="300" y2="216"/>
+  <line class="life" x1="500" y1="48" x2="500" y2="216"/>
+
+  
+  <path d="M100 78 L293 78" stroke="#22C55E" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text class="label" x="200" y="70" text-anchor="middle">permission_request</text>
+  <text class="mono" x="200" y="89" text-anchor="middle">{request_id: "tbxkq", tool_name, ...}</text>
+
+  
+  <path d="M300 118 L493 118" stroke="#818CF8" stroke-width="1.5" marker-end="url(#ai)"/>
+  <text class="label" x="400" y="110" text-anchor="middle">formatted prompt</text>
+  <text class="mono" x="400" y="129" text-anchor="middle">...reply "yes tbxkq" to allow</text>
+
+  
+  <path d="M500 158 L307 158" stroke="#818CF8" stroke-width="1.5" marker-end="url(#ai)"/>
+  <text class="label" x="400" y="150" text-anchor="middle">human types reply</text>
+  <text class="mono" x="400" y="169" text-anchor="middle">"yes tbxkq"</text>
+
+  
+  <path d="M300 198 L107 198" stroke="#22C55E" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text class="label" x="200" y="190" text-anchor="middle">permission verdict</text>
+  <text class="mono" x="200" y="209" text-anchor="middle">{request_id: "tbxkq", behavior: "allow"}</text>
+
+  <defs>
+    <marker id="ag" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5" fill="#22C55E"/>
+    </marker>
+    <marker id="ai" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5" fill="#818CF8"/>
+    </marker>
+  </defs>
+</svg>

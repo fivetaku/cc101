@@ -51,7 +51,7 @@ CC101에서 배운 기초를 조합해 실제 업무에 적용해보세요.
 하나의 프로젝트를 플러그인 조합으로 처음부터 끝까지 진행할 수 있습니다:
 
 ```
-1. 리서치    /deep-research → 시장 조사, 경쟁 분석, 기술 검토
+1. 리서치    /insane-research → 시장 조사, 경쟁 분석, 기술 검토
 2. 기획      /show-me-the-prd → 리서치 결과 기반으로 PRD, 데이터 모델, 프로젝트 스펙 자동 생성
 3. 개발      /kkirikkiri → 에이전트 팀 구성해서 병렬 개발 (프론트/백엔드/테스트 동시 진행)
 4. 검토      /kkirikkiri → 분석 팀 구성해서 코드 리뷰 + 품질 검증
@@ -61,6 +61,8 @@ CC101에서 배운 기초를 조합해 실제 업무에 적용해보세요.
 
 - **docs-guide**를 중간중간 활용하면 공식 문서 기반으로 정확한 구현이 가능합니다
 - **바선생**으로 자신의 AI 활용 패턴을 분석하고 프롬프트 품질을 점진적으로 개선할 수 있습니다
+
+> 💡 이 파이프라인 전체를 한 커맨드로 돌리는 플러그인도 있습니다: **insane-loop**은 인터뷰→PRD→목표 설정→검증·리뷰·개선 반복을 완료 기준을 충족할 때까지 자동으로 순환합니다 (`/insane-loop [아이디어]`). 기획서가 이미 있다면 **골잡이(goaljaby)** 로 PRD를 자율 실행 목표로 바로 변환할 수 있습니다.
 
 **멀티 세션 & 병렬 작업**
 - 여러 터미널에서 Claude Code를 동시에 실행해 작업 분담
@@ -74,13 +76,17 @@ CC101에서 배운 기초를 조합해 실제 업무에 적용해보세요.
 이 가이드에서 다루지 않은 심화 주제들입니다.
 
 **Agent SDK로 나만의 AI 앱 만들기**
-- Anthropic의 [Agent SDK](https://docs.anthropic.com/en/docs/agents)를 사용하면 Claude를 엔진으로 한 독립 AI 애플리케이션을 개발할 수 있습니다
+- Anthropic의 [Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/overview)를 사용하면 Claude를 엔진으로 한 독립 AI 애플리케이션을 개발할 수 있습니다
 - Python/TypeScript로 커스텀 에이전트 구축 — Claude Code 없이도 동작하는 자동화 시스템
 
 **Model Context Protocol (MCP) 서버 직접 만들기**
 - CC101에서는 MCP 서버를 "사용"하는 법을 배웠지만, 직접 MCP 서버를 "만들"수도 있습니다
 - 회사 내부 API, 사내 DB, 사내 위키를 MCP 서버로 감싸면 Claude Code가 바로 접근 가능
 - [MCP 공식 스펙](https://modelcontextprotocol.io)
+
+**장시간 자율 실행 — /goal**
+- `/goal`은 Claude Code에게 목표와 완료 기준을 주고, 사람이 지켜보지 않아도 검증하며 스스로 완주하게 하는 실행 방식입니다 (밤새 돌리는 대규모 작업에 적합)
+- 다만 목표·검증 기준·복구 절차 문서를 갖추는 준비가 핵심인데, **골잡이(goaljaby)** 가 PRD에서 이 문서들을 자동 생성해주고, **insane-loop**은 아이디어 인터뷰부터 이 전 과정을 하나로 묶어 돌립니다
 
 **Claude Code 플러그인 개발**
 - 자신만의 플러그인을 만들어 커뮤니티에 공유하기
@@ -117,7 +123,7 @@ CC101에서 배운 기초를 조합해 실제 업무에 적용해보세요.
 | 리소스 | URL | 설명 |
 |--------|-----|------|
 | **CC101 GitHub** | [github.com/fivetaku/cc101](https://github.com/fivetaku/cc101) | 이 가이드 저장소. 오타·내용 추가 기여 환영 |
-| **gptaku_plugins** | [github.com/fivetaku/gptaku_plugins](https://github.com/fivetaku/gptaku_plugins) | 바이브코더를 위한 11개 플러그인 모음: 기획(show-me-the-prd), Git(깃선생), 멘토(바선생), 리서치(deep-research), 병렬개발(품앗이), 팀 구성(끼리끼리), 스킬 생성(스킬러들의 수다), 공식문서(docs-guide), Google Workspace(nopal), 우회검색(insane-search), 디자인분석(insane-design) |
+| **gptaku_plugins** | [github.com/fivetaku/gptaku_plugins](https://github.com/fivetaku/gptaku_plugins) | 바이브코더를 위한 15개 플러그인 모음: 기획(show-me-the-prd), Git(깃선생), 멘토(바선생), 리서치(insane-research), 병렬개발(품앗이), 팀 구성(끼리끼리), 스킬 생성(스킬러들의 수다), 공식문서(docs-guide), Google Workspace(nopal), 우회검색(insane-search), 디자인분석(insane-design), 클립보드 드롭(dd), 세컨드 오피니언(insane-review), 목표 실행 브리지(goaljaby), 아이디어→완성 루프(insane-loop) |
 
 이 가이드가 도움이 됐다면 **Star** 를 눌러주세요! 업데이트와 발전에 큰 힘이 됩니다.
 
@@ -175,7 +181,7 @@ CC101을 마쳤다면 바로 실전에 뛰어들어 보세요. 코딩 여부와 
  meeting-250225.md 로 저장해줘"
 ```
 
-녹음 파일을 텍스트로 변환하는 도구 설치부터 정리까지 전부 알아서 합니다.
+Claude Code가 녹음을 직접 듣는 건 아니고, 음성→텍스트 변환 도구(whisper 등)를 먼저 설치한 뒤 그 결과를 정리하는 방식입니다. 도구 설치에 몇 분 걸릴 수 있고, 설치 과정의 확인 요청에 승인이 필요합니다.
 
 ---
 

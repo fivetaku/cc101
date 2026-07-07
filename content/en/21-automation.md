@@ -8,11 +8,11 @@
 
 Normally, Claude Code runs interactively in a terminal — you ask a question, Claude responds, you give feedback, and so on.
 
-**Headless mode** lets you run Claude Code automatically, without a person in the loop. You can call it from scripts or CI/CD pipelines just like any other command-line tool.
+**Headless mode** lets you run Claude Code automatically, without a person in the loop. You can call it from scripts or CI/CD pipelines (the automated build-and-deploy process for code) just like any other command-line tool.
 
 > **Headless = automated execution without human interaction**
 
-The feature was previously called "headless mode," but is now officially part of the **Agent SDK CLI**. The `-p` flag and all CLI options work exactly the same way.
+Officially, this is called **non-interactive mode**. The **Claude Agent SDK** extends it so you can use it from programming languages (Python and TypeScript). The `-p` flag and all CLI options work exactly the same way.
 
 ---
 
@@ -39,11 +39,13 @@ claude -p "What does this project do?"
 
 ### Allow tools
 
-Let Claude read and edit files by specifying allowed tools:
+Let Claude read and save files by specifying allowed tools:
 
 ```bash
-claude -p "Find and fix the bug in auth.py" --allowedTools "Read,Edit,Bash"
+claude -p "Read all the PDFs in ~/Downloads and organize them into summary.md" --allowedTools "Read,Write"
 ```
+
+> In automation, allow only the tools you actually need. `Read,Write` is enough for read-and-write tasks; add `Bash` (running terminal commands) only when you truly need it.
 
 ### Get structured JSON output
 

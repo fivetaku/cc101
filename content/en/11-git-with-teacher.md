@@ -1,6 +1,22 @@
-# 11. Getting Started with GitHub
+# 11. Getting Started with Git & GitHub
 
-> Everything you build with Claude Code needs to be saved with Git and uploaded to GitHub. You don't need to memorize commands — start with natural language.
+> 🖥️ This section is mainly for **developers writing code**. If you're not doing coding work, you can read just the **File Version Control for Non-Developers** tips below and skip to the next section. You don't need to know any commands — start with natural language.
+
+---
+
+## Not a Developer? 3 Ways to Version Your Files
+
+Even without coding, anyone can accidentally change or lose a file. Some simple alternatives:
+
+| Situation | Method |
+|-----------|--------|
+| **Document version history** | The "version history" feature in Google Docs / Notion — restore any previous version anytime |
+| **Snapshot before working** | `"Copy the reports/ folder to reports_backup_[today's date]"` (just tell Claude Code) |
+| **Undo work** | `Esc Esc` (with the input box empty) or `/rewind` — the rewind menu opens, and you pick a point to restore |
+
+> ⚠️ **Limits of rewind**: Rewind can only undo things Claude changed **with its file-editing tools directly**. Files copied, moved, or deleted by terminal commands (bash) are not restored by rewind — the "folder snapshot" above is exactly that case, so the copy itself serves as your backup.
+
+> **Curious about Git?** Git can version any kind of file, not just code. Research files, reports, and plans can all be managed safely with Git. If that interests you, keep reading this section.
 
 ---
 
@@ -128,16 +144,16 @@ Request review (PR)            "검토 요청해줘"
 Explain a term                 "commit이 뭐야?"
 ```
 
-Slash commands also work:
+Slash commands also work (each action has a dedicated command):
 
 | Natural language | Slash command |
 |-----------------|--------------|
-| "깃 시작해줘" | `/git-teacher 시작` |
-| "지금 어떤 상태?" | `/git-teacher 상태` |
-| "저장해줘" | `/git-teacher 저장` |
-| "올려줘" | `/git-teacher 올리기` |
-| "검토 요청해줘" | `/git-teacher 검토` |
-| Terminology | `/git-teacher 도움말` |
+| "Set up git" (first run) | `/git-teacher-setup` |
+| "What's the current state?" | `/git-teacher-status` |
+| "Save this" | `/git-teacher-save` |
+| "Upload it" | `/git-teacher-upload` |
+| "Request a review" | `/git-teacher-review` |
+| Terminology questions | `/git-teacher-help` |
 
 ---
 

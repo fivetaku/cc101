@@ -29,7 +29,7 @@
 
 **No.** Claude Code uses a native installation. You do not need to install Node.js separately.
 
-> ⚠️ **npm installation is deprecated.** Previously Claude Code was installed via `npm install -g @anthropic-ai/claude-code`, but that method is no longer recommended. Use the official installation commands below instead.
+> ⚠️ **npm installation is an advanced option we don't recommend for beginners.** Claude Code used to be installed via `npm install -g @anthropic-ai/claude-code`, but the official recommendation today is the native installation below. There's no reason for a beginner to use the npm method.
 
 ---
 
@@ -89,6 +89,16 @@ winget install Anthropic.ClaudeCode
 apk add libgcc libstdc++ ripgrep
 ```
 
+You also need the following setting in `settings.json` (without it, file search won't work):
+
+```json
+{
+  "env": {
+    "USE_BUILTIN_RIPGREP": "0"
+  }
+}
+```
+
 ---
 
 ## Authentication (Logging In)
@@ -103,15 +113,7 @@ On first launch, **your browser opens automatically to an OAuth login page**. Lo
 
 ### Authentication Flow
 
-```
-Run claude in terminal
-       ↓
-Browser opens automatically (OAuth page)
-       ↓
-Log in with your Claude.ai account
-       ↓
-Returns to terminal → Authentication complete
-```
+<img src="/images/auth-flow-en.svg" alt="Run claude in terminal → browser opens OAuth login → sign in with Claude.ai account → authenticated" style={{width:'100%', borderRadius:'12px', margin:'1rem 0'}} />
 
 ### Credential Security
 
@@ -173,7 +175,7 @@ Then re-run the installation command.
 
 **Cause**: The installation path is not registered in your shell's PATH.
 
-**Fix**:
+**Fix** (PATH is "the list of directories your terminal searches for programs," and the shell is the program inside the terminal that interprets your commands):
 ```bash
 # Reload your shell config immediately
 source ~/.bashrc

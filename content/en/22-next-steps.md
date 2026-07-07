@@ -49,7 +49,7 @@ This isn't just learning a new tool. You've picked up a new way of developing so
 You can take a project from start to finish using plugin combinations:
 
 ```
-1. Research    /deep-research → market research, competitor analysis, tech review
+1. Research    /insane-research → market research, competitor analysis, tech review
 2. Planning    /show-me-the-prd → auto-generate PRD, data model, project spec from research
 3. Development /kkirikkiri → build agent team for parallel dev (frontend/backend/tests)
 4. Review      /kkirikkiri → build analysis team for code review + quality checks
@@ -59,6 +59,8 @@ You can take a project from start to finish using plugin combinations:
 
 - Use **docs-guide** throughout for accurate, official-docs-based implementation
 - Use **vibe-sunsang** to analyze your AI usage patterns and improve prompt quality
+
+> 💡 There's also a plugin that runs this whole pipeline with one command: **insane-loop** chains interview → PRD → goal setup → verify/review/improve cycles until the definition of done is met (`/insane-loop [idea]`). Already have a PRD? **goaljaby** turns it into a long-running autonomous goal directly.
 
 **Multi-session & Parallel Work**
 - Run Claude Code in multiple terminals to divide and conquer
@@ -126,13 +128,17 @@ Recommended plugins:
 These are deeper topics not covered in this guide.
 
 **Build Your Own AI Apps with Agent SDK**
-- Anthropic's [Agent SDK](https://docs.anthropic.com/en/docs/agents) lets you build standalone AI applications powered by Claude
+- Anthropic's [Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/overview) lets you build standalone AI applications powered by Claude
 - Build custom agents in Python/TypeScript — automation systems that run without Claude Code
 
 **Build Your Own MCP Servers**
 - CC101 taught you how to "use" MCP servers, but you can also "build" them
 - Wrap your company's internal API, database, or wiki as an MCP server so Claude Code can access them directly
 - [MCP official spec](https://modelcontextprotocol.io)
+
+**Long-Running Autonomous Execution — /goal**
+- `/goal` gives Claude Code a goal and a definition of done, then lets it verify its own work and finish without you watching (great for large overnight tasks)
+- The hard part is preparing the goal, validation criteria, and recovery docs — **goaljaby** auto-generates them from a PRD, and **insane-loop** chains the whole journey from idea interview onward
 
 **Claude Code Plugin Development**
 - Create your own plugins and share them with the community
@@ -169,7 +175,7 @@ These are deeper topics not covered in this guide.
 | Resource | URL | Description |
 |----------|-----|-------------|
 | **CC101 GitHub** | [github.com/fivetaku/cc101](https://github.com/fivetaku/cc101) | This guide's repository. Typo fixes and content contributions welcome |
-| **gptaku_plugins** | [github.com/fivetaku/gptaku_plugins](https://github.com/fivetaku/gptaku_plugins) | 11 plugins for vibe coders: planning (show-me-the-prd), Git (git-teacher), mentor (vibe-sunsang), research (deep-research), parallel dev (pumasi), team setup (kkirikkiri), skill creation (skillers-suda), official docs (docs-guide), Google Workspace (nopal), bypass search (insane-search), design analysis (insane-design) |
+| **gptaku_plugins** | [github.com/fivetaku/gptaku_plugins](https://github.com/fivetaku/gptaku_plugins) | 15 plugins for vibe coders: planning (show-me-the-prd), Git (git-teacher), mentor (vibe-sunsang), research (insane-research), parallel dev (pumasi), team setup (kkirikkiri), skill creation (skillers-suda), official docs (docs-guide), Google Workspace (nopal), bypass search (insane-search), design analysis (insane-design), clipboard drop (dd), second opinion (insane-review), goal bridge (goaljaby), idea-to-done loop (insane-loop) |
 
 If this has been helpful, please give it a **Star**. It helps the community grow.
 
@@ -227,7 +233,7 @@ Transcribe it, then summarize + sort action items by person.
 Save as meeting-250225.md"
 ```
 
-It handles everything from installing transcription tools to organizing the output.
+Claude Code doesn't listen to the recording itself — it first installs a speech-to-text tool (like whisper), then organizes the result. Installing the tool can take a few minutes, and you'll need to approve the confirmation prompts during setup.
 
 ---
 

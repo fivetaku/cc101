@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="280" viewBox="0 0 720 280" fill="none">
+<rect width="720" height="280" rx="8" fill="#F9F9F7"/>
+
+
+<rect x="20" y="100" width="110" height="50" rx="6" fill="#E8E8E4"/>
+<text x="75" y="130" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#1E1E1E">Your prompt</text>
+
+
+<rect x="185" y="55" width="450" height="140" rx="10" fill="none" stroke="#E0E0E0" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="410" y="75" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#9E9E9E">agentic loop</text>
+
+
+<rect x="130" y="120" width="60" height="10" fill="#F9F9F7"/>
+<path d="M130 125 L185 125" stroke="#757575" stroke-width="2"/>
+<polygon points="183,120 195,125 183,130" fill="#757575"/>
+
+
+<rect x="205" y="100" width="110" height="50" rx="6" fill="#D4E4D8"/>
+<text x="260" y="130" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#1E1E1E">Gather context</text>
+
+
+<path d="M315 125 L345 125" stroke="#757575" stroke-width="2"/>
+<polygon points="343,120 355,125 343,130" fill="#757575"/>
+
+
+<rect x="355" y="100" width="110" height="50" rx="6" fill="#D4E4D8"/>
+<text x="410" y="130" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#1E1E1E">Take action</text>
+
+
+<path d="M465 125 L495 125" stroke="#757575" stroke-width="2"/>
+<polygon points="493,120 505,125 493,130" fill="#757575"/>
+
+
+<rect x="505" y="100" width="110" height="50" rx="6" fill="#D4E4D8"/>
+<text x="560" y="130" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#1E1E1E">Verify results</text>
+
+
+<path d="M560 150 L560 170 Q560 180 550 180 L270 180 Q260 180 260 170 L260 155" fill="none" stroke="#B4D4B8" stroke-width="2.5"/>
+<polygon points="255,158 260,145 265,158" fill="#B4D4B8"/>
+
+
+<rect x="615" y="120" width="25" height="10" fill="#F9F9F7"/>
+<path d="M615 125 L665 125" stroke="#757575" stroke-width="2"/>
+<polygon points="663,120 675,125 663,130" fill="#757575"/>
+
+
+<rect x="675" y="100" width="40" height="50" rx="6" fill="#E8E8E4"/>
+<text x="695" y="130" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#1E1E1E">Done</text>
+
+
+<rect x="20" y="210" width="200" height="40" rx="6" fill="#FDF6F2" stroke="#D4A27F" stroke-width="1.5"/>
+<text x="120" y="226" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#1E1E1E">You: interrupt, steer,</text>
+<text x="120" y="240" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#1E1E1E">or add context</text>
+
+
+<path d="M220 230 L410 230 L410 200" stroke="#D4A27F" stroke-width="1.5" stroke-dasharray="5 3"/>
+<polygon points="405,202 410,190 415,202" fill="#D4A27F"/>
+
+</svg>

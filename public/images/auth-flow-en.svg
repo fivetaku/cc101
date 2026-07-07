@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="200" viewBox="0 0 720 200" fill="none">
+<rect width="720" height="200" rx="8" fill="#F9F9F7"/>
+
+<!-- Step 1: terminal -->
+<rect x="28" y="60" width="140" height="80" rx="8" fill="#1E1E1E"/>
+<text x="98" y="92" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#4ADE80">$ claude</text>
+<text x="98" y="116" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#A1A1AA">run in terminal</text>
+
+<!-- arrow 1 -->
+<path d="M168 100 L216 100" stroke="#757575" stroke-width="2"/>
+<polygon points="214,95 226,100 214,105" fill="#757575"/>
+
+<!-- Step 2: browser -->
+<rect x="230" y="60" width="150" height="80" rx="8" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1.5"/>
+<circle cx="248" cy="74" r="3" fill="#F87171"/>
+<circle cx="259" cy="74" r="3" fill="#FBBF24"/>
+<circle cx="270" cy="74" r="3" fill="#4ADE80"/>
+<text x="305" y="100" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#1E1E1E">Browser opens</text>
+<text x="305" y="120" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#757575">OAuth login page</text>
+
+<!-- arrow 2 -->
+<path d="M380 100 L428 100" stroke="#757575" stroke-width="2"/>
+<polygon points="426,95 438,100 426,105" fill="#757575"/>
+
+<!-- Step 3: login -->
+<rect x="442" y="60" width="130" height="80" rx="8" fill="#FDF0E7" stroke="#F5D5BC" stroke-width="1.5"/>
+<text x="507" y="96" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#B45309">Claude.ai account</text>
+<text x="507" y="116" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#92400E">Pro / Max login</text>
+
+<!-- arrow 3 -->
+<path d="M572 100 L614 100" stroke="#757575" stroke-width="2"/>
+<polygon points="612,95 624,100 612,105" fill="#757575"/>
+
+<!-- Step 4: done -->
+<rect x="628" y="60" width="70" height="80" rx="8" fill="#D4E4D8"/>
+<text x="663" y="96" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#2D5A34">✓</text>
+<text x="663" y="118" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#2D5A34">Authenticated</text>
+
+<!-- title -->
+<text x="360" y="34" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#9E9E9E">First-run authentication — you're done when the terminal resumes</text>
+</svg>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="520" viewBox="0 0 720 520" fill="none">
+  <defs>
+    
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#757575"/>
+    </marker>
+    
+    <marker id="arrow-dashed" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#B8B8B8"/>
+    </marker>
+  </defs>
+
+  <rect width="720" height="520" rx="6" fill="#F9F9F7"/>
+
+  
+  <text x="80" y="35" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#1E1E1E">Local</text>
+  <text x="420" y="35" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#1E1E1E">External</text>
+
+  
+  <line x1="300" y1="20" x2="300" y2="500" stroke="#E8E8E4" stroke-width="2" stroke-dasharray="6 4"/>
+
+  
+  <rect x="320" y="120" width="380" height="380" rx="6" fill="#F5F5F3" stroke="#E8E8E4" stroke-width="1"/>
+  <text x="340" y="145" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#757575">Anthropic</text>
+
+  
+  <rect x="80" y="55" width="140" height="46" rx="6" fill="#D4E4D8"/>
+  <text x="150" y="83" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#1E1E1E">install/update</text>
+
+  <rect x="420" y="55" width="200" height="46" rx="6" fill="#E8E8E4"/>
+  <text x="520" y="83" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#1E1E1E">NPM</text>
+
+  <line x1="220" y1="78" x2="410" y2="78" stroke="#757575" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  
+  <rect x="80" y="260" width="140" height="46" rx="6" fill="#D4E4D8"/>
+  <text x="150" y="288" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#1E1E1E">user request</text>
+
+  
+  <rect x="420" y="165" width="200" height="46" rx="6" fill="#E8E8E4"/>
+  <text x="520" y="193" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#1E1E1E">Console auth</text>
+
+  
+  <line x1="220" y1="270" x2="410" y2="195" stroke="#757575" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  
+  <rect x="420" y="222" width="200" height="46" rx="6" fill="#E8E8E4"/>
+  <text x="520" y="250" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#1E1E1E">public-api (v1/messages)</text>
+
+  
+  <line x1="220" y1="280" x2="410" y2="250" stroke="#757575" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  
+  <rect x="420" y="279" width="200" height="46" rx="6" fill="none" stroke="#B8B8B8" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="520" y="300" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#757575">Statsig + Sentry</text>
+  <text x="520" y="315" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#999999">(opt-in telemetry)</text>
+
+  
+  <line x1="220" y1="290" x2="410" y2="302" stroke="#B8B8B8" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow-dashed)"/>
+
+  
+  <rect x="340" y="370" width="140" height="46" rx="6" fill="none" stroke="#B8B8B8" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="410" y="398" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#757575">/bug reports</text>
+
+  
+  <line x1="220" y1="300" x2="330" y2="385" stroke="#B8B8B8" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow-dashed)"/>
+
+  
+  <rect x="520" y="350" width="140" height="46" rx="6" fill="none" stroke="#B8B8B8" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="590" y="378" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#757575">GCS storage</text>
+
+  
+  <line x1="480" y1="383" x2="510" y2="375" stroke="#B8B8B8" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow-dashed)"/>
+
+  
+  <rect x="520" y="410" width="140" height="46" rx="6" fill="none" stroke="#B8B8B8" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="590" y="438" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#757575">GitHub issue</text>
+
+  
+  <line x1="480" y1="405" x2="510" y2="428" stroke="#B8B8B8" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow-dashed)"/>
+</svg>

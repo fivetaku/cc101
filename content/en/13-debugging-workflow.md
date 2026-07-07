@@ -1,4 +1,4 @@
-# Debugging — When You Hit an Error
+# 13. Debugging — When You Hit an Error
 
 > A 3-step workflow for resolving errors without panicking.
 
@@ -18,7 +18,9 @@ When you get an error, **show it to Claude as-is**. You don't need to understand
 
 ### Method 2: Paste a screenshot
 
-Capture the error screen and paste it with `Ctrl+V` (Mac: `Cmd+V`) directly into the chat. Claude can read and analyze the image.
+Capture the error screen and paste it with `Ctrl+V` directly into the chat (Cmd+V also works in iTerm2; Alt+V on Windows/WSL). When an `[Image #1]` chip appears in the input box, it worked — Claude can read and analyze the image.
+
+> 💡 With gptaku's **dd** plugin installed, you don't even need to paste — right after capturing, `/dd analyze this error` sends your clipboard straight to Claude.
 
 ### Method 3: Just describe it in one sentence
 
@@ -44,11 +46,9 @@ When nothing works and there's no error message — that's the most frustrating.
 > /rewind
 ```
 
-Goes back to a point where things were working. If "it worked before but not now," this is the fastest fix.
+The rewind menu opens: pick a point from the list of prompts you sent during the session, then choose to restore the code, the conversation, or both. If "it worked before but not now," this is the fastest fix. Pressing `Esc` `Esc` (Esc key twice) with an empty input box opens the same menu.
 
-### Restore to the previous state with a checkpoint
-
-Press `Esc` `Esc` (Esc key twice) to revert to the state right before Claude's last edit.
+> ⚠️ Rewind only undoes what Claude changed with its file-editing tools. Files changed by terminal commands (bash) are not restored.
 
 ### Check what was changed
 

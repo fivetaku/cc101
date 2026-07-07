@@ -72,10 +72,11 @@ claude doctor
 # Claude Code 안에서
 > /logout
 
-# 또는 인증 파일 직접 삭제
-rm -rf ~/.config/claude-code/auth.json
+# 다시 실행하면 로그인 화면이 나옵니다
 claude
 ```
+
+> 참고: 인증 정보는 macOS에서는 키체인에, Linux/Windows에서는 `~/.claude/.credentials.json`에 저장됩니다. 직접 지우기보다 `/logout` → 재로그인이 안전합니다.
 
 **여전히 안 된다면**
 
@@ -243,10 +244,10 @@ git commit -m "작업 전 백업 $(date +%Y%m%d-%H%M)"
 **현재 비용 확인**
 
 ```
-> /cost
+> /usage
 ```
 
-API 사용자용. 구독 사용자는 `/stats`로 사용량 확인.
+세션 비용과 플랜 사용량을 한 화면에서 보여줍니다 (`/cost`, `/stats`는 같은 화면을 여는 별칭). 구독 사용자는 세션 비용(달러)은 참고용이고, 플랜 사용량 바를 보면 됩니다.
 
 **비용 줄이는 방법**
 

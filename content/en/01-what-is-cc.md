@@ -93,6 +93,17 @@ No Python required. Just describe what you want.
 | **VS Code / Cursor extension** | Use directly inside your editor |
 | **Web browser** | Run at claude.ai/code with no local setup |
 
+Here's what the Code tab in the desktop app looks like:
+
+<img src="/images/desktop-code-tab-light.png" alt="Code tab in the Claude desktop app (light mode)" className="dark:hidden" style={{width:'100%', borderRadius:'12px', margin:'1rem 0'}} />
+<img src="/images/desktop-code-tab-dark.png" alt="Code tab in the Claude desktop app (dark mode)" className="hidden dark:block" style={{width:'100%', borderRadius:'12px', margin:'1rem 0'}} />
+
+The VS Code extension lets you work with Claude in a panel beside your editor:
+
+<img src="/images/vs-code-extension-interface.jpg" alt="The Claude Code panel open inside the VS Code extension" style={{width:'100%', borderRadius:'12px', margin:'1rem 0'}} />
+
+*Image source: [Claude Code official docs](https://code.claude.com/docs)*
+
 ---
 
 ## One-Line Summary
@@ -101,4 +112,4 @@ No Python required. Just describe what you want.
 
 No coding required. No Python required. Just describe what you want to do.
 
-The next section covers which plan to start with.
+Use cases, plans, and installation follow in the next sections.

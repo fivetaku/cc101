@@ -10,6 +10,10 @@ Claude Code is not just a chatbot. When you give it a task, it acts as an **Agen
 
 This process is called the **Agentic Loop**.
 
+<img src="/images/agentic-loop.svg" alt="The agentic loop: prompt → gather context → act → verify, repeated" style={{width:'100%', borderRadius:'12px', margin:'1rem 0'}} />
+
+*Image source: [Claude Code official docs](https://code.claude.com/docs)*
+
 ```
 Your instruction
      ↓
@@ -40,6 +44,10 @@ All of this happens **automatically**.
 ### 1. Context — Claude's Working Memory
 
 **Context** is everything Claude Code is currently "holding in mind": conversation history, file contents it has read, command outputs, CLAUDE.md instructions, and more.
+
+<img src="/images/context-loading.svg" alt="How CLAUDE.md and settings load into context at the start of a session" style={{width:'100%', borderRadius:'12px', margin:'1rem 0'}} />
+
+*Image source: [Claude Code official docs](https://code.claude.com/docs)*
 
 Context has a **token limit**. If a conversation gets very long or you load many large files, context can fill up. Claude Code handles this automatically by summarizing older content.
 
@@ -107,7 +115,7 @@ Think of CLAUDE.md as a **standing instruction sheet** for Claude.
 | `~/.claude/CLAUDE.md` | All your projects (global preferences) |
 | `./CLAUDE.local.md` | Personal project-specific settings (not committed to git) |
 
-> CLAUDE.md is covered in depth in **[08. Mastering CLAUDE.md](#08-claude-md)**.
+> The full hierarchy (including managed org files) is covered in **[08. Mastering CLAUDE.md](#08-claude-md)**.
 
 ---
 
@@ -183,8 +191,10 @@ Plan mode:
 Before editing any file, Claude Code **automatically takes a snapshot** of the current state.
 
 If something goes wrong:
-- Press `Esc` twice in a row to rewind to a previous state
+- With the input box empty, press `Esc` twice or type `/rewind` → the **rewind menu** opens, and you choose the point to return to and the scope (code / conversation / both) to restore
 - Or just tell Claude: "undo what you just did"
+
+> Note: files changed by terminal commands (bash) are not restored by rewind. This is covered in more detail in Section 14.
 
 ---
 
